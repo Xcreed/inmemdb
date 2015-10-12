@@ -1,12 +1,17 @@
 package inmemdb.structures;
 
-public class BinaryNode <T> {
+public class BinaryNode<T> extends Node {
 	
 	private T Hizq;
 	private T Hder;
 	private T value;
 	
+//	public BinaryNode(){
+//		
+//	}
+//	
 	public BinaryNode(T value) {
+		super(value);
 		this.value = value;
 		
 	}
@@ -42,16 +47,19 @@ public class BinaryNode <T> {
 	 * @return
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public boolean remove(int value, BinaryNode parent) {
+	public boolean remove(T value, BinaryNode parent) {
 		
-        if (value < (int) this.value) {//El valor a borrar es menor que el valor del nodo
+		BinaryNode toRemove = new BinaryNode(value);
+		BinaryNode nodeValue = new BinaryNode(this.value);
+		
+        if (nodeValue.compareTo(toRemove) > 0) {//El valor a borrar es menor que el valor del nodo
               if (Hizq != null)//Node has at least one child
                     return ((BinaryNode) Hizq).remove(value, this);
               else//Node is a leaf
                     return false;
         } 
         
-        else if (value > (int) this.value) {//Value is bigger than node's value
+        else if (nodeValue.compareTo(toRemove) < 0) {//Value is bigger than node's value
               if (Hder != null)//Node has at least one child
                     return ((BinaryNode) Hder).remove(value, this);
               else//Node is a leaf
@@ -77,6 +85,7 @@ public class BinaryNode <T> {
         }
   }
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public T minValue() {
         if (Hizq == null)
               return value;

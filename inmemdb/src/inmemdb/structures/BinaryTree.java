@@ -12,24 +12,26 @@ public class BinaryTree <T> {
      * Returns the root of the tree
      * @return
      */
-    public Object getRoot(){
+    public BinaryNode getRoot(){
     	return root;
     }
 	/**
 	 * Insert elements
-	 * @param node
+	 * @param value to insert
 	 */
-	public void insert(BinaryNode data) {
+	public void insert(T data) {
 		
-		if (root == null) //Arbol vacio
-			root = data;
+		BinaryNode toInsert = new BinaryNode(data);
+		
+		if (root == null) //Empty Tree
+			root = toInsert;
 		else 
-			insertAux(data, root);	
+			insertAux(toInsert, root);	
 	}
 	
 	private void insertAux(BinaryNode node, BinaryNode root) {
 		
-		if ((int) root.getData() > (int) node.getData()) { //Node is smaller than root
+		if (root.compareTo(node) > 0) { //Node is smaller than root
 			
 			if (root.getHizq() == null)
 				root.setHizq(node);
@@ -37,7 +39,7 @@ public class BinaryTree <T> {
 				insertAux(node, (BinaryNode) root.getHizq());
 		}
 		
-		else {	//El nodo es mayor que la raiz
+		else {	//Node is greater than root
 			
 			if (node.getData() != root.getData()) {
 				if (root.getHder() == null)
@@ -55,11 +57,12 @@ public class BinaryTree <T> {
 	 * @param Padre del nodo
 	 * @return
 	 */
-	private BinaryNode getParent(BinaryNode root, int value, BinaryNode parent) {
-		
-		if ((int) root.getData() == value || root == null)
+	private BinaryNode getParent(BinaryNode root, T value, BinaryNode parent) {
+		BinaryNode child = new BinaryNode(value);
+
+		if (root.compareTo(child) == 0 || root == null)
 			return parent;
-		if ((int) root.getData() > value)
+		if (root.compareTo(child) > 0)
 			return getParent((BinaryNode) root.getHizq(), value, root);
 		else
 			return getParent((BinaryNode) root.getHder(), value, root);
@@ -69,19 +72,20 @@ public class BinaryTree <T> {
 	 * Remove an element
 	 * @param Value to remove
 	 */
-	public boolean remove(Object value) {
-		
+	public boolean remove(T value) {
+		BinaryNode toRemove = new BinaryNode(value);
+
 	    if (root == null)//Tree doesn't exist
 	          return false;
 	    else {
-	          if ((int) root.getData() == (int) value) {//Remove root
+	          if (root.compareTo(toRemove) == 0) {//Remove root
 	                BinaryNode auxRoot = new BinaryNode(0);
 	                auxRoot.setHizq(root);
-	                boolean result = root.remove((int) value, auxRoot);
+	                boolean result = root.remove(value, auxRoot);
 	                root = (BinaryNode) auxRoot.getHizq();
 	                return result;
 	          } else {
-	                return root.remove((int) value, null);
+	                return root.remove(value, null);
 	          }
 	    }
 	}
@@ -154,7 +158,7 @@ public class BinaryTree <T> {
 			return;
 		else
 			tmp.enqueue(Root);
-		
+
 		while(tmp.size() != 0) {
 			BinaryNode tmpNode = (BinaryNode) tmp.dequeue();
 			
@@ -173,29 +177,31 @@ public class BinaryTree <T> {
 	 * @param data to be found
 	 * @return boolean depending if the element is or not 
 	 */
-	public boolean find(int data) {
+	public boolean find(T data) {
+		BinaryNode toFind = new BinaryNode(data);
 		if (root == null)//No existe arbol
 			return false;
 		
-		if ((int) root.getData() == data) //La raiz es el dato
+		if (root.compareTo(toFind) == 0) //La raiz es el dato
 			return true;
 		
 		else
 			return findAux(data, root);
 	}
 	
-	public boolean findAux(int data, BinaryNode node) {
-		
+	public boolean findAux(T data, BinaryNode node) {
+		BinaryNode toFind = new BinaryNode(data);
+
 		if (node == null) //El nodo ya no existe por lo tanto no está el dato
 			return false;
 		
-		if ((int) node.getData() == data) //El nodo presente tiene el dato
+		if (node.compareTo(toFind) == 0) //El nodo presente tiene el dato
 			return true;
 		
-		if ((int) node.getData() < data) //El dato es mayor de lo que tiene el nodo
+		if (node.compareTo(toFind) < 0) //El dato es mayor de lo que tiene el nodo
 			return findAux(data, (BinaryNode) node.getHder()); //Se usa el hijo derecho
 		
-		if ((int) node.getData() > data) //El dato es menor de lo que tiene el nodo
+		if (node.compareTo(toFind) > 0) //El dato es menor de lo que tiene el nodo
 			return findAux(data, (BinaryNode) node.getHizq()); //Se usa el hijo izquierdo
 		
 		else 
