@@ -1,5 +1,5 @@
 package inmemdb.controller;
 
-public abstract class Adapter {
+public class JSONConvertor {
 
 }
