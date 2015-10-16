@@ -3,10 +3,13 @@ package inmemdb.nosql;
 import inmemdb.structures.BinaryTree;
 import inmemdb.structures.DoubleLinkedList;
 
-public class Schema {
+public class Schema<T> {
 	
-	String name;
-	DoubleLinkedList schema = new DoubleLinkedList();
+	private String name;
+	private DoubleLinkedList schema = new DoubleLinkedList();
+	private T type;//Type of the schema
+	private int length;//length of elements
+	private byte[] sharedSecret;
 	
 	/**
 	 * Creates a new schema
@@ -14,13 +17,15 @@ public class Schema {
 	 */
 	public Schema(String name) {
 		this.name = name;
+		System.out.println(name + "table created.");
+		//generateSharedSecret()
 	}
 	
 	/**
 	 * Adds an index to the schema
 	 * Needs to add type parameter
 	 */
-	public void createIndex(String treeType) {
+	public boolean createIndex(String treeType) {
 		
 		if (treeType.equals("BiTree")) {
 			//Creates a binary Tree and adds it to the list
@@ -36,7 +41,7 @@ public class Schema {
 	 * --Implement delete won't delete joined schema
 	 * @throws Throwable 
 	 */
-	public void delete() throws Throwable {
+	public boolean delete() throws Throwable {
 		schema = null;
 		this.finalize();
 	}
@@ -45,7 +50,7 @@ public class Schema {
 	 * Delete an index inside the schema
 	 * @param Index
 	 */
-	public void deleteIndex(int Index) {
+	public boolean deleteIndex(int Index) {
 		
 	}
 	
@@ -63,6 +68,10 @@ public class Schema {
 	 * @param element
 	 */
 	public <T> void insert(T element) {
+		
+	}
+	
+	public boolean join(Schema otherSchema) {
 		
 	}
 	
