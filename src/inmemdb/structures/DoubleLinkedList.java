@@ -11,7 +11,7 @@ public class DoubleLinkedList <T> {
 	
 	private DoubleNode<T> head = null; //null node for the head of the list
 	private DoubleNode<T> tail = null; //null node for the tail of the list
-	
+	private int index;
 	
 	/**
 	 * Return the length of the list.
@@ -53,11 +53,13 @@ public class DoubleLinkedList <T> {
 		
 		if(isEmpty()){
 			head = tail = data;
+			index = 0;
 		}else{
 			head.setPrev(data); //head.prev = data;
 		}
 		data.setNext(head); //data.next = head;
 		head = data; //head = data;
+		index++;
 	}
 	
 	/**
@@ -71,11 +73,13 @@ public class DoubleLinkedList <T> {
 		
 		if(isEmpty()){
 			head = tail = data;
+			index = 0;
 		}else{
 			tail.setNext(data); //tail.next = data;
 			data.setPrev(tail); //data.prev = tail;
 		}
 		tail = data; //tail = head;
+		index++;
 	}
 	
 	/**
@@ -97,7 +101,7 @@ public class DoubleLinkedList <T> {
 		//return list;
 	}
 	
-	public Object getItem(int i) {
+	public T getItem(int i) {
 		
 		if (head == tail) {
 			return head.getData();
@@ -105,7 +109,8 @@ public class DoubleLinkedList <T> {
 		
 		else  {
 		
-			DoubleNode temp = head;
+			DoubleNode<T> temp = head;
+			
 			if (temp != null) {
 				for (int j = 0; j != i; j++) {
 					
