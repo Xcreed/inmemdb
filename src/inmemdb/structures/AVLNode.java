@@ -5,7 +5,7 @@ public class AVLNode<T> extends Node{
 	public AVLNode rightChild;
 	
 	public int height;
-	public Object data;
+	public T data;
 	
 
 	public AVLNode(T value) {

@@ -4,6 +4,9 @@ public abstract class Node<T> implements Comparable<Node<T>>{
 	
 	private T data;
     
+	public Node(){
+		data = null;
+	}
     public Node(T value){
         this.data = value;
     }
@@ -17,6 +20,7 @@ public abstract class Node<T> implements Comparable<Node<T>>{
         String temp2 = a.toString();
         return temp1.compareTo(temp2);
     }
+    
      
     public String toString(){
         return data.toString();
