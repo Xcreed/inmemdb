@@ -45,15 +45,12 @@ public class CeRobot {
 	 * @throws IOException 
 	 */
 	public void readFiles() throws IOException {
-		
 		for (File f : contents) {
 			extractText(f.getAbsolutePath());
 		}
-		
         PrintWriter out = new PrintWriter(new FileOutputStream(text.getAbsolutePath(), false));
         out.flush();
         out.close();
-		
 	}
 	
 	/**
@@ -62,18 +59,15 @@ public class CeRobot {
 	 * @throws IOException
 	 */
 	private void extractText(String pdfPath) throws IOException {
-		
 		PdfReader reader = new PdfReader(pdfPath);	
 		PdfReaderContentParser parser = new PdfReaderContentParser(reader);
         PrintWriter out = new PrintWriter(new FileOutputStream(text.getAbsolutePath(), true));
 		TextExtractionStrategy strategy;
-        
 		for (int i = 1; i <= reader.getNumberOfPages(); i++) {
             strategy = parser.processContent(i, new SimpleTextExtractionStrategy());
             out.println(strategy.getResultantText());
             takeWords();
         }
-        
 		out.flush();
         out.close();
         System.out.println("Reading...");
@@ -85,7 +79,6 @@ public class CeRobot {
 	 * structure
 	 */
 	private void takeWords() throws NullPointerException {
-		
 		try 
 			(InputStream fis = new FileInputStream(text);
 			InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
@@ -98,10 +91,6 @@ public class CeRobot {
 		    }
 		} catch (Exception e){ 
 			System.out.println("Unsupported character");
-			
 		}
-		
-		
 	}
-
 }
