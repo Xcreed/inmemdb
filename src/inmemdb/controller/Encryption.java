@@ -16,7 +16,6 @@ public class Encryption {
 	 * @throws UnsupportedEncodingException
 	 */
 	public String encrypt(String dataToEncrypt) throws UnsupportedEncodingException {
-		
 		String encryptedString = Base64.getEncoder().encodeToString(dataToEncrypt.getBytes("utf-8"));
 		System.out.println(encryptedString);
 		return encryptedString;
