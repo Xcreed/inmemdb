@@ -3,13 +3,13 @@ package inmemdb.nosql;
 import inmemdb.structures.BinaryTree;
 import inmemdb.structures.DoubleLinkedList;
 
-public class Schema<T> {
+public abstract class Schema<T> {
 	
-	private String name;
-	private DoubleLinkedList schema = new DoubleLinkedList();
-	private T type;//Type of the schema
-	private int length;//length of elements
-	private byte[] sharedSecret;
+	protected String name;
+	protected DoubleLinkedList<T> schema = new DoubleLinkedList<T>();
+	protected T type;//Type of the schema
+	protected int length;//length of elements
+	protected byte[] sharedSecret;
 	
 	/**
 	 * Creates a new schema
@@ -17,7 +17,7 @@ public class Schema<T> {
 	 */
 	public Schema(String name) {
 		this.name = name;
-		System.out.println(name + "table created.");
+		System.out.println(name + " table created.");
 		//generateSharedSecret()
 	}
 	
@@ -25,14 +25,16 @@ public class Schema<T> {
 	 * Adds an index to the schema
 	 * Needs to add type parameter
 	 */
-	public boolean createIndex(String treeType) {
+	public boolean createIndex(int I) {
 		
-		if (treeType.equals("BiTree")) {
-			//Creates a binary Tree and adds it to the list
-			BinaryTree<?> biTree = new BinaryTree();
-			schema.insertAtBeginning(biTree);
-			
-		}
+//		if (treeType.equals("BiTree")) {
+//			//Creates a binary Tree and adds it to the list
+//			BinaryTree<T> biTree = new BinaryTree();
+//			schema.insertAtBeginning(biTree);
+//			
+//		}
+		schema.insertAtEnd(new BinaryTree<T>());
+		return false;
 		
 	}
 	
@@ -44,6 +46,7 @@ public class Schema<T> {
 	public boolean delete() throws Throwable {
 		schema = null;
 		this.finalize();
+		return false;
 	}
 	
 	/**
@@ -51,6 +54,7 @@ public class Schema<T> {
 	 * @param Index
 	 */
 	public boolean deleteIndex(int Index) {
+		return false;
 		
 	}
 	
@@ -63,15 +67,16 @@ public class Schema<T> {
 		
 	}
 	
-	/**
-	 * Inserts an element in the schema
-	 * @param element
-	 */
-	public <T> void insert(T element) {
-		
-	}
+//	/**
+//	 * Inserts an element in the schema
+//	 * @param element
+//	 */
+//	public void insert(T element) {
+//		
+//		
+//	}
 	
-	public boolean join(Schema otherSchema) {
+	public void join(Schema otherSchema) {
 		
 	}
 	
