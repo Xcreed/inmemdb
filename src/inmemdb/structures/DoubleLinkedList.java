@@ -47,9 +47,10 @@ public class DoubleLinkedList <T> {
 	 * 
 	 * @param pData
 	 */
-	public void insertAtBeginning(T tData){
+	@SuppressWarnings("unchecked")
+	public <T> void insertAtBeginning(T tData){
 		
-		DoubleNode<T> data = new DoubleNode<T>(tData);
+		DoubleNode data = new DoubleNode<T>(tData);
 		
 		if(isEmpty()){
 			head = tail = data;
@@ -65,11 +66,11 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Insert an element (tData) at the end of the list.
 	 * 
-	 * @param tData
+	 * @param element
 	 */
-	public void insertAtEnd(T tData){
+	public <T> void insertAtEnd(T element){
 		
-		DoubleNode<T> data = new DoubleNode<T>(tData);
+		DoubleNode data = new DoubleNode<T>(element);
 		
 		if(isEmpty()){
 			head = tail = data;
