@@ -1,7 +1,7 @@
 package inmemdb.structures;
 
 
-public class AVLTree <T>{
+public class AVLTree <T> extends Tree{
 	public AVLNode root; 
 
 	public AVLTree(){

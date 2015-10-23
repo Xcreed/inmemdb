@@ -1,5 +1,5 @@
 package inmemdb.structures;
 
-public class BTree {
+public class BTree extends Tree{
 
 }

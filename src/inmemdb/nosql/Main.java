@@ -1,14 +1,13 @@
 package inmemdb.nosql;
 
+import java.io.IOException;
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		@SuppressWarnings("rawtypes")
-		NumberType n = new NumberType("Numbers");
-		n.insertToIndex(0, 10);
-		
-		String h = Integer.toBinaryString(10);
+		Schema s = new Schema("T");
+		System.out.println(s.getFileType("C:\\Users\\Xcreed\\Desktop\\test\\1st.jpg"));
 	}
 
 }
