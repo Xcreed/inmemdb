@@ -105,7 +105,7 @@ public class DoubleLinkedList <T> {
 	public T getItem(int i) {
 		
 		if (head == tail) {
-			return head.getData();
+			return (T) head.getData();
 		}
 		
 		else  {
@@ -121,7 +121,7 @@ public class DoubleLinkedList <T> {
 				System.out.println("Index out of reach");
 				return null;
 			}
-			return temp.getData();
+			return (T) temp.getData();
 
 		}
 			

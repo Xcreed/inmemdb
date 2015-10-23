@@ -1,15 +1,25 @@
 package inmemdb.nosql;
 
-import inmemdb.structures.BinaryTree;
-import inmemdb.structures.DoubleLinkedList;
+import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public abstract class Schema<T> {
+import javax.activation.MimetypesFileTypeMap;
+
+import inmemdb.structures.BinarySearchTree;
+import inmemdb.structures.DoubleLinkedList;
+import inmemdb.structures.Tree;
+
+public class Schema<T> {
 	
 	protected String name;
-	protected DoubleLinkedList<T> schema = new DoubleLinkedList<T>();
+	protected DoubleLinkedList<Index> schema = new DoubleLinkedList<Index>();
 	protected T type;//Type of the schema
 	protected int length;//length of elements
 	protected byte[] sharedSecret;
+	protected ParameterizedType indexType;
 	
 	/**
 	 * Creates a new schema
@@ -25,18 +35,35 @@ public abstract class Schema<T> {
 	 * Adds an index to the schema
 	 * Needs to add type parameter
 	 */
-	public boolean createIndex(int I) {
+	public <U> boolean createIndex(String treeType) {
 		
-//		if (treeType.equals("BiTree")) {
-//			//Creates a binary Tree and adds it to the list
-//			BinaryTree<T> biTree = new BinaryTree();
-//			schema.insertAtBeginning(biTree);
-//			
-//		}
-		schema.insertAtEnd(new BinaryTree<T>());
 		return false;
-		
 	}
+	
+//	public void setArgsType(int treeIndex, String argsType) {
+////		if (argsType.equals("Number")) {
+////			Tree tree = schema.getItem(treeIndex);
+////			
+////			Tree<V extends Number> t = new Tree();
+////		}
+////		else if (argsType.equals("String")) {
+////			
+////		}
+////		else if (argsType.equals("Image")) {
+////			
+////		}
+////		else if (argsType.equals("Binary")) {
+////			
+////		}
+////		else if (argsType.equals("Video")) {
+////			
+////		}
+////		else if (argsType.equals("char")) {
+////			
+////		}
+////		
+//	}
+	
 	
 	/**
 	 * Delete schema
@@ -67,17 +94,33 @@ public abstract class Schema<T> {
 		
 	}
 	
-//	/**
-//	 * Inserts an element in the schema
-//	 * @param element
-//	 */
-//	public void insert(T element) {
-//		
-//		
-//	}
+	/**
+	 * Inserts an element in the index structure
+	 * @param element
+	 */
+	public <U> void insertToIndex(U element) {
+		
+		
+		
+		
+	}
 	
 	public void join(Schema otherSchema) {
 		
+	}
+
+	/**
+	 * Checks the type of file
+	 * Usable for image/video files
+	 * Only jpeg and mp4
+	 * @param fileName
+	 * @return
+	 * @throws IOException 
+	 */
+	public String getFileType(String fileName) throws IOException {    
+//		"image/jpeg" -- "video/mp4"
+		Path filePath = Paths.get(fileName);
+		return Files.probeContentType(filePath);
 	}
 	
 
