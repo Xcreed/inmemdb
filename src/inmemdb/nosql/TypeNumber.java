@@ -8,9 +8,11 @@ public class TypeNumber <T extends Number> extends Type{
 	
 	public boolean check(T element) {
 		
-		
-		return false;
-		
+		if (element instanceof Number && element.toString().length() <= length) {
+			return true;
+		} else {
+			return false;
+		}	
 	}
 
 }

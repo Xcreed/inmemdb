@@ -2,7 +2,7 @@ package inmemdb.nosql;
 
 public class Type <T>{
 	
-	private int length;
+	protected int length;
 
 	public Type(int length) {
 		this.length = length;
@@ -15,5 +15,10 @@ public class Type <T>{
 	
 	public boolean check(T element) {
 		return false;
+	}
+	
+	public boolean insert(T element) {
+		check(element);
+		return true;
 	}
 }

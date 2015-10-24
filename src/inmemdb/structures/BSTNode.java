@@ -1,10 +1,10 @@
 package inmemdb.structures;
 
 public class BSTNode<T> extends Node{
-	T data;
+	public T data;
 	
-	BSTNode leftChild;
-	BSTNode rightChild;
+	public BSTNode leftChild;
+	public BSTNode rightChild;
 	
 	public BSTNode(T value){
 		super(value);

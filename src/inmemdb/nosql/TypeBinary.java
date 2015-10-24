@@ -7,12 +7,11 @@ public class TypeBinary <T extends Number> extends Type {
 	} 
 
 	public boolean check(T element) {
-		return false;
-		
+		if (element instanceof Number && element.toString().length() <= length) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
-	private String toBinary(int toConvert) {
-		String binaryNumber = Integer.toBinaryString(toConvert);
-		return binaryNumber;
-	}
 }
