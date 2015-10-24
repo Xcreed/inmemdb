@@ -2,7 +2,7 @@ package inmemdb.nosql;
 
 import inmemdb.structures.SplayTree;
 
-public class IndexSplay<T> {
+public class IndexSplay<T> extends Index {
 
 	private SplayTree tree;
 
@@ -10,9 +10,9 @@ public class IndexSplay<T> {
 		tree = new SplayTree();
 	}
 
-	public void insert(T element) {
-
-		if (type.check(element)) {
+	public void insert(boolean pass, T element) {
+		
+		if (pass){ 
 			tree.insert(element);
 		} else {
 			System.out.println("Invalid type");

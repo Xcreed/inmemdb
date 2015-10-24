@@ -10,9 +10,9 @@ public class IndexAVL <T> extends Index {
 		tree = new AVLTree();	
 	}
 	
-	public void insert(T element) {
+	public void insert(boolean pass, T element) {
 		
-		if (type.check(element)){
+		if (pass){
 			tree.insert(element);
 		} else {
 			System.out.println("Invalid type");

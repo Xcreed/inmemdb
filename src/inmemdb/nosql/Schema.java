@@ -20,50 +20,28 @@ public class Schema<T> {
 	protected int length;//length of elements
 	protected byte[] sharedSecret;
 	protected ParameterizedType indexType;
+	protected String newFolderLoc;
 	
 	/**
 	 * Creates a new schema
+	 * Missing folder creation, sharedSecret
+	 * abstract factory implementation
 	 * @param name
 	 */
 	public Schema(String name) {
 		this.name = name;
+		//createFolder()
 		System.out.println(name + " table created.");
 		//generateSharedSecret()
 	}
 	
 	/**
 	 * Adds an index to the schema
-	 * Needs to add type parameter
 	 */
-	public <U> boolean createIndex(String treeType) {
-		
-		return false;
+	public <U extends Index> boolean insertIndex(U index) {
+		schema.insertAtEnd(index);
+		return true;
 	}
-	
-//	public void setArgsType(int treeIndex, String argsType) {
-////		if (argsType.equals("Number")) {
-////			Tree tree = schema.getItem(treeIndex);
-////			
-////			Tree<V extends Number> t = new Tree();
-////		}
-////		else if (argsType.equals("String")) {
-////			
-////		}
-////		else if (argsType.equals("Image")) {
-////			
-////		}
-////		else if (argsType.equals("Binary")) {
-////			
-////		}
-////		else if (argsType.equals("Video")) {
-////			
-////		}
-////		else if (argsType.equals("char")) {
-////			
-////		}
-////		
-//	}
-	
 	
 	/**
 	 * Delete schema
@@ -99,28 +77,11 @@ public class Schema<T> {
 	 * @param element
 	 */
 	public <U> void insertToIndex(U element) {
-		
-		
-		
-		
+
 	}
 	
 	public void join(Schema otherSchema) {
 		
-	}
-
-	/**
-	 * Checks the type of file
-	 * Usable for image/video files
-	 * Only jpeg and mp4
-	 * @param fileName
-	 * @return
-	 * @throws IOException 
-	 */
-	public String getFileType(String fileName) throws IOException {    
-//		"image/jpeg" -- "video/mp4"
-		Path filePath = Paths.get(fileName);
-		return Files.probeContentType(filePath);
 	}
 	
 
