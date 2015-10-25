@@ -5,19 +5,21 @@ public class SplayNode<T> extends Node {
 	public SplayNode rightChild;
 	public SplayNode parent;
 	public T data; 
+	public int key;
 	
-	public SplayNode(){
+	/*public SplayNode(){
 		super();
 		this.leftChild=null;
 		this.rightChild=null;
 		this.parent=null;
-	}
-	public SplayNode(T value){
+	}*/
+	public SplayNode(T value, int key){
 		super(value);
 		this.data = value;
 		this.leftChild=null;
 		this.rightChild=null;
 		this.parent=null;
+		this.key = key;
 	}
 	
 	/**
