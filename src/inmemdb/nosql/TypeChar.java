@@ -8,8 +8,17 @@ public class TypeChar <T extends Charset> extends Type{
 		super(length);
 	}
 	
+	/**
+	 * Check if the element is correct
+	 * @param element
+	 * @return
+	 */
 	public boolean check(T element) {
-		return false;
+		if (element.toString().length() <= length) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

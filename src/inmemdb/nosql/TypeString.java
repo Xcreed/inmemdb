@@ -6,6 +6,11 @@ public class TypeString <T extends String> extends Type{
 		super(length);
 	}
 	
+	/**
+	 * Check if the element is correct
+	 * @param element
+	 * @return
+	 */
 	public boolean check(T element) {
 		if (element instanceof String && element.length() <= length) {
 			System.out.println("Valid string");

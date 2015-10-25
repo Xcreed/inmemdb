@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		Schema s = new Schema("T");
+		Schema s = new Schema("T","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr" );
 		SchemaJoin j = new SchemaJoin("F");
 		IndexBTS bts = new IndexBTS();
 		IndexBTS btss = new IndexBTS();

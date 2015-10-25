@@ -12,6 +12,12 @@ public class IndexBTS<T> extends Index{
 		
 	}
 	
+	/**
+	 * Inserts an element after checking its type
+	 * @param pass
+	 * @param element
+	 * @return
+	 */
 	public boolean insert(boolean pass, T element) {
 		if (pass){
 			tree.addNode(element);
@@ -22,11 +28,27 @@ public class IndexBTS<T> extends Index{
 			return false;
 		}
 	}
-
+	
+//	@SuppressWarnings("unchecked")
+//	public <U> boolean insert(U element) {
+//		if (type instanceof TypeString) {
+//			TypeString tb = (TypeString) type;
+//			tb.check(element);
+//		}
+//	}
+	
+	/**
+	 * Deletes an element
+	 * @param element
+	 * @return
+	 */
 	public boolean delete(T element) {
 		return tree.remove(element);
 	}
 	
+	/**
+	 * Returns tree
+	 */
 	public BinarySearchTree getTree() {
 		return tree;
 	}

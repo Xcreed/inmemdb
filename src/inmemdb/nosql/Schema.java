@@ -1,5 +1,6 @@
 package inmemdb.nosql;
 
+import java.io.File;
 import java.lang.reflect.ParameterizedType;
 
 import inmemdb.structures.AVLTree;
@@ -26,6 +27,11 @@ public class Schema<T> {
 		//createFolder()
 		System.out.println(name + " table created.");
 		//generateSharedSecret()
+	}
+	
+	public Schema(String name, String path) {
+		this.name = name;
+		createFolder(path);
 	}
 	
 	/**
@@ -109,10 +115,6 @@ public class Schema<T> {
 //		return bool; 
 //	}
 	
-	public void join(Schema otherSchema) {
-		
-	}
-	
 	/**
 	 * Deletes an element in a given index (Starts in 1)
 	 * @param containingIndex
@@ -138,5 +140,19 @@ public class Schema<T> {
 		return bool; 
 	}
 	
+	/**
+	 * Creates a folder when creating a schema
+	 * @param path
+	 */
+	private void createFolder(String path) {
+		// Create a directory; all non-existent ancestor directories are
+		// automatically created
+		boolean success = (new File(path)).mkdirs();
+		if (!success) {
+			System.out.println("Folder already exists");
+		} else {
+			System.out.println("Folder created succesfully");
+		}
+	}
 
 }
