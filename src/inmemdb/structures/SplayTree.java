@@ -1,6 +1,6 @@
 package inmemdb.structures;
 
-public class SplayTree<T> {
+public class SplayTree<T> extends Tree {
 	
 	public SplayNode root;
     private int count = 0;

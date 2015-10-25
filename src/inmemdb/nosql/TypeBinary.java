@@ -6,7 +6,7 @@ public class TypeBinary <T extends Number> extends Type {
 		super(length);
 	} 
 
-	public boolean check(T element) {
+	public boolean checkB(T element) {
 		if (element instanceof Number && element.toString().length() <= length) {
 			return true;
 		}else {

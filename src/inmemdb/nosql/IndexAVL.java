@@ -10,17 +10,23 @@ public class IndexAVL <T> extends Index {
 		tree = new AVLTree();	
 	}
 	
-	public void insert(boolean pass, T element) {
+	public boolean insert(boolean pass, T element) {
 		
 		if (pass){
 			tree.insert(element);
+			return true;
 		} else {
 			System.out.println("Invalid type");
+			return false;
 		}
 	}
 	
-	public void delete(T element) {
-		tree.remove(element);
+	public boolean delete(T element) {
+		return tree.remove(element);
+	}
+	
+	public AVLTree getTree() {
+		return tree;
 	}
 
 }

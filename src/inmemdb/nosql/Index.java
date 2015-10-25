@@ -1,7 +1,9 @@
 package inmemdb.nosql;
 
+import inmemdb.structures.AVLTree;
 import inmemdb.structures.Tree;
 
+@SuppressWarnings({ "hiding", "rawtypes" })
 public class Index <T> {
 	
 	protected Tree<?> tree;
@@ -20,10 +22,16 @@ public class Index <T> {
 		this.type = type;
 	}
 	
-
+	public Type getType() {
+		return type;
+	}
 	protected String toBinary(int toConvert) {
 		String binaryNumber = Integer.toBinaryString(toConvert);
 		return binaryNumber;
+	}
+	
+	public Tree getTree() {
+		return tree;
 	}
 	
 	
