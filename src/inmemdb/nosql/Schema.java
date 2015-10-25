@@ -1,23 +1,16 @@
 package inmemdb.nosql;
 
-import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-import javax.activation.MimetypesFileTypeMap;
-
+import inmemdb.structures.AVLTree;
 import inmemdb.structures.BinarySearchTree;
 import inmemdb.structures.DoubleLinkedList;
-import inmemdb.structures.Tree;
+import inmemdb.structures.SplayTree;
 
 public class Schema<T> {
 	
 	protected String name;
 	protected DoubleLinkedList<Index> schema = new DoubleLinkedList<Index>();
-	protected T type;//Type of the schema
-	protected int length;//length of elements
 	protected byte[] sharedSecret;
 	protected ParameterizedType indexType;
 	protected String newFolderLoc;
@@ -58,30 +51,91 @@ public class Schema<T> {
 	 * Delete an index inside the schema
 	 * @param Index
 	 */
-	public boolean deleteIndex(int Index) {
-		return false;
-		
+	public boolean deleteIndex(int index) {
+		if (index == 1) {
+			schema.removeAtBeginning();
+		}
+		return true;
 	}
 	
 	/**
 	 * Searches an item in all the schema
-	 * --Missing interpretation
+	 * --Missing Btree
 	 * @param searchItem
 	 */
-	public <T> void search(T searchItem) {
-		
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public boolean search(T searchItem) {
+		Index index;
+		boolean bool = false;
+		for (int i = 0; i < schema.getLength(); i++) {
+			index = schema.getItem(i);
+			if (index instanceof IndexBTS) {
+				IndexBTS indexType = (IndexBTS) schema.getItem(i);
+				BinarySearchTree indexTree = indexType.getTree();
+				bool = indexTree.findNode(searchItem);
+			} else if (index instanceof IndexAVL) {
+				IndexAVL indexType = (IndexAVL) schema.getItem(i);
+				AVLTree indexTree = indexType.getTree();	
+				bool = indexTree.search(searchItem);
+			} else if (index instanceof IndexSplay) {
+				IndexSplay indexType = (IndexSplay) schema.getItem(i);
+				SplayTree indexTree = indexType.getTree();
+				bool = indexTree.search(searchItem);
+			}
+		}
+		return bool; 
 	}
 	
 	/**
 	 * Inserts an element in the index structure
 	 * @param element
 	 */
-	public <U> void insertToIndex(U element) {
-
-	}
+//	public boolean insertToIndex(int containingIndex, T itemToInsert) {
+//		Index index = schema.getItem(containingIndex);
+//		boolean bool = false;
+//		
+//		if (index instanceof IndexBTS) {
+//			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
+//			bool = indexType.insert(indexType.type.,itemToInsert);
+//		} else if (index instanceof IndexAVL) {
+//			IndexAVL indexType = (IndexAVL) schema.getItem(containingIndex);
+//			bool = indexType.insert(itemToInsert)
+//		} else if (index instanceof IndexSplay) {
+//			IndexSplay indexType = (IndexSplay) schema.getItem(containingIndex);
+//			SplayTree indexTree = indexType.getTree();
+//			bool = indexTree.remove(itemToRemove);
+//		}
+//		
+//		return bool; 
+//	}
 	
 	public void join(Schema otherSchema) {
 		
+	}
+	
+	/**
+	 * Deletes an element in a given index (Starts in 1)
+	 * @param containingIndex
+	 * @param itemToRemove
+	 * @return
+	 */
+	public boolean deleteInIndex(int containingIndex, T itemToRemove) {
+		Index index;
+		boolean bool = false;
+		index = schema.getItem(containingIndex);
+		if (index instanceof IndexBTS) {
+			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
+			bool = indexType.delete(itemToRemove);
+		} else if (index instanceof IndexAVL) {
+			IndexAVL indexType = (IndexAVL) schema.getItem(containingIndex);
+			AVLTree indexTree = indexType.getTree();	
+			bool = indexType.delete(itemToRemove);		
+		} else if (index instanceof IndexSplay) {
+			IndexSplay indexType = (IndexSplay) schema.getItem(containingIndex);
+			bool = indexType.delete(itemToRemove);
+		}
+		
+		return bool; 
 	}
 	
 
