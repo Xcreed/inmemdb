@@ -20,14 +20,31 @@ public class DoubleLinkedList <T> {
 	 */
 	public int getLength() {
 		int counter = 0; 
-		DoubleNode tmp = head;
+		DoubleNode<T> tmp = head;
 		
 		while (tmp != null) {
 			counter++;
 			tmp = tmp.getNext();
 			}
 		return counter;
+	}
+	
+	public int positionInList(T pData){
+		int position = 0;
+		boolean bool = false;
+		
+		
+		DoubleNode<T> tmp = head; 
+		
+		while(tmp != null){
+			if(tmp.getData().equals(pData)){
+				bool = true;
+				return bool;
+			}else{
+				tmp = tmp.getNext();
+			}
 		}
+	}
 		
 	/**
 	 * Returns a true if empty, else false.
@@ -48,7 +65,7 @@ public class DoubleLinkedList <T> {
 	 * @param pData
 	 */
 	@SuppressWarnings("unchecked")
-	public <T> void insertAtBeginning(T tData){
+	public void insertAtBeginning(T tData){
 		
 		DoubleNode data = new DoubleNode<T>(tData);
 		
@@ -102,6 +119,12 @@ public class DoubleLinkedList <T> {
 		//return list;
 	}
 	
+	/**
+	 * Given a number, search and return the element
+	 * from the position in the list. 
+	 * @param i
+	 * @return item
+	 */
 	public T getItem(int i) {
 		
 		if (head == tail) {
@@ -152,6 +175,9 @@ public class DoubleLinkedList <T> {
 		}
 	}
 	
+	/**
+	 * Removes the first the element of the list. 
+	 */
 	public void removeAtBeginning(){
 		
 		//List only has one element
@@ -167,6 +193,9 @@ public class DoubleLinkedList <T> {
 		}
 	}
 	
+	/**
+	 * Removes the last element of the list. 
+	 */
 	public void removeAtEnd() {
 		//List only has one element
 		if (head == tail) {
@@ -176,19 +205,28 @@ public class DoubleLinkedList <T> {
 			tail.setNext(null);			
 		}
 	}
-
+	
 	/**
-	 * removeAtEnd()
-	 * insertInPosition(int position, tdata)
-	 * removeInPosition(int postion, tdata)
+	 * Removes an given item from the list. 
+	 * @param pData
 	 */
+	public void removeFromList(T pData){
+		
+		 if( contains(pData) == true){
+			 
+		 }else{
+			 return;
+		 }
+		
+	}
+
 
 	/**
 	 * Return the search  element, else false.
 	 * @param pData
 	 * @return pData
 	 */
-	public boolean contains(String pData){
+	public boolean contains(T pData){
 		DoubleNode<T> data = new DoubleNode<T>((T) pData);
 		boolean bool = false;
 	
