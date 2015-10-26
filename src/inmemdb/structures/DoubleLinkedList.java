@@ -29,25 +29,31 @@ public class DoubleLinkedList <T> {
 		return counter;
 	}
 	
+	/**
+	 * Returns the position number (index)  of a given element.
+	 * Position number (index) starts at cero (0).
+	 * @param pData
+	 * @return position
+	 */
+	
 	public int positionInList(T pData){
-		int position = 0;
-		boolean bool = false;
 		
-		
+		int index = 0;
 		DoubleNode<T> tmp = head; 
 		
 		while(tmp != null){
 			if(tmp.getData().equals(pData)){
-				bool = true;
-				return bool;
+				index++;
+				break;
 			}else{
 				tmp = tmp.getNext();
 			}
 		}
+		return index;
 	}
 		
 	/**
-	 * Returns a true if empty, else false.
+	 * Returns a true if list's empty, else false.
 	 * 
 	 * @return boolean 
 	 */
@@ -60,14 +66,13 @@ public class DoubleLinkedList <T> {
 		}
 	
 	/**
-	 * Insert an element (tData) at the beginning of the list.
+	 * Insert an element (pData) at the beginning of the list.
 	 * 
 	 * @param pData
 	 */
-	@SuppressWarnings("unchecked")
-	public void insertAtBeginning(T tData){
+	public void insertBeginning(T pData){
 		
-		DoubleNode data = new DoubleNode<T>(tData);
+		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
 		if(isEmpty()){
 			head = tail = data;
@@ -83,11 +88,11 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Insert an element (tData) at the end of the list.
 	 * 
-	 * @param element
+	 * @param pData
 	 */
-	public <T> void insertAtEnd(T element){
+	public void insertEnd(T pData){
 		
-		DoubleNode data = new DoubleNode<T>(element);
+		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
 		if(isEmpty()){
 			head = tail = data;
@@ -108,7 +113,7 @@ public class DoubleLinkedList <T> {
 	public void print(){	
 		
 		StringBuilder list = new StringBuilder();
-		DoubleNode tmp = head;
+		DoubleNode<T> tmp = head;
 		
 		while(tmp != null){
 			//System.out.println(list);
@@ -151,7 +156,7 @@ public class DoubleLinkedList <T> {
 	}
 	
 	/**
-	 * Return the search  element, else false.
+	 * Return the search (pData) element, else false.
 	 * @param pData
 	 * @return pData
 	 */
@@ -162,7 +167,7 @@ public class DoubleLinkedList <T> {
 		if(isEmpty()){
 			return null;
 		}else{
-			DoubleNode tmp = head; 
+			DoubleNode<T> tmp = head; 
 			while(tmp != null){
 				if(tmp.getData() == pData){
 					return tmp;
@@ -178,7 +183,7 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Removes the first the element of the list. 
 	 */
-	public void removeAtBeginning(){
+	public void deleteBeginning(){
 		
 		//List only has one element
 		if (head == tail) {
@@ -196,7 +201,7 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Removes the last element of the list. 
 	 */
-	public void removeAtEnd() {
+	public void deleteEnd() {
 		//List only has one element
 		if (head == tail) {
 			head = tail = null;
@@ -207,17 +212,51 @@ public class DoubleLinkedList <T> {
 	}
 	
 	/**
-	 * Removes an given item from the list. 
+	 * Deletes (pData) from any middle position inside the list.
+	 * Any middle position are any position that isn't the beginning
+	 * or the end. 
 	 * @param pData
 	 */
-	public void removeFromList(T pData){
+	public void deleteMiddle(T pData){
 		
-		 if( contains(pData) == true){
-			 
-		 }else{
-			 return;
-		 }
+		DoubleNode<T> tmp = head;
 		
+		while(tmp != null){
+			if (tmp.getData() == pData){
+				tmp.getPrev().setNext(tmp.getNext());
+				tmp.setPrev(null);
+				tmp.getNext().setPrev(tmp.getPrev());
+				tmp.setNext(null);
+				break;
+			}else{
+				tmp = tmp.getNext();
+			}
+		}
+	}
+	
+	
+	/**
+	 * Deletes an given item from the list at any position. 
+	 * @param pData
+	 */
+	public void delete(T pData){
+		
+		DoubleNode<T> tmp = head;
+		
+		while(tmp != null){
+			if(tmp.getData() == pData && tmp.getPrev() == null){ // is at head
+				deleteBeginning();
+				break;
+			}else if(tmp.getData() == pData && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
+				deleteMiddle(pData);
+				break;
+			}else if(tmp.getData() == pData && tmp.getNext() == null){ // is at tail
+				deleteEnd();
+				break;
+			}else{
+				tmp = tmp.getNext();
+			}
+		}
 	}
 
 
@@ -233,7 +272,7 @@ public class DoubleLinkedList <T> {
 		if(isEmpty()){
 			return false;
 		}else{
-			DoubleNode tmp = head; 
+			DoubleNode<T> tmp = head; 
 			while(tmp != null){
 				if(tmp.getData().equals(pData)){
 					bool = true;
