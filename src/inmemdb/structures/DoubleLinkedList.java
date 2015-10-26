@@ -20,17 +20,40 @@ public class DoubleLinkedList <T> {
 	 */
 	public int getLength() {
 		int counter = 0; 
-		DoubleNode tmp = head;
+		DoubleNode<T> tmp = head;
 		
 		while (tmp != null) {
 			counter++;
 			tmp = tmp.getNext();
 			}
 		return counter;
+	}
+	
+	/**
+	 * Returns the position number (index)  of a given element.
+	 * Position number (index) starts at cero (0).
+	 * @param pData
+	 * @return position
+	 */
+	
+	public int positionInList(T pData){
+		
+		int index = 0;
+		DoubleNode<T> tmp = head; 
+		
+		while(tmp != null){
+			if(tmp.getData().equals(pData)){
+				index++;
+				break;
+			}else{
+				tmp = tmp.getNext();
+			}
 		}
+		return index;
+	}
 		
 	/**
-	 * Returns a true if empty, else false.
+	 * Returns a true if list's empty, else false.
 	 * 
 	 * @return boolean 
 	 */
@@ -43,14 +66,13 @@ public class DoubleLinkedList <T> {
 		}
 	
 	/**
-	 * Insert an element (tData) at the beginning of the list.
+	 * Insert an element (pData) at the beginning of the list.
 	 * 
 	 * @param pData
 	 */
-	@SuppressWarnings("unchecked")
-	public <T> void insertAtBeginning(T tData){
+	public void insertBeginning(T pData){
 		
-		DoubleNode data = new DoubleNode<T>(tData);
+		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
 		if(isEmpty()){
 			head = tail = data;
@@ -66,11 +88,11 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Insert an element (tData) at the end of the list.
 	 * 
-	 * @param element
+	 * @param pData
 	 */
-	public <T> void insertAtEnd(T element){
+	public void insertEnd(T pData){
 		
-		DoubleNode data = new DoubleNode<T>(element);
+		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
 		if(isEmpty()){
 			head = tail = data;
@@ -91,7 +113,7 @@ public class DoubleLinkedList <T> {
 	public void print(){	
 		
 		StringBuilder list = new StringBuilder();
-		DoubleNode tmp = head;
+		DoubleNode<T> tmp = head;
 		
 		while(tmp != null){
 			//System.out.println(list);
@@ -102,6 +124,12 @@ public class DoubleLinkedList <T> {
 		//return list;
 	}
 	
+	/**
+	 * Given a number, search and return the element
+	 * from the position in the list. 
+	 * @param i
+	 * @return item
+	 */
 	public T getItem(int i) {
 		
 		if (head == tail) {
@@ -128,7 +156,7 @@ public class DoubleLinkedList <T> {
 	}
 	
 	/**
-	 * Return the search  element, else false.
+	 * Return the search (pData) element, else false.
 	 * @param pData
 	 * @return pData
 	 */
@@ -139,7 +167,7 @@ public class DoubleLinkedList <T> {
 		if(isEmpty()){
 			return null;
 		}else{
-			DoubleNode tmp = head; 
+			DoubleNode<T> tmp = head; 
 			while(tmp != null){
 				if(tmp.getData() == pData){
 					return tmp;
@@ -152,7 +180,10 @@ public class DoubleLinkedList <T> {
 		}
 	}
 	
-	public void removeAtBeginning(){
+	/**
+	 * Removes the first the element of the list. 
+	 */
+	public void deleteBeginning(){
 		
 		//List only has one element
 		if (head == tail) {
@@ -167,7 +198,10 @@ public class DoubleLinkedList <T> {
 		}
 	}
 	
-	public void removeAtEnd() {
+	/**
+	 * Removes the last element of the list. 
+	 */
+	public void deleteEnd() {
 		//List only has one element
 		if (head == tail) {
 			head = tail = null;
@@ -176,26 +210,69 @@ public class DoubleLinkedList <T> {
 			tail.setNext(null);			
 		}
 	}
-
+	
 	/**
-	 * removeAtEnd()
-	 * insertInPosition(int position, tdata)
-	 * removeInPosition(int postion, tdata)
+	 * Deletes (pData) from any middle position inside the list.
+	 * Any middle position are any position that isn't the beginning
+	 * or the end. 
+	 * @param pData
 	 */
+	public void deleteMiddle(T pData){
+		
+		DoubleNode<T> tmp = head;
+		
+		while(tmp != null){
+			if (tmp.getData() == pData){
+				tmp.getPrev().setNext(tmp.getNext());
+				tmp.setPrev(null);
+				tmp.getNext().setPrev(tmp.getPrev());
+				tmp.setNext(null);
+				break;
+			}else{
+				tmp = tmp.getNext();
+			}
+		}
+	}
+	
+	
+	/**
+	 * Deletes an given item from the list at any position. 
+	 * @param pData
+	 */
+	public void delete(T pData){
+		
+		DoubleNode<T> tmp = head;
+		
+		while(tmp != null){
+			if(tmp.getData() == pData && tmp.getPrev() == null){ // is at head
+				deleteBeginning();
+				break;
+			}else if(tmp.getData() == pData && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
+				deleteMiddle(pData);
+				break;
+			}else if(tmp.getData() == pData && tmp.getNext() == null){ // is at tail
+				deleteEnd();
+				break;
+			}else{
+				tmp = tmp.getNext();
+			}
+		}
+	}
+
 
 	/**
 	 * Return the search  element, else false.
 	 * @param pData
 	 * @return pData
 	 */
-	public boolean contains(String pData){
+	public boolean contains(T pData){
 		DoubleNode<T> data = new DoubleNode<T>((T) pData);
 		boolean bool = false;
 	
 		if(isEmpty()){
 			return false;
 		}else{
-			DoubleNode tmp = head; 
+			DoubleNode<T> tmp = head; 
 			while(tmp != null){
 				if(tmp.getData().equals(pData)){
 					bool = true;
