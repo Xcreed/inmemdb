@@ -11,7 +11,7 @@ public class DoubleLinkedList <T> {
 	
 	private DoubleNode<T> head = null; //null node for the head of the list
 	private DoubleNode<T> tail = null; //null node for the tail of the list
-	
+	private int index;
 	
 	/**
 	 * Return the length of the list.
@@ -47,35 +47,40 @@ public class DoubleLinkedList <T> {
 	 * 
 	 * @param pData
 	 */
-	public void insertAtBeginning(T tData){
+	@SuppressWarnings("unchecked")
+	public <T> void insertAtBeginning(T tData){
 		
-		DoubleNode<T> data = new DoubleNode<T>(tData);
+		DoubleNode data = new DoubleNode<T>(tData);
 		
 		if(isEmpty()){
 			head = tail = data;
+			index = 0;
 		}else{
 			head.setPrev(data); //head.prev = data;
 		}
 		data.setNext(head); //data.next = head;
 		head = data; //head = data;
+		index++;
 	}
 	
 	/**
 	 * Insert an element (tData) at the end of the list.
 	 * 
-	 * @param tData
+	 * @param element
 	 */
-	public void insertAtEnd(T tData){
+	public <T> void insertAtEnd(T element){
 		
-		DoubleNode<T> data = new DoubleNode<T>(tData);
+		DoubleNode data = new DoubleNode<T>(element);
 		
 		if(isEmpty()){
 			head = tail = data;
+			index = 0;
 		}else{
 			tail.setNext(data); //tail.next = data;
 			data.setPrev(tail); //data.prev = tail;
 		}
 		tail = data; //tail = head;
+		index++;
 	}
 	
 	/**
@@ -97,17 +102,18 @@ public class DoubleLinkedList <T> {
 		//return list;
 	}
 	
-	public Object getItem(int i) {
+	public T getItem(int i) {
 		
 		if (head == tail) {
-			return head.getData();
+			return (T) head.getData();
 		}
 		
 		else  {
 		
-			DoubleNode temp = head;
+			DoubleNode<T> temp = head;
+			
 			if (temp != null) {
-				for (int j = 0; j != i; j++) {
+				for (int j = 1; j < i; j++) {
 					
 					temp = temp.getNext();
 				}
@@ -115,7 +121,7 @@ public class DoubleLinkedList <T> {
 				System.out.println("Index out of reach");
 				return null;
 			}
-			return temp.getData();
+			return (T) temp.getData();
 
 		}
 			
