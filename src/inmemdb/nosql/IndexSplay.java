@@ -11,6 +11,7 @@ public class IndexSplay<T> extends Index {
 		tree = new SplayTree();
 	}
 	
+
 	/**
 	 * Inserts an element after checking its type
 	 * @param pass
