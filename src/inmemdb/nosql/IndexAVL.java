@@ -6,7 +6,8 @@ public class IndexAVL <T> extends Index {
 	
 	private AVLTree tree;
 	
-	public IndexAVL() {
+	public IndexAVL(String type, int length) {
+		super(type, length);
 		tree = new AVLTree();	
 	}
 	/**

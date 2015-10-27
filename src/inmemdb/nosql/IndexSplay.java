@@ -6,7 +6,8 @@ public class IndexSplay<T> extends Index {
 
 	protected SplayTree tree;
 
-	public IndexSplay() {
+	public IndexSplay(String type, int length) {
+		super(type, length);
 		tree = new SplayTree();
 	}
 	

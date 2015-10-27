@@ -7,7 +7,8 @@ public class IndexBTS<T> extends Index{
 
 	protected BinarySearchTree tree;
 	
-	public IndexBTS() {
+	public IndexBTS(String type, int length) {
+		super(type, length);
 		tree = new BinarySearchTree();	
 		
 	}
@@ -31,7 +32,12 @@ public class IndexBTS<T> extends Index{
 	
 //	@SuppressWarnings("unchecked")
 	public <U> boolean insert(U element) {
-		return super.check(element);
+		if (super.check(element)) {
+			tree.addNode(element);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**

@@ -16,6 +16,8 @@ public class Index <T> {
 	protected int length;
 	
 	public Index(String type, int length) {
+		this.type = type;
+		this.length = length;
 		
 	}
 	
@@ -23,14 +25,6 @@ public class Index <T> {
 	}
 	
 	public void remove() {
-	}
-	
-	/**
-	 * Sets index type
-	 * @param type
-	 */
-	public void setType(Type<?> type) {
-		this.type = type;
 	}
 	
 	/**
@@ -85,6 +79,8 @@ public class Index <T> {
 		} else if (type.equals("string")){
 			if (element instanceof String && checkLength(element)) {
 				bool = true;
+			} else if (!checkLength(element)) {
+				bool = false;
 			} else {
 				System.out.println("Invalid type. Index type is " + type);
 				bool = false;
