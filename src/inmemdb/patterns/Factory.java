@@ -1,6 +1,5 @@
 package inmemdb.patterns;
 
-import inmemdb.nosql.Type;
 import inmemdb.structures.Tree;
 
 /**
@@ -10,10 +9,9 @@ import inmemdb.structures.Tree;
   */
 public class Factory {
 	
-	private int number;
-	
 	protected Tree<?> tree;
-	protected Type<?> type;
+	protected String type;
+	protected int length;
 
 
 }

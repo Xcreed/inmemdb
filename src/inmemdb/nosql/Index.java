@@ -12,7 +12,7 @@ import inmemdb.structures.Tree;
  * Asbtract class for the differents types of 
  * index. 
  * 
- * @author Juan Pablo, Randy, Alejandra
+ * @author Juan Pablo
  *
  * @param <T>
  */

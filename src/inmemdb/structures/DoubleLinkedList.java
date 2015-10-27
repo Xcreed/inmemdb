@@ -32,11 +32,12 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Returns the position number (index)  of a given element.
 	 * Position number (index) starts at cero (0).
+	 * @param <U>
 	 * @param pData
 	 * @return position
 	 */
 	
-	public int positionInList(T pData){
+	public <U> int positionInList(U pData){
 		
 		int index = 0;
 		DoubleNode<T> tmp = head; 
@@ -215,9 +216,10 @@ public class DoubleLinkedList <T> {
 	 * Deletes (pData) from any middle position inside the list.
 	 * Any middle position are any position that isn't the beginning
 	 * or the end. 
+	 * @param <U>
 	 * @param pData
 	 */
-	public <U> void deleteMiddle(U pData){
+	public <U extends Number> void deleteMiddle(U pData){
 		
 		DoubleNode<T> tmp = head;
 		if(contains(pData) == true){
@@ -241,9 +243,10 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Deletes an given item from the list at any position. 
 	 * @param pData
+	 * @return 
 	 */
-	public <U> void delete(U pData){
-		
+	public <U extends Number> boolean delete(U pData){
+		DoubleLinkedList<T> activeList = this;
 		DoubleNode<T> tmp = head;
 		
 		while(tmp != null){
@@ -260,15 +263,20 @@ public class DoubleLinkedList <T> {
 				tmp = tmp.getNext();
 			}
 		}
+		return true;
+		
 	}
-
+		
+		
+	
 
 	/**
 	 * Return the search  element, else false.
+	 * @param <U>
 	 * @param pData
 	 * @return pData
 	 */
-	public boolean contains(T pData){
+	public <U> boolean contains(U pData){
 		DoubleNode<T> data = new DoubleNode<T>((T) pData);
 		boolean bool = false;
 	

@@ -24,7 +24,7 @@ public class DoubleNode<T> {
 	public DoubleNode (T data) {
 		this.data = data;
 	}
-	
+
 	/**
 	 * Set the next node in the list. 
 	 * 

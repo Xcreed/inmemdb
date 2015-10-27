@@ -16,17 +16,12 @@ public class StructureTester {
 		testList.insertEnd(8);
 		testList.insertBeginning(4);
 		testList.print();
-		testList.delete(4);
+		testList.delete(0);
 		testList.print();
-		testList.delete(4);
+		testList.delete(3);
 		testList.print();
-		testList.deleteEnd();		
-		testList.print();
-		testList.delete(7);
-		testList.print();
-		testList.delete(88);
-		testList.print();
-
+		
+		
 		
 	}
 
