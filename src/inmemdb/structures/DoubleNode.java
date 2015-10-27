@@ -66,7 +66,7 @@ public class DoubleNode<T> {
 	 * 
 	 * @return data (info)
 	 */
-	public T getData() {
+	public Object getData() {
 		return data;
 	}
 }
