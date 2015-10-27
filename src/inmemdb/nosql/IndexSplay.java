@@ -6,10 +6,18 @@ public class IndexSplay<T> extends Index {
 
 	protected SplayTree tree;
 
-	public IndexSplay() {
+	public IndexSplay(String type, int length) {
+		super(type, length);
 		tree = new SplayTree();
 	}
 	
+
+	/**
+	 * Inserts an element after checking its type
+	 * @param pass
+	 * @param element
+	 * @return
+	 */
 	public boolean insert(boolean pass, T element) {
 		
 		if (pass){ 
@@ -21,10 +29,18 @@ public class IndexSplay<T> extends Index {
 		}
 	}
 
+	/**
+	 * Deletes an element
+	 * @param element
+	 * @return
+	 */
 	public boolean delete(T element) {
 		return tree.remove(element);
 	}
 	
+	/**
+	 * Returns tree
+	 */
 	public SplayTree getTree() {
 		return tree;
 	}

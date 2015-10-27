@@ -217,7 +217,7 @@ public class DoubleLinkedList <T> {
 	 * or the end. 
 	 * @param pData
 	 */
-	public void deleteMiddle(T pData){
+	public <U> void deleteMiddle(U pData){
 		
 		DoubleNode<T> tmp = head;
 		if(contains(pData) == true){
@@ -242,7 +242,7 @@ public class DoubleLinkedList <T> {
 	 * Deletes an given item from the list at any position. 
 	 * @param pData
 	 */
-	public void delete(T pData){
+	public <U> void delete(U pData){
 		
 		DoubleNode<T> tmp = head;
 		

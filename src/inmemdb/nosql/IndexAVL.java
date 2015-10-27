@@ -6,10 +6,16 @@ public class IndexAVL <T> extends Index {
 	
 	private AVLTree tree;
 	
-	public IndexAVL() {
+	public IndexAVL(String type, int length) {
+		super(type, length);
 		tree = new AVLTree();	
 	}
-	
+	/**
+	 * Inserts an element after checking its type
+	 * @param pass
+	 * @param element
+	 * @return
+	 */
 	public boolean insert(boolean pass, T element) {
 		
 		if (pass){
@@ -21,10 +27,18 @@ public class IndexAVL <T> extends Index {
 		}
 	}
 	
+	/**
+	 * Deletes an element
+	 * @param element
+	 * @return
+	 */
 	public boolean delete(T element) {
 		return tree.remove(element);
 	}
 	
+	/**
+	 * Returns tree
+	 */
 	public AVLTree getTree() {
 		return tree;
 	}
