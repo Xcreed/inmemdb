@@ -19,18 +19,6 @@ public class IndexBTS<T> extends Index{
 	 * @param element
 	 * @return
 	 */
-	public boolean insert(boolean pass, T element) {
-		if (pass){
-			tree.addNode(element);
-			System.out.println("Inserting...");
-			return true;
-		} else {
-			System.out.println("Invalid input");
-			return false;
-		}
-	}
-	
-//	@SuppressWarnings("unchecked")
 	public <U> boolean insert(U element) {
 		if (super.check(element)) {
 			tree.addNode(element);

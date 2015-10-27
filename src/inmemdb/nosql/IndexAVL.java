@@ -16,13 +16,11 @@ public class IndexAVL <T> extends Index {
 	 * @param element
 	 * @return
 	 */
-	public boolean insert(boolean pass, T element) {
-		
-		if (pass){
+	public <U> boolean insert(U element) {
+		if (super.check(element)) {
 			tree.insert(element);
 			return true;
 		} else {
-			System.out.println("Invalid type");
 			return false;
 		}
 	}
