@@ -18,6 +18,7 @@ public class IndexSplay<T> extends Index {
 	 * @param element
 	 * @return
 	 */
+
 	public <U> boolean insert(U element) {
 		if (super.check(element)) {
 			tree.insert(element);

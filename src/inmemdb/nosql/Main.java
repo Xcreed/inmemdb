@@ -37,9 +37,11 @@ public class Main {
 		s.schema.print();
 		s.deleteIndex(2);
 		s.schema.print();
+		
 		System.out.println(j.joinedSearch(243));
 		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
 		System.out.println(j.joinedSearch("Hello"));
+		
 //		System.out.println(s.search("Hell"));
 //		System.out.println(s.deleteInIndex(1,"Hell"));
 //		System.out.println(s.search("Hell"));
