@@ -1,14 +1,21 @@
 package inmemdb.nosql;
-
+	
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import inmemdb.structures.AVLTree;
 import inmemdb.structures.Tree;
 
-@SuppressWarnings({ "hiding", "rawtypes" })
+@SuppressWarnings({ "rawtypes" })
+/**
+ * Asbtract class for the differents types of 
+ * index. 
+ * 
+ * @author Juan Pablo, Randy, Alejandra
+ *
+ * @param <T>
+ */
 public class Index <T> {
 	
 	protected Tree<?> tree;
@@ -18,27 +25,28 @@ public class Index <T> {
 	public Index(String type, int length) {
 		this.type = type;
 		this.length = length;
-		
-	}
-	
-	public void insert() {
-	}
-	
-	public void remove() {
 	}
 	
 	/**
-	 * Returns index type
-	 * @return
+	 * Insert
 	 */
-	public String getType() {
-		return type;
+	public void insert() {
 	}
+	
+	 /**
+	  *Remove 
+	  */
+	public void remove() {
+	}
+	
 	
 	/**
 	 * Converts integer to binary
 	 * @param toConvert
 	 * @return
+	 * 
+	 * @param toConvert
+	 * @return binaryNumber
 	 */
 	protected String toBinary(int toConvert) {
 		String binaryNumber = Integer.toBinaryString(toConvert);
@@ -48,6 +56,8 @@ public class Index <T> {
 	/**
 	 * Returns index tree
 	 * @return
+	 * Returns the working tree.
+	 * @return tree
 	 */
 	public Tree getTree() {
 		return tree;
