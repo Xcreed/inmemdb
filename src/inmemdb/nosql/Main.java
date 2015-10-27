@@ -7,39 +7,39 @@ import inmemdb.structures.BinarySearchTree;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
+		
+		//Creates a regular schema and Join type in the desired folder
+		Schema s = new Schema("T","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 
-		Schema s = new Schema("T","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr" );
-		SchemaJoin j = new SchemaJoin("F");
-		IndexBTS bts = new IndexBTS("string", 5);
-		
-		
-		
-		//System.out.println(s.getFileType("C:\\Users\\Xcreed\\Desktop\\test\\1st.jpg"));
-		/*
-		TypeImage ti = new TypeImage();
-		s.insertIndex(bts);
-		bts.insert(ti.check(null), null); //Needs to call the check method, otherwise it'll use check() from abstract class
-		*/
-		
-		s.insertIndex(bts);
-//		j.joinSchema(s);
-//
-//		j.insertJoinedIndex(btss);
+		//Creates an index in the regular schema
+		s.createIndex("bts", "string", 5);
+		//Joins the schema to the regular one
+		j.joinSchema(s);
+		//Creates an index in both schemas
+		j.createJoinedIndex("avl","number", 3);
 		String a = "Hello";
 		String b = "Hell";
 		String c = "Mello";
-		System.out.println(bts.getType().getClass());
-		bts.insert(a);
-		bts.insert(b);
-		bts.insert("Helloz");
+
 		
-		System.out.println(bts.tree.root);
-		System.out.println(bts.tree.root.rightChild);
-		System.out.println(bts.tree.root.leftChild);
+		s.insertToIndex(1, a);
+		s.insertToIndex(1, b);
+		s.insertToIndex(1, c);
+		j.insertToIndex(1, 243);
 		
-//		System.out.println(j.joinedSearch("Hello"));
-//		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
-//		System.out.println(j.joinedSearch("Hello"));
+		IndexBTS index = (IndexBTS) s.schema.getItem(1);
+		BinarySearchTree t = (BinarySearchTree) index.tree;
+		System.out.println(t.root);
+		System.out.println("Hijo dere " + t.root.rightChild);
+		System.out.println("Hijo izq " + t.root.leftChild);
+		
+		s.schema.print();
+		s.deleteIndex(2);
+		s.schema.print();
+		System.out.println(j.joinedSearch(243));
+		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
+		System.out.println(j.joinedSearch("Hello"));
 //		System.out.println(s.search("Hell"));
 //		System.out.println(s.deleteInIndex(1,"Hell"));
 //		System.out.println(s.search("Hell"));

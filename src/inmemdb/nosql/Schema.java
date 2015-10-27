@@ -35,6 +35,37 @@ public class Schema<T> {
 	}
 	
 	/**
+	 * ***Missing B trees***
+	 * Creates an index in the schema
+	 * @param treeType bts, avl, splay, b
+	 * @param indexType char, string, number, image, video, binary
+	 * @param length
+	 * @return
+	 */
+	public boolean createIndex(String treeType, String indexType, int length) {
+		if (treeType.equals("bts")) {
+			IndexBTS bts = new IndexBTS(indexType, length);
+			insertIndex(bts);
+			return true;
+		} else if (treeType.equals("avl")) {
+			IndexAVL avl = new IndexAVL(indexType, length);
+			insertIndex(avl);
+			return true;
+		} else if (treeType.equals("splay")) {
+			IndexSplay splay = new IndexSplay(indexType, length);
+			insertIndex(splay);
+			return true;
+		} else if (treeType.equals("b")) {
+//			IndexBTS bts = new IndexBTS(indexType, length);
+//			insertIndex(bts);
+			return true;
+		} else {
+			System.out.println("Parameters invalid.");
+			return false;
+		}
+	}
+	
+	/**
 	 * Adds an index to the schema
 	 */
 	public <U extends Index> boolean insertIndex(U index) {
@@ -97,27 +128,26 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Inserts an element in the index structure
+	 * Inserts an element in a given index structure
 	 * @param element
 	 */
-//	public boolean insertToIndex(int containingIndex, T itemToInsert) {
-//		Index index = schema.getItem(containingIndex);
-//		boolean bool = false;
-//		
-//		if (index instanceof IndexBTS) {
-//			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
-//			bool = indexType.insert(indexType.type.,itemToInsert);
-//		} else if (index instanceof IndexAVL) {
-//			IndexAVL indexType = (IndexAVL) schema.getItem(containingIndex);
-//			bool = indexType.insert(itemToInsert)
-//		} else if (index instanceof IndexSplay) {
-//			IndexSplay indexType = (IndexSplay) schema.getItem(containingIndex);
-//			SplayTree indexTree = indexType.getTree();
-//			bool = indexTree.remove(itemToRemove);
-//		}
-//		
-//		return bool; 
-//	}
+	public boolean insertToIndex(int containingIndex, T itemToInsert) {
+		Index index = schema.getItem(containingIndex);
+		boolean bool = false;
+		
+		if (index instanceof IndexBTS) {
+			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
+			bool = indexType.insert(itemToInsert);
+		} else if (index instanceof IndexAVL) {
+			IndexAVL indexType = (IndexAVL) schema.getItem(containingIndex);
+			bool = indexType.insert(itemToInsert);
+		} else if (index instanceof IndexSplay) {
+			IndexSplay indexType = (IndexSplay) schema.getItem(containingIndex);
+			bool = indexType.insert(itemToInsert);
+		}
+		
+		return bool; 
+	}
 	
 	/**
 	 * Deletes an element in a given index (Starts in 1)

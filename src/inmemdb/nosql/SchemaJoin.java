@@ -4,8 +4,8 @@ public class SchemaJoin<T> extends Schema<T>{
 	
 	private Schema joinedSchema;
 	
-	public SchemaJoin(String name) {
-		super(name);
+	public SchemaJoin(String name, String folderLocation) {
+		super(name, folderLocation);
 	}
 	
 	/**
@@ -18,29 +18,26 @@ public class SchemaJoin<T> extends Schema<T>{
 	}
 	
 	
-	public boolean deleteIndex(int index) {
-		
-	}
+//	public boolean deleteIndex(int index) {
+//		
+//	}
 	
 	/**
-	 * Inserts index in this table and the one joined
-	 * @param insertIndex
-	 * @return
+	 * Inserts an element to a given index
+	 * Only in the Join type schema
 	 */
-	public <U extends Index> boolean insertJoinedIndex(U insertIndex){
-		
-		super.insertIndex(insertIndex);
-		joinedSchema.insertIndex(insertIndex);
-		return true;
-		
-	}
-	
-	public boolean insertToIndex() {
-		
+	public boolean insertToIndex(int containingIndex, T itemToInsert) {
+		if (super.insertToIndex(containingIndex, itemToInsert)) {
+			System.out.println("Item inserted to index " + containingIndex);
+			return true;
+		} else {
+			System.out.println("Failed to insert");
+			return false;
+		}
 	}
 	
 	/**
-	 * Deletes element in this tables
+	 * Deletes element in this table
 	 * @param containingIndex
 	 * @param itemToRemove
 	 * @return
@@ -74,6 +71,20 @@ public class SchemaJoin<T> extends Schema<T>{
 			System.out.println("Item not found in any table");
 			return false;
 		}
+	}
+	
+	/**
+	 * Creates two separate Indexes with the same info
+	 * one for each table
+	 * @param treeType
+	 * @param indexType
+	 * @param length
+	 * @return
+	 */
+	public boolean createJoinedIndex(String treeType, String indexType, int length) {
+		super.createIndex(treeType, indexType, length);
+		joinedSchema.createIndex(treeType, indexType, length);
+		return true;
 	}
 	
 
