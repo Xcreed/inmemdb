@@ -17,7 +17,7 @@ public class Index <T> {
 	protected Type<?> type;
 	
 	/**
-	 *Index
+	 *Constructor 1.
 	 */
 	public Index() {
 	}
