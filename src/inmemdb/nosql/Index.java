@@ -33,7 +33,4 @@ public class Index <T> {
 	public Tree getTree() {
 		return tree;
 	}
-	
-	
-
 }

@@ -10,7 +10,6 @@ public class IndexSplay<T> extends Index {
 		tree = new SplayTree();
 	}
 	
-	
 	public boolean insert(boolean pass, T element) {
 		
 		if (pass){ 

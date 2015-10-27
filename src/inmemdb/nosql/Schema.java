@@ -32,7 +32,7 @@ public class Schema<T> {
 	 * Adds an index to the schema
 	 */
 	public <U extends Index> boolean insertIndex(U index) {
-		schema.insertAtEnd(index);
+		schema.insertEnd(index);
 		return true;
 	}
 	
@@ -53,7 +53,7 @@ public class Schema<T> {
 	 */
 	public boolean deleteIndex(int index) {
 		if (index == 1) {
-			schema.removeAtBeginning();
+			schema.deleteBeginning();
 		}
 		return true;
 	}
