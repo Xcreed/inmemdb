@@ -30,12 +30,9 @@ public class IndexBTS<T> extends Index{
 	}
 	
 //	@SuppressWarnings("unchecked")
-//	public <U> boolean insert(U element) {
-//		if (type instanceof TypeString) {
-//			TypeString tb = (TypeString) type;
-//			tb.check(element);
-//		}
-//	}
+	public <U> boolean insert(U element) {
+		return super.check(element);
+	}
 	
 	/**
 	 * Deletes an element
