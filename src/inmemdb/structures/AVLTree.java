@@ -3,9 +3,11 @@ package inmemdb.structures;
 
 public class AVLTree <T> extends Tree{
 	public AVLNode root; 
+	public int index;
 
 	public AVLTree(){
 		root=null;
+		index = 0;
 	}
 	
 	
@@ -43,13 +45,21 @@ public class AVLTree <T> extends Tree{
 	 * Insertion 
 	 */ 
 	public void insert(T data){
-		root = insert2(data, this.root);
+		if (this.root==null){
+			return;
+		}else if (search(data)){
+			System.out.println("This value already exists in the tree");
+		}else{
+			root = insert2(data, this.root);
+			this.index++;
+		}
+		
 	}
 	
 
 	
 	private AVLNode<T> insert2(T data, AVLNode node){
-		AVLNode newNode = new AVLNode(data);
+		AVLNode newNode = new AVLNode(data, this.index+1);
 		if (node==null){       
 			node = newNode;
 		}else if(newNode.compareTo(node)>0){
@@ -136,7 +146,11 @@ public class AVLTree <T> extends Tree{
 	
 	//With T
 	public boolean search(T value){
-		return search(root, value);
+		if(root ==null){
+			return false;
+		}else{
+			return search(root, value);
+		}
 	}
 	
 	public boolean search(AVLNode root, T value){
@@ -275,7 +289,7 @@ public class AVLTree <T> extends Tree{
 	public void inorder(AVLNode root){
 		if(root != null){
 			inorder(root.leftChild);
-			System.out.println(root.data + "  ");
+			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 			inorder(root.rightChild);
 		}
 	}
@@ -287,7 +301,7 @@ public class AVLTree <T> extends Tree{
 	public void inorder2(AVLNode root){
 		if(root != null){
 			inorder(root.rightChild);
-			System.out.println(root.data + "  ");
+			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 			inorder(root.leftChild);
 		}
 	}
@@ -298,7 +312,7 @@ public class AVLTree <T> extends Tree{
 	
 	public void preorder(AVLNode root){
 		if (root != null){
-			System.out.println(root.data);
+			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 			preorder(root.leftChild);
 			preorder(root.rightChild);
 		}
@@ -313,7 +327,7 @@ public class AVLTree <T> extends Tree{
 		if (root != null){
 			postorder(root.leftChild);
 			postorder(root.rightChild);
-			System.out.println(root.data);
+			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 		}
 	}
 
