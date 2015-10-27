@@ -1,7 +1,7 @@
 package inmemdb.structures;
 
+public class BinarySearchTree <T> extends Tree{
 
-public class BinarySearchTree {
 	public BSTNode root;
 	int index;
 

@@ -1,10 +1,10 @@
 package inmemdb.structures;
 
-
-public class SplayTree<T> {
+public class SplayTree<T> extends Tree {
 	SplayNode root;
 	int size;
 	int index; 
+
 	
 	public boolean isEmpty(){
 		return root == null;

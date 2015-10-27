@@ -1,4 +1,4 @@
-package ceSearch;
+package inmemdb.ceSearch;
 
 public class CeSearch {
 
