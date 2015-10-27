@@ -1,11 +1,13 @@
 package inmemdb.structures;
 
 public class BinarySearchTree <T> extends Tree{
+
 	public BSTNode root;
-	
+	int index;
 
 	public BinarySearchTree (){
 		root = null;
+		index = 0;
 	}
 	
 	/*
@@ -17,11 +19,14 @@ public class BinarySearchTree <T> extends Tree{
         return temp1.compareTo(temp2);
     }
 	
+	
+	
 	public <T> void addNode(T data){
 		//BSTNode newNode = new BSTNode(data, name);
-		BSTNode newNode = new BSTNode(data);
+		BSTNode newNode = new BSTNode(data, this.index+1);
 		if (root == null){
 			root = newNode;
+			this.index++;
 		}else{
 			BSTNode current = root;
 			BSTNode parent; 
@@ -31,13 +36,15 @@ public class BinarySearchTree <T> extends Tree{
 				if(compareTo(data, current.data)>0){
 					current = current.leftChild;
 					if(current == null){
-						parent.leftChild = newNode; 
+						parent.leftChild = newNode;
+						this.index++;
 						return; 
 					}
 				}else{
 					current = current.rightChild;
 					if(current==null){
 						parent.rightChild = newNode;
+						this.index++;
 						return;
 					}
 				}
@@ -46,6 +53,9 @@ public class BinarySearchTree <T> extends Tree{
 	}
 	
 	public <T> boolean findNode(T data){
+		if(root==null){
+			return false;
+		}
 		BSTNode current = root;
 		while (current.data != data){
 			if (compareTo(data, current.data)>0){
@@ -77,14 +87,19 @@ public class BinarySearchTree <T> extends Tree{
 	}
 	
 	
-	public <T> boolean remove(T key){
+	
+	public <T> boolean remove(T data){
 		BSTNode current = root;
 		BSTNode parent = root;
 		
+		if(root == null){
+			return false;
+		}
+		
 		boolean isItALeftChild = true;
-		while(current.data != key){
+		while(current.data != data){
 			parent = current;
-			if(compareTo(key, current.data)>0){
+			if(compareTo(data, current.data)>0){
 				isItALeftChild = true;
 				current = current.leftChild;
 			}else{
@@ -142,7 +157,7 @@ public class BinarySearchTree <T> extends Tree{
 	public void inOrderTraversal(BSTNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
-			System.out.println(current);
+			System.out.println("Data: "+current+"    Key: "+current.key);
 			inOrderTraversal(current.rightChild);
 		}
 	}

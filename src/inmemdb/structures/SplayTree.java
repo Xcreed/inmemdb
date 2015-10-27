@@ -1,24 +1,21 @@
 package inmemdb.structures;
 
 public class SplayTree<T> extends Tree {
+	SplayNode root;
+	int size;
+	int index; 
+
 	
-	public SplayNode root;
-    private int count = 0;
-    
-    public SplayTree(){
-        root = null;
-    }
-    
-    public boolean isEmpty(){
-        return root == null;
-    }
-    
-    public void makeEmpty()
-    {
-        root = null;
-    }
-    
-    /*
+	public boolean isEmpty(){
+		return root == null;
+	}
+	
+	public void makeEmpty(){
+		root = null;
+	}
+	
+	
+	/*
 	 * Compare (T only)
 	 */
 	public int compareTo(T a, T b){
@@ -26,228 +23,327 @@ public class SplayTree<T> extends Tree {
         String temp2 = b.toString();
         return temp1.compareTo(temp2);
     }
-    
-    
-    public void insert(T ele)
-    {
-        SplayNode node1 = root;
-        SplayNode node2 = null;
-        while (node1 != null)
-        {
-            node2 = node1;
-            if (compareTo(ele, (T) node2.data)>0)
-                node1 = node1.rightChild;
-            else
-                node1 = node1.leftChild;
-        }
-        node1 = new SplayNode();
-        node1.data = ele;
-        node1.parent = node2;
-        if (node2 == null)
-            root = node1;
-        else if (compareTo(ele, (T) node2.data)>0)
-            node2.rightChild= node1;
-        else
-            node2.leftChild = node1;
-        Splay(node1);
-        count++;
-    }
-    
-    public void makeLeftChildParent(SplayNode child, SplayNode parent)
-    {
-        if ((child == null) || (parent == null) || (parent.leftChild != child) || (child.parent != parent))
-            throw new RuntimeException("WRONG");
-
-        if (parent.parent != null)
-        {
-            if (parent == parent.parent.leftChild)
-                parent.parent.leftChild = child;
-            else 
-                parent.parent.rightChild= child;
-        }
-        if (child.rightChild!= null)
-            child.rightChild.parent = parent;
-
-        child.parent = parent.parent;
-        parent.parent = child;
-        parent.leftChild = child.rightChild;
-        child.rightChild= parent;
-    }
-
-    public void makeRightChildParent(SplayNode child, SplayNode parent)
-    {
-        if ((child == null) || (parent == null) || (parent.rightChild!= child) || (child.parent != parent))
-            throw new RuntimeException("WRONG");
-        if (parent.parent != null)
-        {
-            if (parent == parent.parent.leftChild)
-                parent.parent.leftChild = child;
-            else
-                parent.parent.rightChild= child;
-        }
-        if (child.leftChild != null)
-            child.leftChild.parent = parent;
-        child.parent = parent.parent;
-        parent.parent = child;
-        parent.rightChild= child.leftChild;
-        child.leftChild = parent;
-    }
-
-
-    private void Splay(SplayNode node)
-    {
-        while (node.parent != null)
-        {
-            SplayNode Parent = node.parent;
-            SplayNode GrandParent = Parent.parent;
-            if (GrandParent == null)
-            {
-                if (node == Parent.leftChild)
-                    makeLeftChildParent(node, Parent);
-                else
-                    makeRightChildParent(node, Parent);                 
-            } 
-            else
-            {
-                if (node == Parent.leftChild)
-                {
-                    if (Parent == GrandParent.leftChild)
-                    {
-                        makeLeftChildParent(Parent, GrandParent);
-                        makeLeftChildParent(node, Parent);
-                    }
-                    else 
-                    {
-                        makeLeftChildParent(node, node.parent);
-                        makeRightChildParent(node, node.parent);
-                    }
-                }
-                else 
-                {
-                    if (Parent == GrandParent.leftChild)
-                    {
-                        makeRightChildParent(node, node.parent);
-                        makeLeftChildParent(node, node.parent);
-                    } 
-                    else 
-                    {
-                        makeRightChildParent(Parent, GrandParent);
-                        makeRightChildParent(node, Parent);
-                    }
-                }
-            }
-        }
-        root = node;
-    }
-    
-
-    public boolean remove(T value)
-    {
-        SplayNode node = findNode(value);
-        return remove(node);
-    }
-    
-
-    private boolean remove(SplayNode node)
-    {
-        if (node == null)
-            return false;
-
-        Splay(node);
-        if( (node.leftChild != null) && (node.rightChild!=null))
-        { 
-            SplayNode min = node.leftChild;
-            while(min.rightChild!=null)
-                min = min.rightChild;
-
-            min.rightChild= node.rightChild;
-            node.rightChild.parent = min;
-            node.leftChild.parent = null;
-            root = node.leftChild;
-        }
-        else if (node.rightChild!= null)
-        {
-            node.rightChild.parent = null;
-            root = node.rightChild;
-        } 
-        else if( node.leftChild !=null)
-        {
-            node.leftChild.parent = null;
-            root = node.leftChild;
-        }
-        else
-        {
-            root = null;
-        }
-        node.parent = null;
-        node.leftChild = null;
-        node.rightChild= null;
-        node = null;
-        count--;
-        return true;
-    }
-    
-
-    public int size(){
-        return count;
-    }
-    
-
-    public boolean search(T value)
-    {
-        return findNode(value) != null;
-    }
-
-    private SplayNode findNode(T value)
-    {
-        SplayNode currentNode = root;
-        while (currentNode != null)
-        {
-        	if (compareTo(value, (T) currentNode.rightChild)>0)
-                currentNode = currentNode.rightChild;
-            else if (compareTo(value, (T) currentNode.data)<0)
-                currentNode = currentNode.leftChild;
-            else
-                return currentNode;
-        }
-        return null;
-    }
-    
-	public void inorder(){
-		inorder(root);
-	}
+	/**/
 	
-	public void inorder(SplayNode root){
-		if(root != null){
-			inorder(root.leftChild);
-			System.out.println(root.data + "  ");
-			inorder(root.rightChild);
+	public void insert(T data){
+		//System.out.println(data);
+		if(search(data)){
+			System.out.println("This node already exists ");
+		}else{
+			index++;
+			insert(data, index);
+		}
+	}
+	public void insert(T data, int key){
+		System.out.println(data);
+		SplayNode newNode = new SplayNode(data, key);
+		if(root == null){
+			this.root = newNode;
+		}else{
+			insert(newNode, this.root);
 		}
 	}
 	
-	public void preorder(){
-		preorder(root);
+	public void insert(SplayNode newNode, SplayNode root){
+		if(newNode.compareTo(root)<0){  ///newNode > root
+			if(root.rightChild==null){
+				newNode.parent = root;
+				root.rightChild = newNode; 
+			}else{
+				insert(newNode, root.rightChild);
+			}
+		}else{
+			if(root.leftChild==null){
+				newNode.parent = root;
+				
+				root.leftChild = newNode; 
+			}else{
+				insert(newNode, root.leftChild);
+			}
+			
+		}
+		this.root=Splay(newNode);
+		
 	}
 	
-	public void preorder(SplayNode root){
-		if (root != null){
-			System.out.println(root.data);
-			preorder(root.leftChild);
-			preorder(root.rightChild);
+	
+	public void delete(T data){
+		if(root==null){
+			return ;
+		}
+		SplayNode current = root;
+		while(current.data!=data){
+			if (compareTo((T) current.data, data)<0){
+				current = current.leftChild;
+			}else{
+				current = current.rightChild;
+			}
+		}
+		if (current.leftChild==null && current.rightChild==null){
+			SplayNode node2Splay = current.parent;
+			current = null; 
+			this.root= Splay(current.parent);
+		}else if(current.rightChild== null){
+			SplayNode newCurrent = current.leftChild;
+			while(newCurrent.rightChild != null){
+				newCurrent = newCurrent.rightChild; 
+			}
+			current.data = newCurrent.data;
+			newCurrent = null;
+			this.root = Splay(current);
+		}else{
+			SplayNode newCurrent = current.rightChild;
+			while(newCurrent.leftChild != null){
+				newCurrent = newCurrent.leftChild; 
+			}
+			current.data = newCurrent.data;
+			newCurrent = null;
+			this.root = Splay(current);
 		}
 	}
 	
-	public void postorder(){
-		postorder(root);
+	public SplayNode zig(SplayNode node){
+		SplayNode p = node.parent;
+		SplayNode x = node;
+		if (node.compareTo(node.parent)<0){  // node > node.parent
+			x.parent = p.parent;
+			p.parent=x;
+			if(x.leftChild!=null){
+				x.leftChild.parent = p;
+				p.rightChild = x.leftChild;
+			}else{
+				p.rightChild = null; 
+			}
+			x.leftChild = p;
+		}else{
+			x.parent = p.parent;
+			p.parent=x;
+			if(x.rightChild!=null){
+				x.rightChild.parent = p;
+				p.leftChild = x.rightChild;
+			}else{
+				p.leftChild = null; 
+			}
+			x.rightChild = p; 
+		}
+		return node; 
 	}
 	
-	public void postorder(SplayNode root){
-		if (root != null){
-			postorder(root.leftChild);
-			postorder(root.rightChild);
-			System.out.println(root.data);
+	public SplayNode zigzig(SplayNode node, boolean leftLeft){
+		SplayNode x = node; 
+		SplayNode p = node.parent;
+		SplayNode g = node.parent.parent;
+		if (leftLeft){
+			if(g.parent!=null){
+				if(g.parent.rightChild==g){
+					g.parent.rightChild=x;
+				}else{
+					g.parent.leftChild = x;
+				}
+				x.parent = g.parent;
+			}else{
+				x.parent=null;
+			}
+			
+			if (x.rightChild == null){
+				p.leftChild = null;
+			}else{
+				p.leftChild = x.rightChild;
+				x.rightChild.parent = p;
+			}
+			
+			g.leftChild = p;
+			p.parent = g;
+			g.parent = x;
+			x.rightChild = g;
+			
+			
+		}else{  //right right 
+			if(g.parent!=null){
+				if(g.parent.leftChild==g){
+					g.parent.leftChild=x;
+				}else{
+					g.parent.rightChild = x;
+				}
+				x.parent = g.parent;
+			}else{
+				x.parent=null;
+			}
+			
+			if (x.leftChild == null){
+				p.rightChild = null;
+			}else{
+				p.rightChild = x.leftChild;
+				x.leftChild.parent = p;
+			}
+			
+			g.rightChild = p;
+			p.parent = g;
+			g.parent = x;
+			x.leftChild = g;
+			
+		}
+		return x; 
+	}
+	
+	public SplayNode zigzag(SplayNode node, boolean XRightCPLeftC){
+		SplayNode x = node;
+		SplayNode p = node.parent;
+		SplayNode g = node.parent.parent;
+		if(XRightCPLeftC){
+			if(g.parent==null){
+				x.parent = null;
+			}else{
+				if(g.parent.leftChild==g){
+					g.parent.leftChild=x;
+				}else{
+					g.parent.rightChild=x;
+				}
+				x.parent=g.parent;
+			}
+			
+			if(x.leftChild==null){
+				g.rightChild = null;
+			}else{
+				g.rightChild = x.leftChild;
+				x.leftChild.parent = g;
+			}
+			
+			if(x.rightChild==null){
+				p.leftChild = null;
+			}else{
+				p.leftChild = x.rightChild;
+				x.rightChild.parent = p;
+			}
+			
+			x.leftChild = g;
+			g.parent = x;
+			x.rightChild = p;
+			p.parent = x;
+			
+		}else{
+			if(g.parent==null){
+				x.parent = null;
+			}else{
+				if(g.parent.leftChild==g){
+					g.parent.leftChild=x;
+				}else{
+					g.parent.rightChild=x;
+				}
+				x.parent=g.parent;
+			}
+			
+			if(x.rightChild==null){
+				g.leftChild = null;
+			}else{
+				g.leftChild = x.rightChild;
+				x.rightChild.parent = g;
+			}
+			
+			if(x.leftChild==null){
+				p.rightChild = null;
+			}else{
+				p.rightChild = x.leftChild;
+				x.leftChild.parent = p;
+			}
+			
+			x.rightChild = g;
+			g.parent = x;
+			x.leftChild = p;
+			p.parent = x;
+			
+		}
+		return x;
+	}
+	
+	public SplayNode Splay(SplayNode node){
+		if (node.parent==null){
+			return node; 
+		}else if (node.parent.parent==null){
+			return zig(node);
+		}else if (node.parent.compareTo(node)<0){   ////node < node.parent
+			if(node.parent.parent.compareTo(node.parent)<0){  ////node.parent < node.parent.parent
+				//zig zig x(lC) p(lC)
+				node = zigzig(node, true);
+			}else{
+				//zig zag x(lC) p(rC)
+				node = zigzag(node, false);
+			}
+			return Splay(node);
+		}else{//(node.parent.compareTo(node)>0){  /// node > node.parent
+			if(node.parent.parent.compareTo(node.parent)<0){   //// node.parent < node.parent.parent
+				//zig zag x(rc) p(lc)
+				node = zigzag(node, true);
+			}else{
+				//zig zig x(rC) p(rC)
+				node = zigzig(node, false);
+			}
+			return Splay(node);
 		}
 	}
-
+	
+	public boolean search(T data){
+		if(this.root==null){
+			return false;
+		}
+		SplayNode current = root;
+		while(current.data!=data){
+			if(compareTo(data, (T) current.data)<0){   //current.data < data
+				if(current.rightChild==null){
+					return false;
+				}else{
+					current = current.rightChild;
+				}
+			}else{
+				if(current.leftChild==null){
+					return false;
+				}else{
+					current = current.leftChild;
+				}
+			}
+		}
+		return true; 
+	}
+	
+	
+	public void inOrderTraversal(){
+		System.out.println("In order traversal");
+		inOrderTraversal(root);
+	}
+	
+	public void inOrderTraversal(SplayNode current){
+		if(current != null){
+			inOrderTraversal(current.leftChild);
+			System.out.println("Data: "+current+ "   Key: " + current.key);
+			inOrderTraversal(current.rightChild);
+		}
+	}
+	
+	public void preorderTraversal(){
+		System.out.println("Preorder traversal");
+		preorderTraversal(root);
+	}
+	
+	public void preorderTraversal(SplayNode current){
+		if(current != null){
+			System.out.println(current);
+			preorderTraversal(current.leftChild);
+			preorderTraversal(current.rightChild);
+		}
+	}
+	
+	public void postorderTraversal(){
+		System.out.println("Postorder traversal");
+		postorderTraversal(root);
+	}
+	
+	public void postorderTraversal(SplayNode current){
+		if(current != null){
+			postorderTraversal(current.leftChild);
+			postorderTraversal(current.rightChild);
+			System.out.println(current);
+		}
+	}
+	
+	
 }
-
