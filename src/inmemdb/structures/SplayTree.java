@@ -68,6 +68,9 @@ public class SplayTree<T> {
 	
 	
 	public void delete(T data){
+		if(root==null){
+			return ;
+		}
 		SplayNode current = root;
 		while(current.data!=data){
 			if (compareTo((T) current.data, data)<0){

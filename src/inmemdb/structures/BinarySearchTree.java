@@ -53,6 +53,9 @@ public class BinarySearchTree {
 	}
 	
 	public <T> boolean findNode(T data){
+		if(root==null){
+			return false;
+		}
 		BSTNode current = root;
 		while (current.data != data){
 			if (compareTo(data, current.data)>0){
@@ -88,6 +91,10 @@ public class BinarySearchTree {
 	public <T> boolean remove(T data){
 		BSTNode current = root;
 		BSTNode parent = root;
+		
+		if(root == null){
+			return false;
+		}
 		
 		boolean isItALeftChild = true;
 		while(current.data != data){

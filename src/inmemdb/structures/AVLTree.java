@@ -45,7 +45,9 @@ public class AVLTree <T>{
 	 * Insertion 
 	 */ 
 	public void insert(T data){
-		if (search(data)){
+		if (this.root==null){
+			return;
+		}else if (search(data)){
 			System.out.println("This value already exists in the tree");
 		}else{
 			root = insert2(data, this.root);
@@ -144,7 +146,11 @@ public class AVLTree <T>{
 	
 	//With T
 	public boolean search(T value){
-		return search(root, value);
+		if(root ==null){
+			return false;
+		}else{
+			return search(root, value);
+		}
 	}
 	
 	public boolean search(AVLNode root, T value){
