@@ -220,17 +220,20 @@ public class DoubleLinkedList <T> {
 	public void deleteMiddle(T pData){
 		
 		DoubleNode<T> tmp = head;
-		
-		while(tmp != null){
-			if (tmp.getData() == pData){
-				tmp.getPrev().setNext(tmp.getNext());
-				tmp.setPrev(null);
-				tmp.getNext().setPrev(tmp.getPrev());
-				tmp.setNext(null);
-				break;
-			}else{
-				tmp = tmp.getNext();
-			}
+		if(contains(pData) == true){
+			while(tmp != null){
+				if (tmp.getData() == pData){
+					tmp.getPrev().setNext(tmp.getNext());
+					tmp.setPrev(null);
+					tmp.getNext().setPrev(tmp.getPrev());
+					tmp.setNext(null);
+					break;
+				}else{
+					tmp = tmp.getNext();
+				}
+			}	
+		}else{
+			return;
 		}
 	}
 	

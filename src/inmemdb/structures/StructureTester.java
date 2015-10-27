@@ -24,7 +24,7 @@ public class StructureTester {
 		testList.print();
 		testList.delete(7);
 		testList.print();
-		testList.delete(6);
+		testList.delete(88);
 		testList.print();
 
 		

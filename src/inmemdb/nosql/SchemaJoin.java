@@ -1,6 +1,6 @@
 package inmemdb.nosql;
 
-public class SchemaJoin<T> extends Schema{
+public class SchemaJoin<T> extends Schema<T>{
 	
 	private Schema joinedSchema;
 	public SchemaJoin(String name) {
