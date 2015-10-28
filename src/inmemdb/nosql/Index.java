@@ -1,7 +1,6 @@
 package inmemdb.nosql;
 	
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,11 +12,7 @@ import inmemdb.structures.Tree;
  * Asbtract class for the differents types of 
  * index. 
  * 
-<<<<<<< HEAD
  * @author Juan Pablo
-=======
- * @author Juan Pablo, Randy
->>>>>>> branch 'master' of https://github.com/Xcreed/inmemdb.git
  *
  * @param <T>
  */
@@ -26,18 +21,15 @@ public class Index <T> {
 	protected Tree<?> tree;
 	protected String type;
 	protected int length;
-
-	protected String name;
 	
-	public Index(String type, String name, int length) {
+	/**
+	 *Constructor
+	 */
+	public Index(String type, int length) {
 		this.type = type;
 		this.length = length;
-		this.name = name;
 	}
 	
-	public String getName() {
-		return name;
-	}
 	/**
 	 * Insert
 	 */
@@ -90,7 +82,7 @@ public class Index <T> {
 				bool = false;
 			}
 		} else if (type.equals("char")){
-			if (element instanceof Charset && checkLength(element)) {
+			if (element instanceof Number && checkLength(element)) {
 				bool = true;
 			} else {
 				System.out.println("Invalid type. Index type is " + type);
