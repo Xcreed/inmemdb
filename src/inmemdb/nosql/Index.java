@@ -1,6 +1,7 @@
 package inmemdb.nosql;
 	
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,6 +32,7 @@ public class Index <T> {
 	public Index(String type, String name, int length) {
 		this.type = type;
 		this.length = length;
+		this.name = name;
 	}
 	
 	public String getName() {
@@ -88,7 +90,7 @@ public class Index <T> {
 				bool = false;
 			}
 		} else if (type.equals("char")){
-			if (element instanceof Number && checkLength(element)) {
+			if (element instanceof Charset && checkLength(element)) {
 				bool = true;
 			} else {
 				System.out.println("Invalid type. Index type is " + type);

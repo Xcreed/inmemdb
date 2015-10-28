@@ -11,24 +11,22 @@ public class Main {
 		
 		//Creates a regular schema and Join type in the desired folder
 		Schema s = new Schema("T","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
-		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+//		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
 		s.createIndex("bts", "string", "salutations", 5);
 		//Joins the schema to the regular one
-		j.joinSchema(s);
+//		j.joinSchema(s);
 		//Creates an index in both schemas
-		j.createJoinedIndex("avl","number","times", 3);
-//		s.createIndex("splay", "char", "character", 1);
-		String a = "Hello";
-		String b = "Hell";
-		String c = "Mello";
-
+//		j.createJoinedIndex("avl","number","times", 3);
+		s.createIndex("avl", "number", "id", 3);
 		
-		s.insertToIndex(1, a);
-		s.insertToIndex(1, b);
-		s.insertToIndex(1, c);
-		j.insertToIndex(1, 243);
+		s.insertToIndex(1, "Hello");
+		s.insertToIndex(1, "Hell");
+		s.insertToIndex(1, "Mello");
+		s.insertToIndex(2, 102);
+		
+//		j.insertToIndex(1, 243);
 		
 		IndexBTS index = (IndexBTS) s.schema.getItem(1);
 		BinarySearchTree t = (BinarySearchTree) index.tree;
@@ -50,7 +48,6 @@ public class Main {
 //		System.out.println(s.search("Hell"));
 		
 		JSONProtocol json = new JSONProtocol();
-		//System.out.println("heelll");
 		json.writeSchema(s);
 		
 		
