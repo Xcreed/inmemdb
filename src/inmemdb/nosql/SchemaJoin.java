@@ -18,9 +18,9 @@ public class SchemaJoin<T> extends Schema<T>{
 	}
 	
 	
-//	public boolean deleteIndex(int index) {
-//		
-//	}
+	public boolean deleteIndex(int index) {
+		return super.deleteIndex(index);
+	}
 	
 	/**
 	 * Inserts an element to a given index

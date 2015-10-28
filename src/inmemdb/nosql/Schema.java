@@ -131,6 +131,7 @@ public class Schema<T> {
 	 * Inserts an element in a given index structure
 	 * @param element
 	 */
+	@SuppressWarnings("rawtypes")
 	public boolean insertToIndex(int containingIndex, T itemToInsert) {
 		Index index = schema.getItem(containingIndex);
 		boolean bool = false;

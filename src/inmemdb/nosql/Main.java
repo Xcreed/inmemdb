@@ -19,6 +19,7 @@ public class Main {
 		j.joinSchema(s);
 		//Creates an index in both schemas
 		j.createJoinedIndex("avl","number","times", 3);
+//		s.createIndex("splay", "char", "character", 1);
 		String a = "Hello";
 		String b = "Hell";
 		String c = "Mello";
@@ -35,10 +36,11 @@ public class Main {
 		System.out.println("Hijo dere " + t.root.rightChild);
 		System.out.println("Hijo izq " + t.root.leftChild);
 		
-		s.schema.print();
-		s.deleteIndex(2);
-		s.schema.print();
-		
+		//Deletes an index in the schema
+//		s.schema.print();
+//		s.deleteIndex(3);
+//		s.schema.print();
+//		
 //		System.out.println(j.joinedSearch(243));
 //		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
 //		System.out.println(j.joinedSearch("Hello"));
