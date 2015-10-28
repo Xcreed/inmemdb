@@ -3,36 +3,50 @@ package inmemdb.nosql;
 import java.io.IOException;
 
 import inmemdb.controller.JSONProtocol;
+import inmemdb.structures.AVLTree;
 import inmemdb.structures.BinarySearchTree;
 
 public class Main {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws IOException {
 		
 		//Creates a regular schema and Join type in the desired folder
-		Schema s = new Schema("T","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		Schema s = new Schema("Estudiantes","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+
 //		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
-		s.createIndex("bts", "string", "salutations", 5);
+		s.createIndex("bts", "string", "Nombre", 10);
 		//Joins the schema to the regular one
 //		j.joinSchema(s);
 		//Creates an index in both schemas
 //		j.createJoinedIndex("avl","number","times", 3);
-		s.createIndex("avl", "number", "id", 3);
+
+		s.createIndex("bts", "number", "año", 4);
 		
-		s.insertToIndex(1, "Hello");
-		s.insertToIndex(1, "Hell");
-		s.insertToIndex(1, "Mello");
-		s.insertToIndex(2, 102);
+		s.insertToIndex(1, "JP");
+		s.insertToIndex(1, "Randy");
+		s.insertToIndex(1, "Alejandra");
+		s.insertToIndex(2, 1996);
+		s.insertToIndex(2, 1995);
+		s.insertToIndex(2, 1997);
 		
 //		j.insertToIndex(1, 243);
 		
 		IndexBTS index = (IndexBTS) s.schema.getItem(1);
 		BinarySearchTree t = (BinarySearchTree) index.tree;
-		System.out.println(t.root);
-		System.out.println("Hijo dere " + t.root.rightChild);
-		System.out.println("Hijo izq " + t.root.leftChild);
+		t.inOrderTraversal();
+		
+		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
+		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
+		System.out.println("bts2 order");
+		t2.inOrderTraversal();
+		
+		
+//		System.out.println(t.root);
+//		System.out.println("Hijo dere " + t.root.rightChild);
+//		System.out.println("Hijo izq " + t.root.leftChild);
 		
 		//Deletes an index in the schema
 //		s.schema.print();
