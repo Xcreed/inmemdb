@@ -48,7 +48,7 @@ public class Main {
 //		System.out.println(s.search("Hell"));
 		
 		JSONProtocol json = new JSONProtocol();
-		System.out.println("heelll");
+		//System.out.println("heelll");
 		json.writeSchema(s);
 		
 		

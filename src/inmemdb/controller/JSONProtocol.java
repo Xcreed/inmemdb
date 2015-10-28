@@ -18,7 +18,7 @@ import inmemdb.structures.SplayTree;
 
 public class JSONProtocol {
 	
-	File jsonFile = new File("/res/jsonprotocol.json");
+	File jsonFile = new File("res/jsonprotocol.json");
 	
 	protected Schema table;
 	
@@ -27,19 +27,20 @@ public class JSONProtocol {
 		
 		this.table = schemaToSave;
 		JSONObject clientObj = new JSONObject();
-		
-		System.out.println("Heelo");
-		
+				
 		clientObj.put("name", table.name);
 		
 		for (int i = 0; i < table.schema.getLength(); i++) {
 			
 			
+			JSONArray indexes = new JSONArray();
 			
 			Index index = (Index) table.schema.getItem(i);
+			
 			if (index instanceof IndexBTS) {
 				IndexBTS indexType = (IndexBTS) table.schema.getItem(i);
 				BinarySearchTree indexTree = indexType.getTree();
+				indexes.add("" + index.getName() + ":" + indexTree.getDataString());
 //				bool = indexTree.findNode(searchItem);
 			} else if (index instanceof IndexAVL) {
 				IndexAVL indexType = (IndexAVL) table.schema.getItem(i);
@@ -52,23 +53,25 @@ public class JSONProtocol {
 			}
 			
 			JSONArray company = new JSONArray();
-			company.add("Compnay: eBay");
-			company.add("Compnay: Paypal");
-			company.add("Compnay: Google");
-			clientObj.put("Company List", company);
+//			company.add("Compnay: eBay");
+//			company.add("Compnay: Paypal");
+//			company.add("Compnay: Google");
+//			clientObj.put("Company List", company);
 			
+			clientObj.put("Index: " + i, indexes);
 //			clientObj.put("rank", rank);
 //			clientObj.put("importance", importance);
 //			clientObj.put("location", location);
 			
-			try (FileWriter file = new FileWriter(jsonFile)) {
-				file.write(clientObj.toJSONString());
-				System.out.println("Successfully Copied JSON Object to File...");
-				System.out.println("\nJSON Object: " + clientObj);
-			} catch (IOException e) {
-				e.printStackTrace();
-			} 
 		}
+		
+		try (FileWriter file = new FileWriter(jsonFile,true)) {
+			file.write(clientObj.toJSONString());
+			System.out.println("Successfully Copied JSON Object to File...");
+			System.out.println("\nJSON Object: " + clientObj);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 		
 	}
 
