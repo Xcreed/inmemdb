@@ -131,6 +131,7 @@ public class Schema<T> {
 		Index index = schema.getItem(containingIndex);
 		boolean bool = false;
 		
+		System.out.println(itemToInsert);
 		if (index instanceof IndexBTS) {
 			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
 			bool = indexType.insert(itemToInsert);
