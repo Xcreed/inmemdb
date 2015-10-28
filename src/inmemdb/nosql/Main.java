@@ -13,6 +13,7 @@ public class Main {
 		
 		//Creates a regular schema and Join type in the desired folder
 		Schema s = new Schema("Estudiantes","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+
 //		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
@@ -21,6 +22,7 @@ public class Main {
 //		j.joinSchema(s);
 		//Creates an index in both schemas
 //		j.createJoinedIndex("avl","number","times", 3);
+
 		s.createIndex("bts", "number", "año", 4);
 		
 		s.insertToIndex(1, "JP");
