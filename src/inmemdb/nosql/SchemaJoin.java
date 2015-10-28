@@ -81,9 +81,9 @@ public class SchemaJoin<T> extends Schema<T>{
 	 * @param length
 	 * @return
 	 */
-	public boolean createJoinedIndex(String treeType, String indexType, int length) {
-		super.createIndex(treeType, indexType, length);
-		joinedSchema.createIndex(treeType, indexType, length);
+	public boolean createJoinedIndex(String treeType, String indexType, String indexName, int length) {
+		super.createIndex(treeType, indexType, indexName, length);
+		joinedSchema.createIndex(treeType, indexType, indexName, length);
 		return true;
 	}
 	

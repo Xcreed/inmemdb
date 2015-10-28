@@ -2,6 +2,7 @@ package inmemdb.nosql;
 
 import java.io.IOException;
 
+import inmemdb.controller.JSONProtocol;
 import inmemdb.structures.BinarySearchTree;
 
 public class Main {
@@ -13,11 +14,11 @@ public class Main {
 		SchemaJoin j = new SchemaJoin("F","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
-		s.createIndex("bts", "string", 5);
+		s.createIndex("bts", "string", "salutations", 5);
 		//Joins the schema to the regular one
 		j.joinSchema(s);
 		//Creates an index in both schemas
-		j.createJoinedIndex("avl","number", 3);
+		j.createJoinedIndex("avl","number","times", 3);
 		String a = "Hello";
 		String b = "Hell";
 		String c = "Mello";
@@ -38,15 +39,17 @@ public class Main {
 		s.deleteIndex(2);
 		s.schema.print();
 		
-		System.out.println(j.joinedSearch(243));
-		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
-		System.out.println(j.joinedSearch("Hello"));
+//		System.out.println(j.joinedSearch(243));
+//		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
+//		System.out.println(j.joinedSearch("Hello"));
 		
 //		System.out.println(s.search("Hell"));
 //		System.out.println(s.deleteInIndex(1,"Hell"));
 //		System.out.println(s.search("Hell"));
 		
-		
+		JSONProtocol json = new JSONProtocol();
+		//System.out.println("heelll");
+		json.writeSchema(s);
 		
 		
 		

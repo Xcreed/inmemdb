@@ -148,6 +148,21 @@ public class BinarySearchTree <T> extends Tree{
 		return true;
 	}
 	
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(BSTNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			inOrderTraversal(current.leftChild);
+			list.append("Data: "+current+"    Key: "+current.key);
+			inOrderTraversal(current.rightChild);
+		} 
+		
+		return list.toString();
+	}
 	
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");
