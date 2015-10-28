@@ -12,7 +12,7 @@ import inmemdb.structures.Tree;
  * Asbtract class for the differents types of 
  * index. 
  * 
- * @author Juan Pablo, Randy, Alejandra
+ * @author Juan Pablo
  *
  * @param <T>
  */
@@ -22,6 +22,9 @@ public class Index <T> {
 	protected String type;
 	protected int length;
 	
+	/**
+	 *Constructor 1.
+	 */
 	public Index(String type, int length) {
 		this.type = type;
 		this.length = length;
