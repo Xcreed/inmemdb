@@ -345,5 +345,21 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(SplayNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
+		} 
+		System.out.println(list);
+		return list.toString();
+	}
+	
 	
 }

@@ -89,11 +89,6 @@ public class Schema<T> {
 	 * @param Index
 	 */
 	public boolean deleteIndex(int index) {
-
-//		if (index == 1) {
-//			schema.removeAtBeginning();
-//		}
-//		return true;
 		schema.deleteByIndex(index);
 
 		return true;

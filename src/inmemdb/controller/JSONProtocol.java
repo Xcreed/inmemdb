@@ -29,42 +29,34 @@ public class JSONProtocol {
 		JSONObject clientObj = new JSONObject();
 				
 		clientObj.put("name", table.name);
-		
+		JSONArray indexes = new JSONArray();
+		System.out.println(table.schema.getLength());
 		for (int i = 0; i < table.schema.getLength(); i++) {
 			
-			
-			JSONArray indexes = new JSONArray();
-			
 			Index index = (Index) table.schema.getItem(i);
+			
+			System.out.println(index.getClass());
 			
 			if (index instanceof IndexBTS) {
 				IndexBTS indexType = (IndexBTS) table.schema.getItem(i);
 				BinarySearchTree indexTree = indexType.getTree();
-				indexes.add("" + index.getName() + ":" + indexTree.getDataString());
+				System.out.println("Hey");
+				indexes.add("" + indexType.getName() + ": " + indexTree.getDataString());
 //				bool = indexTree.findNode(searchItem);
 			} else if (index instanceof IndexAVL) {
 				IndexAVL indexType = (IndexAVL) table.schema.getItem(i);
-				AVLTree indexTree = indexType.getTree();	
+				AVLTree indexTree = indexType.getTree();
+				indexes.add("" + indexType.getName() + ": " + indexTree.getDataString());
 //				bool = indexTree.search(searchItem);
 			} else if (index instanceof IndexSplay) {
 				IndexSplay indexType = (IndexSplay) table.schema.getItem(i);
 				SplayTree indexTree = indexType.getTree();
+				indexes.add("" + indexType.getName() + ": " + indexTree.getDataString());
 //				bool = indexTree.search(searchItem);
 			}
-			
-			JSONArray company = new JSONArray();
-//			company.add("Compnay: eBay");
-//			company.add("Compnay: Paypal");
-//			company.add("Compnay: Google");
-//			clientObj.put("Company List", company);
-			
-			clientObj.put("Index: " + i, indexes);
-//			clientObj.put("rank", rank);
-//			clientObj.put("importance", importance);
-//			clientObj.put("location", location);
-			
 		}
-		
+		clientObj.put("Indexes: ", indexes);
+
 		try (FileWriter file = new FileWriter(jsonFile,true)) {
 			file.write(clientObj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");

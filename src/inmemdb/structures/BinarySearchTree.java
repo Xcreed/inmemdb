@@ -156,13 +156,14 @@ public class BinarySearchTree <T> extends Tree{
 		StringBuilder list = new StringBuilder();
 		
 		if(current != null){
-			inOrderTraversal(current.leftChild);
-			list.append("Data: "+current+"    Key: "+current.key);
-			inOrderTraversal(current.rightChild);
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
 		} 
-		
+		System.out.println(list);
 		return list.toString();
 	}
+	
 	
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");

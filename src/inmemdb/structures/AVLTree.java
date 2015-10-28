@@ -331,4 +331,19 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(AVLNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
+		} 
+		System.out.println(list);
+		return list.toString();
+	}
 }
