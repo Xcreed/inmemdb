@@ -138,7 +138,7 @@ public class DoubleLinkedList <T> {
 		}else{
 			DoubleNode<T> temp = head;
 			if (temp != null) {
-				for (int j = 0; j < i; j++) {
+				for (int j = 1; j < i; j++) {
 					temp = temp.getNext();
 				}
 			}else{
@@ -238,29 +238,39 @@ public class DoubleLinkedList <T> {
 	 * @param pData
 	 * @return 
 	 */
-	public <U extends Number> boolean deleteByIndex(int index){
+	public boolean deleteByIndex(int index){
 		
-		DoubleLinkedList<T> activeList = this;
-		DoubleNode<T> tmp = head;
-		DoubleNode<T> element = (DoubleNode<T>) activeList.getItem(index);
-		System.out.println(index+ "," + element);
+		DoubleNode node = (DoubleNode) getItem(index);
 		
+		DoubleNode next = node.getNext();
+		DoubleNode prev = node.getPrev();
 		
-		while(tmp.getData() != element){
-			if(tmp.getData() == element && tmp.getPrev() == null){ // is at head
-				deleteBeginning();
-				break;
-			}else if(tmp.getData() == element && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
-				deleteMiddle(element);
-				break;
-			}else if(tmp.getData() == element && tmp.getNext() == null){ // is at tail
-				deleteEnd();
-				break;
-			}else{
-				tmp = tmp.getNext();
-			}
-		}
+		node = null;
+		prev.setNext(next);
+		
 		return true;
+		
+//		DoubleLinkedList<T> activeList = this;
+//		DoubleNode<T> tmp = head;
+//		DoubleNode<T> element = (DoubleNode<T>) activeList.getItem(index);
+//		System.out.println(index+ "," + element);
+//		
+//		
+//		while(tmp.getData() != element){
+//			if(tmp.getData() == element && tmp.getPrev() == null){ // is at head
+//				deleteBeginning();
+//				break;
+//			}else if(tmp.getData() == element && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
+//				deleteMiddle(element);
+//				break;
+//			}else if(tmp.getData() == element && tmp.getNext() == null){ // is at tail
+//				deleteEnd();
+//				break;
+//			}else{
+//				tmp = tmp.getNext();
+//			}
+//		}
+//		return true;
 		
 	}
 		

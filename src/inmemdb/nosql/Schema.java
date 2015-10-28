@@ -94,7 +94,7 @@ public class Schema<T> {
 //			schema.removeAtBeginning();
 //		}
 //		return true;
-		schema.delete(index);
+		schema.deleteByIndex(index);
 
 		return true;
 	}
