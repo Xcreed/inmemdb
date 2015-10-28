@@ -10,8 +10,8 @@ import inmemdb.structures.SplayTree;
 
 public class Schema<T> {
 	
-	protected String name;
-	protected DoubleLinkedList<Index> schema = new DoubleLinkedList<Index>();
+	public String name;
+	public DoubleLinkedList<Index> schema = new DoubleLinkedList<Index>();
 	protected byte[] sharedSecret;
 	protected ParameterizedType indexType;
 	protected String newFolderLoc;
@@ -42,17 +42,17 @@ public class Schema<T> {
 	 * @param length
 	 * @return
 	 */
-	public boolean createIndex(String treeType, String indexType, int length) {
+	public boolean createIndex(String treeType, String indexType, String indexName, int length) {
 		if (treeType.equals("bts")) {
-			IndexBTS bts = new IndexBTS(indexType, length);
+			IndexBTS bts = new IndexBTS(indexType, indexName, length);
 			insertIndex(bts);
 			return true;
 		} else if (treeType.equals("avl")) {
-			IndexAVL avl = new IndexAVL(indexType, length);
+			IndexAVL avl = new IndexAVL(indexType, indexName, length);
 			insertIndex(avl);
 			return true;
 		} else if (treeType.equals("splay")) {
-			IndexSplay splay = new IndexSplay(indexType, length);
+			IndexSplay splay = new IndexSplay(indexType, indexName, length);
 			insertIndex(splay);
 			return true;
 		} else if (treeType.equals("b")) {

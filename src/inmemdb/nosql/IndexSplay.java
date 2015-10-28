@@ -6,8 +6,8 @@ public class IndexSplay<T> extends Index {
 
 	protected SplayTree tree;
 
-	public IndexSplay(String type, int length) {
-		super(type, length);
+	public IndexSplay(String type, String name, int length) {
+		super(type, name, length);
 		tree = new SplayTree();
 	}
 	
@@ -34,7 +34,8 @@ public class IndexSplay<T> extends Index {
 	 * @return
 	 */
 	public boolean delete(T element) {
-		return tree.remove(element);
+		tree.delete(element);
+		return true;
 	}
 	
 	/**
