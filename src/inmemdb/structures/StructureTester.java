@@ -16,10 +16,13 @@ public class StructureTester {
 		testList.insertEnd(8);
 		testList.insertBeginning(4);
 		testList.print();
-		testList.delete(0);
+		testList.deleteBeginning();
 		testList.print();
-		testList.delete(3);
+		testList.deleteEnd();
 		testList.print();
+		
+		testList.deleteByIndex(3);
+		
 		
 		
 		

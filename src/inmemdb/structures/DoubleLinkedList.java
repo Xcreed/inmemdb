@@ -37,7 +37,7 @@ public class DoubleLinkedList <T> {
 	 * @return position
 	 */
 	
-	public <U> int positionInList(U pData){
+	public <U> int getElementPosition(U pData){
 		
 		int index = 0;
 		DoubleNode<T> tmp = head; 
@@ -129,31 +129,24 @@ public class DoubleLinkedList <T> {
 	 * Given a number, search and return the element
 	 * from the position in the list. 
 	 * @param i
-	 * @return item
+	 * @return element
 	 */
-	public T getItem(int i) {
+	public T getElement(int i) {
 		
 		if (head == tail) {
 			return (T) head.getData();
-		}
-		
-		else  {
-		
+		}else{
 			DoubleNode<T> temp = head;
-			
 			if (temp != null) {
-				for (int j = 1; j < i; j++) {
-					
+				for (int j = 0; j < i; j++) {
 					temp = temp.getNext();
 				}
-			} else {
+			}else{
 				System.out.println("Index out of reach");
 				return null;
 			}
 			return (T) temp.getData();
-
-		}
-			
+		}	
 	}
 	
 	/**
@@ -217,14 +210,14 @@ public class DoubleLinkedList <T> {
 	 * Any middle position are any position that isn't the beginning
 	 * or the end. 
 	 * @param <U>
-	 * @param pData
+	 * @param element
 	 */
-	public <U extends Number> void deleteMiddle(U pData){
+	public <U extends Number> void deleteMiddle(DoubleNode<T> element){
 		
 		DoubleNode<T> tmp = head;
-		if(contains(pData) == true){
+		if(contains(element) == true){
 			while(tmp != null){
-				if (tmp.getData() == pData){
+				if (tmp.getData() == element){
 					tmp.getPrev().setNext(tmp.getNext());
 					tmp.setPrev(null);
 					tmp.getNext().setPrev(tmp.getPrev());
@@ -245,18 +238,22 @@ public class DoubleLinkedList <T> {
 	 * @param pData
 	 * @return 
 	 */
-	public <U extends Number> boolean delete(U pData){
+	public <U extends Number> boolean deleteByIndex(int index){
+		
 		DoubleLinkedList<T> activeList = this;
 		DoubleNode<T> tmp = head;
+		DoubleNode<T> element = (DoubleNode<T>) activeList.getElement(index);
+		System.out.println(index+ "," + element);
 		
-		while(tmp != null){
-			if(tmp.getData() == pData && tmp.getPrev() == null){ // is at head
+		
+		while(tmp.getData() != element){
+			if(tmp.getData() == element && tmp.getPrev() == null){ // is at head
 				deleteBeginning();
 				break;
-			}else if(tmp.getData() == pData && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
-				deleteMiddle(pData);
+			}else if(tmp.getData() == element && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
+				deleteMiddle(element);
 				break;
-			}else if(tmp.getData() == pData && tmp.getNext() == null){ // is at tail
+			}else if(tmp.getData() == element && tmp.getNext() == null){ // is at tail
 				deleteEnd();
 				break;
 			}else{
