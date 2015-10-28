@@ -235,47 +235,44 @@ public class DoubleLinkedList <T> {
 	
 	/**
 	 * Deletes an given item from the list at any position. 
-	 * @param pData
+	 * @param index starts in 1
 	 * @return 
 	 */
 	public boolean deleteByIndex(int index){
 		
-		DoubleNode node = (DoubleNode) getItem(index);
-		
-		DoubleNode next = node.getNext();
-		DoubleNode prev = node.getPrev();
-		
-		node = null;
-		prev.setNext(next);
-		
-		return true;
-		
-//		DoubleLinkedList<T> activeList = this;
-//		DoubleNode<T> tmp = head;
-//		DoubleNode<T> element = (DoubleNode<T>) activeList.getItem(index);
-//		System.out.println(index+ "," + element);
-//		
-//		
-//		while(tmp.getData() != element){
-//			if(tmp.getData() == element && tmp.getPrev() == null){ // is at head
-//				deleteBeginning();
-//				break;
-//			}else if(tmp.getData() == element && tmp.getPrev() != null && tmp.getNext() != null){ // is at some middle
-//				deleteMiddle(element);
-//				break;
-//			}else if(tmp.getData() == element && tmp.getNext() == null){ // is at tail
-//				deleteEnd();
-//				break;
-//			}else{
-//				tmp = tmp.getNext();
-//			}
-//		}
-//		return true;
-		
+		if (index == 1) {
+			head = head.getNext();
+			return true;
+		}else{
+			DoubleNode<T> temp = head;
+			
+			for (int j = 1; j < index; j++) {
+				
+				temp = temp.getNext();
+			} 
+			
+			DoubleNode<T> next = temp.getNext();
+			DoubleNode<T> prev = temp.getPrev();
+			
+			
+			if (prev == null) {
+				temp = null;
+				head = next;
+			} else if (next == null) {
+				temp = null;
+				prev.setNext(null);
+			} else {
+				temp = null;
+				prev.setNext(next);
+			}
+			
+			System.out.println("Deleted");
+			
+			return true;
+		}
+
 	}
 		
-		
-	
 
 	/**
 	 * Return the search  element, else false.
