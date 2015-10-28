@@ -7,8 +7,8 @@ public class IndexBTS<T> extends Index{
 
 	protected BinarySearchTree tree;
 	
-	public IndexBTS(String type, int length) {
-		super(type, length);
+	public IndexBTS(String type, String name, int length) {
+		super(type, name, length);
 		tree = new BinarySearchTree();	
 		
 	}
