@@ -1,7 +1,7 @@
 package inmemdb.structures;
 
 
-public class AVLTree <T>{
+public class AVLTree <T> extends Tree{
 	public AVLNode root; 
 	public int index;
 
@@ -329,4 +329,19 @@ public class AVLTree <T>{
 		}
 	}
 
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(AVLNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
+		} 
+		System.out.println(list);
+		return list.toString();
+	}
 }

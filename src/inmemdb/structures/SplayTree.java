@@ -1,10 +1,10 @@
 package inmemdb.structures;
 
-
-public class SplayTree<T> {
+public class SplayTree<T> extends Tree {
 	SplayNode root;
 	int size;
 	int index; 
+
 	
 	public boolean isEmpty(){
 		return root == null;
@@ -343,6 +343,22 @@ public class SplayTree<T> {
 			postorderTraversal(current.rightChild);
 			System.out.println(current);
 		}
+	}
+	
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(SplayNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
+		} 
+		System.out.println(list);
+		return list.toString();
 	}
 	
 	

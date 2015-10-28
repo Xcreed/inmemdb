@@ -1,7 +1,7 @@
 package inmemdb.structures;
 
+public class BinarySearchTree <T> extends Tree{
 
-public class BinarySearchTree {
 	public BSTNode root;
 	int index;
 
@@ -146,6 +146,22 @@ public class BinarySearchTree {
 			replacement.leftChild = current.leftChild;
 		}
 		return true;
+	}
+	
+	public String getDataString() {
+		return getDataStringAux(root);
+	}
+	
+	private String getDataStringAux(BSTNode current) {
+		StringBuilder list = new StringBuilder();
+		
+		if(current != null){
+			getDataStringAux(current.leftChild);
+			list.append("Data: "+current+"--Key: "+current.key);
+			getDataStringAux(current.rightChild);
+		} 
+		System.out.println(list);
+		return list.toString();
 	}
 	
 	
