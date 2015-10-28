@@ -45,12 +45,10 @@ public class AVLTree <T>{
 	 * Insertion 
 	 */ 
 	public void insert(T data){
-		if (this.root==null){
-			return;
-		}else if (search(data)){
+		if (search(data)){
 			System.out.println("This value already exists in the tree");
 		}else{
-			root = insert2(data, this.root);
+			root = insert(data, this.root);
 			this.index++;
 		}
 		
@@ -58,12 +56,12 @@ public class AVLTree <T>{
 	
 
 	
-	private AVLNode<T> insert2(T data, AVLNode node){
+	private AVLNode<T> insert(T data, AVLNode node){
 		AVLNode newNode = new AVLNode(data, this.index+1);
 		if (node==null){       
 			node = newNode;
 		}else if(newNode.compareTo(node)>0){
-			node.leftChild = insert2(data, node.leftChild);
+			node.leftChild = insert(data, node.leftChild);
 			if (height(node.leftChild) - height (node.rightChild)==2){
 				if (newNode.compareTo(node.leftChild)>0){
 					node = rotateWithLeftChild(node);
@@ -72,7 +70,7 @@ public class AVLTree <T>{
 				}
 			}
 		}else if(newNode.compareTo(node)<0){
-			node.rightChild = insert2(data, node.rightChild);
+			node.rightChild = insert(data, node.rightChild);
 			if (height(node.rightChild)-height(node.leftChild)==2){
 				if (newNode.compareTo(node.rightChild)<0){
 					node = rotateWithRightChild(node);
