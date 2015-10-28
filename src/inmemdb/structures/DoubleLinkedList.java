@@ -131,7 +131,7 @@ public class DoubleLinkedList <T> {
 	 * @param i
 	 * @return element
 	 */
-	public T getElement(int i) {
+	public T getItem(int i) {
 		
 		if (head == tail) {
 			return (T) head.getData();
@@ -212,9 +212,9 @@ public class DoubleLinkedList <T> {
 	 * @param <U>
 	 * @param element
 	 */
-	public <U extends Number> void deleteMiddle(DoubleNode<T> element){
+	public <T> void deleteMiddle(DoubleNode<T> element) {
 		
-		DoubleNode<T> tmp = head;
+		DoubleNode<T> tmp = (DoubleNode<T>) head;
 		if(contains(element) == true){
 			while(tmp != null){
 				if (tmp.getData() == element){
@@ -242,7 +242,7 @@ public class DoubleLinkedList <T> {
 		
 		DoubleLinkedList<T> activeList = this;
 		DoubleNode<T> tmp = head;
-		DoubleNode<T> element = (DoubleNode<T>) activeList.getElement(index);
+		DoubleNode<T> element = (DoubleNode<T>) activeList.getItem(index);
 		System.out.println(index+ "," + element);
 		
 		
@@ -273,14 +273,14 @@ public class DoubleLinkedList <T> {
 	 * @param pData
 	 * @return pData
 	 */
-	public <U> boolean contains(U pData){
+	public <T> boolean contains(T pData){
 		DoubleNode<T> data = new DoubleNode<T>((T) pData);
 		boolean bool = false;
 	
 		if(isEmpty()){
 			return false;
 		}else{
-			DoubleNode<T> tmp = head; 
+			DoubleNode<T> tmp = (DoubleNode<T>) head; 
 			while(tmp != null){
 				if(tmp.getData().equals(pData)){
 					bool = true;
