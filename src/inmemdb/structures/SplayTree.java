@@ -1,21 +1,31 @@
 package inmemdb.structures;
 
+/**
+ * Class for the SplayTree. 
+ *
+ * @param <T>
+ */
 public class SplayTree<T> extends Tree {
 	SplayNode root;
 	int size;
 	int index; 
 
-	
+	/**
+	 * verify if the tree is empty.
+	 * 
+	 * @return boolean
+	 */
 	public boolean isEmpty(){
 		return root == null;
 	}
-	
+	/**
+	 * Make the tree empty.
+	 */
 	public void makeEmpty(){
 		root = null;
 	}
 	
-	
-	/*
+	/**
 	 * Compare (T only)
 	 */
 	public int compareTo(T a, T b){
@@ -23,8 +33,12 @@ public class SplayTree<T> extends Tree {
         String temp2 = b.toString();
         return temp1.compareTo(temp2);
     }
-	/**/
 	
+	/**
+	 * Gine a data, it assign a key for the new
+	 * node that will contain the data.
+	 * @param data
+	 */
 	public void insert(T data){
 		//System.out.println(data);
 		if(search(data)){
@@ -34,6 +48,15 @@ public class SplayTree<T> extends Tree {
 			insert(data, index);
 		}
 	}
+	
+	/**
+	 * Given a new data, insert its into a new node. 
+	 * Calls insert() to insert the new node into 
+	 * the tree. 
+	 * 
+	 * @param data
+	 * @param key
+	 */
 	public void insert(T data, int key){
 		System.out.println(data);
 		SplayNode newNode = new SplayNode(data, key);
@@ -44,6 +67,12 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
+	/**
+	 * Insert a new node into the tree.
+	 * 
+	 * @param newNode
+	 * @param root
+	 */
 	public void insert(SplayNode newNode, SplayNode root){
 		if(newNode.compareTo(root)<0){  ///newNode > root
 			if(root.rightChild==null){
@@ -66,7 +95,11 @@ public class SplayTree<T> extends Tree {
 		
 	}
 	
-	
+	/**
+	 * Deletes the nodes that contains the given data.
+	 * 
+	 * @param data
+	 */
 	public void delete(T data){
 		if(root==null){
 			return ;
@@ -102,6 +135,12 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
+	/**
+	 *Zig operation.
+	 * 
+	 * @param node
+	 * @return node
+	 */
 	public SplayNode zig(SplayNode node){
 		SplayNode p = node.parent;
 		SplayNode x = node;
@@ -129,6 +168,13 @@ public class SplayTree<T> extends Tree {
 		return node; 
 	}
 	
+	/**
+	 * ZigZig rotation. 
+	 * 
+	 * @param node
+	 * @param leftLeft
+	 * @return node
+	 */
 	public SplayNode zigzig(SplayNode node, boolean leftLeft){
 		SplayNode x = node; 
 		SplayNode p = node.parent;
@@ -186,6 +232,13 @@ public class SplayTree<T> extends Tree {
 		return x; 
 	}
 	
+	/**
+	 * Zizag rotation.
+	 * 
+	 * @param node
+	 * @param XRightCPLeftC
+	 * @return Node
+	 */
 	public SplayNode zigzag(SplayNode node, boolean XRightCPLeftC){
 		SplayNode x = node;
 		SplayNode p = node.parent;
@@ -256,6 +309,13 @@ public class SplayTree<T> extends Tree {
 		return x;
 	}
 	
+	/**
+	 * Apply the splay operation into a given a
+	 * node. 
+	 * 
+	 * @param node
+	 * @return node
+	 */
 	public SplayNode Splay(SplayNode node){
 		if (node.parent==null){
 			return node; 
@@ -281,7 +341,13 @@ public class SplayTree<T> extends Tree {
 			return Splay(node);
 		}
 	}
-	
+	/**
+	 * Given a data, searches if it is contain
+	 * by the tree.
+	 * 
+	 * @param data
+	 * @return boolean
+	 */
 	public boolean search(T data){
 		if(this.root==null){
 			return false;
@@ -305,12 +371,18 @@ public class SplayTree<T> extends Tree {
 		return true; 
 	}
 	
-	
+	/**
+	 * Calls inOrderTraversal().
+	 */
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");
 		inOrderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void inOrderTraversal(SplayNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
@@ -319,11 +391,18 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
+	/**
+	 * Calls preorderTraversal().
+	 */
 	public void preorderTraversal(){
 		System.out.println("Preorder traversal");
 		preorderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void preorderTraversal(SplayNode current){
 		if(current != null){
 			System.out.println(current);
@@ -332,11 +411,18 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
+	/**
+	 * Calls postOrderTraversal().
+	 */
 	public void postorderTraversal(){
 		System.out.println("Postorder traversal");
 		postorderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void postorderTraversal(SplayNode current){
 		if(current != null){
 			postorderTraversal(current.leftChild);
@@ -344,11 +430,20 @@ public class SplayTree<T> extends Tree {
 			System.out.println(current);
 		}
 	}
-	
+	/**
+	 * Calls getDataStringAux().
+	 * 
+	 * @return String
+	 */
 	public String getDataString() {
 		return getDataStringAux(root);
 	}
 	
+	/**
+	 * Returns the data of a given as a type String.
+	 * 
+	 * @return String
+	 */
 	private String getDataStringAux(SplayNode current) {
 		StringBuilder list = new StringBuilder();
 		
@@ -359,7 +454,5 @@ public class SplayTree<T> extends Tree {
 		} 
 		System.out.println(list);
 		return list.toString();
-	}
-	
-	
+	}	
 }

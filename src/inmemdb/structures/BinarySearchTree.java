@@ -1,17 +1,25 @@
 package inmemdb.structures;
 
+/**
+ * Class for the Binary Search Tree. 
+ *
+ * @param <T>
+ */
 public class BinarySearchTree <T> extends Tree{
 
 	public BSTNode root;
 	int index;
-
+	
+	/**
+	 * Constructor.
+	 */
 	public BinarySearchTree (){
 		root = null;
 		index = 0;
 	}
 	
-	/*
-	 * Compare (T only)
+	/**
+	 * Compare two given data. Both as strings.
 	 */
 	public <T> int compareTo(T a, T b){
         String temp1 = a.toString();
@@ -20,7 +28,11 @@ public class BinarySearchTree <T> extends Tree{
     }
 	
 	
-	
+	/**
+	 * Inserts a given data to the tree. 
+	 * 
+	 * @param data
+	 */
 	public <T> void addNode(T data){
 		//BSTNode newNode = new BSTNode(data, name);
 		BSTNode newNode = new BSTNode(data, this.index+1);
@@ -52,6 +64,13 @@ public class BinarySearchTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Given a data, returns the a boolean weather or 
+	 * not a node containing the data exists. 
+	 * 
+	 * @param data
+	 * @return
+	 */
 	public <T> boolean findNode(T data){
 		if(root==null){
 			return false;
@@ -69,7 +88,14 @@ public class BinarySearchTree <T> extends Tree{
 		}
 		return true;
 	}
-
+	
+	/**
+	 * Given a new node, replace a node in the tree
+	 * by the new one 
+	 * 
+	 * @param replacedNode
+	 * @return node
+	 */
 	public BSTNode getReplacementNode(BSTNode replacedNode){
 		BSTNode replacementParent = replacedNode;
 		BSTNode replacement  = replacedNode;
@@ -86,8 +112,13 @@ public class BinarySearchTree <T> extends Tree{
 		return replacement;
 	}
 	
-	
-	
+	/**
+	 * Given a data inside the tree, deletes the node
+	 * that contains the data. 
+	 * 
+	 * @param data
+	 * @return boolean
+	 */
 	public <T> boolean remove(T data){
 		BSTNode current = root;
 		BSTNode parent = root;
@@ -148,10 +179,22 @@ public class BinarySearchTree <T> extends Tree{
 		return true;
 	}
 	
+	/**
+	 * Calls getDataStringAux().
+	 * 
+	 * @return String
+	 */
 	public String getDataString() {
 		return getDataStringAux(root);
 	}
 	
+	/**
+	 * Returns as a type String the data from 
+	 * a specific node. 
+	 *  
+	 * @param current
+	 * @return
+	 */
 	private String getDataStringAux(BSTNode current) {
 		StringBuilder list = new StringBuilder();
 		
@@ -164,12 +207,18 @@ public class BinarySearchTree <T> extends Tree{
 		return list.toString();
 	}
 	
-	
+	/**
+	 * Calls inOrderTravesal().
+	 */
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");
 		inOrderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void inOrderTraversal(BSTNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
@@ -178,11 +227,18 @@ public class BinarySearchTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Calls preorderTravesarl().
+	 */
 	public void preorderTraversal(){
 		System.out.println("Preorder traversal");
 		preorderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void preorderTraversal(BSTNode current){
 		if(current != null){
 			System.out.println(current);
@@ -191,11 +247,18 @@ public class BinarySearchTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Calls postOrderTraversal().
+	 */
 	public void postorderTraversal(){
 		System.out.println("Postorder traversal");
 		postorderTraversal(root);
 	}
 	
+	/**
+	 * 
+	 * @param current
+	 */
 	public void postorderTraversal(BSTNode current){
 		if(current != null){
 			postorderTraversal(current.leftChild);
