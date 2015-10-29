@@ -13,6 +13,12 @@ public class SplayNode<T> extends Node {
 		this.rightChild=null;
 		this.parent=null;
 	}*/
+	
+	/**
+	 * Constructor
+	 * @param value
+	 * @param key
+	 */
 	public SplayNode(T value, int key){
 		super(value);
 		this.data = value;
