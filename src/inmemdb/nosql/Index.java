@@ -21,15 +21,19 @@ public class Index <T> {
 	protected Tree<?> tree;
 	protected String type;
 	protected int length;
+	protected String name;
 	
-	/**
-	 *Constructor
-	 */
-	public Index(String type, int length) {
+	
+	public Index(String type, String name, int length) {
 		this.type = type;
 		this.length = length;
+		this.name = name;
 	}
 	
+	
+	public String getName() {
+		return name;
+	}
 	/**
 	 * Insert
 	 */
