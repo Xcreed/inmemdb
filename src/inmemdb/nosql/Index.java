@@ -8,12 +8,10 @@ import java.nio.file.Paths;
 import inmemdb.structures.Tree;
 
 @SuppressWarnings({ "rawtypes" })
+
 /**
  * Asbtract class for the differents types of 
  * index. 
- * 
- * @author Juan Pablo
- *
  * @param <T>
  */
 public class Index <T> {
@@ -21,6 +19,7 @@ public class Index <T> {
 	protected Tree<?> tree;
 	protected String type;
 	protected int length;
+	
 	protected String name;
 	
 	
@@ -29,7 +28,6 @@ public class Index <T> {
 		this.length = length;
 		this.name = name;
 	}
-	
 	
 	public String getName() {
 		return name;
