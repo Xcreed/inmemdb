@@ -23,15 +23,15 @@ public class newSplayTree<T> {
     }
 	/**/
 	
-	public void insert(T data){
-		System.out.println(data);
-		SplayNode newNode = new SplayNode(data);
-		if(root == null){
-			this.root = newNode;
-		}else{
-			insert(newNode, this.root);
-		}
-	}
+//	public void insert(T data){
+//		System.out.println(data);
+//		SplayNode newNode = new SplayNode(data);
+//		if(root == null){
+//			this.root = newNode;
+//		}else{
+//			insert(newNode, this.root);
+//		}
+//	}
 	
 	public void insert(SplayNode newNode, SplayNode root){
 		if(newNode.compareTo(root)<0){  ///newNode > root

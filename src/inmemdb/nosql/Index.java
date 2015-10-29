@@ -20,8 +20,14 @@ public class Index <T> {
 	protected Tree<?> tree;
 	protected String type;
 	protected int length;
-
 	protected String name;
+	
+	/**
+	 * Index Construcutor
+	 * @param type
+	 * @param name
+	 * @param length
+	 */
 	
 	public Index(String type, String name, int length) {
 		this.type = type;
@@ -29,9 +35,15 @@ public class Index <T> {
 		this.name = name;
 	}
 	
+	/**
+	 * As a type String returns the name.
+	 * @return name
+	 */
+	
 	public String getName() {
 		return name;
 	}
+	
 	/**
 	 * Insert
 	 */
@@ -43,7 +55,6 @@ public class Index <T> {
 	  */
 	public void remove() {
 	}
-	
 	
 	/**
 	 * Converts integer to binary
@@ -127,12 +138,15 @@ public class Index <T> {
 				System.out.println("Invalid type. Index type is " + type);
 				bool = false;
 			}
-			
 		}
-		
 		return bool;
 	}
 	
+	/**
+	 * Checks the length of the index.
+	 * @param element
+	 * @return boolean
+	 */
 	private boolean checkLength(T element) {
 		if (element.toString().length() <= length) {
 			return true;

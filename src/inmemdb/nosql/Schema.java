@@ -56,8 +56,8 @@ public class Schema<T> {
 			insertIndex(splay);
 			return true;
 		} else if (treeType.equals("b")) {
-//			IndexBTS bts = new IndexBTS(indexType, length);
-//			insertIndex(bts);
+//			IndexBTS bt = new IndexBTS(indexType, length);
+//			insertIndex(bt);
 			return true;
 		} else {
 			System.out.println("Parameters invalid.");
