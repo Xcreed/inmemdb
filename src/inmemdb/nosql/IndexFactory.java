@@ -36,20 +36,23 @@ public class IndexFactory {
 	  */
 	public Index makeIndex(String treeType, String indexType, String indexName, int length){
 		if (treeType.equals("bts")) {
-			return new IndexBTS(indexType, indexName, length);
+			IndexBTS bts = new IndexBTS(indexType, indexName, length);
 			insertIndex(bts);
+			return true;
 		} else if (treeType.equals("avl")) {
-			return new IndexAVL(indexType, indexName, length);
+			IndexAVL avl = new IndexAVL(indexType, indexName, length);
 			insertIndex(avl);
+			return true;
 		} else if (treeType.equals("splay")) {
-			return new IndexSplay(indexType, indexName, length);
+			IndexSplay splay = new IndexSplay(indexType, indexName, length);
 			insertIndex(splay);
+			return true;
 		} else if (treeType.equals("b")) {
-//			return new IndexBTS(indexType, length);
+//			IndexBTS bts = new IndexBTS(indexType, length);
 //			insertIndex(bts);
+			return true;
 		} else {
 			System.out.println("Parameters invalid.");
+			return false;
 		}
-	}
-
 }
