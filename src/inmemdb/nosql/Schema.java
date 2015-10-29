@@ -8,6 +8,12 @@ import inmemdb.structures.BinarySearchTree;
 import inmemdb.structures.DoubleLinkedList;
 import inmemdb.structures.SplayTree;
 
+/**
+ *Schema class for managing the schemas the client/user will
+ *use. All actions return a boolean when performed or not. 
+ *
+ * @param <T>
+ */
 public class Schema<T> {
 	
 	public String name;
@@ -17,9 +23,8 @@ public class Schema<T> {
 	protected String newFolderLoc;
 	
 	/**
-	 * Creates a new schema
-	 * Missing folder creation, sharedSecret
-	 * abstract factory implementation
+	 * Constructor 1. 
+	 * 
 	 * @param name
 	 */
 	public Schema(String name) {
@@ -29,18 +34,24 @@ public class Schema<T> {
 		//generateSharedSecret()
 	}
 	
+	/**
+	 * Constructor 2. 
+	 * 
+	 * @param name
+	 * @param path
+	 */
 	public Schema(String name, String path) {
 		this.name = name;
 		createFolder(path);
 	}
 	
 	/**
-	 * ***Missing B trees***
-	 * Creates an index in the schema
+	 * Creates an index in the schema.
+	 * 
 	 * @param treeType bts, avl, splay, b
 	 * @param indexType char, string, number, image, video, binary
 	 * @param length
-	 * @return
+	 * @return boolean
 	 */
 	public boolean createIndex(String treeType, String indexType, String indexName, int length) {
 		if (treeType.equals("bts")) {
@@ -66,7 +77,9 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Adds an index to the schema
+	 * Adds an index to the schema.
+	 * 
+	 * @return boolean
 	 */
 	public <U extends Index> boolean insertIndex(U index) {
 		schema.insertEnd(index);
@@ -74,9 +87,11 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Delete schema
-	 * --Implement delete won't delete joined schema
-	 * @throws Throwable 
+	 * Deletes schema.
+	 * --Implement delete won't delete joined schema.--
+	 * 
+	 * @throws Throwable
+	 * @return false
 	 */
 	public boolean delete() throws Throwable {
 		schema = null;
@@ -86,7 +101,9 @@ public class Schema<T> {
 	
 	/**
 	 * Delete an index inside the schema
+	 * 
 	 * @param Index
+	 * @return boolean
 	 */
 	public boolean deleteIndex(int index) {
 		schema.deleteByIndex(index);
@@ -95,8 +112,9 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Searches an item in all the schema
-	 * --Missing Btree
+	 * Searches an item in all the schema.
+	 * 
+	 * @return boolean
 	 * @param searchItem
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -123,8 +141,10 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Inserts an element in a given index structure
+	 * Inserts an element in a given index structure.
+	 * 
 	 * @param element
+	 * @return boolean
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean insertToIndex(int containingIndex, T itemToInsert) {
@@ -147,10 +167,11 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Deletes an element in a given index (Starts in 1)
+	 * Deletes an element in a given index (starts in 1).
+	 * 
 	 * @param containingIndex
 	 * @param itemToRemove
-	 * @return
+	 * @return boolean
 	 */
 	public boolean deleteInIndex(int containingIndex, T itemToRemove) {
 		Index index;
@@ -172,7 +193,8 @@ public class Schema<T> {
 	}
 	
 	/**
-	 * Creates a folder when creating a schema
+	 * Creates a folder when creating a schema.
+	 * 
 	 * @param path
 	 */
 	private void createFolder(String path) {
@@ -185,5 +207,4 @@ public class Schema<T> {
 			System.out.println("Folder created succesfully");
 		}
 	}
-
 }

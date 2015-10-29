@@ -11,8 +11,9 @@ import inmemdb.structures.Tree;
 @SuppressWarnings({ "rawtypes" })
 
 /**
- * Asbtract class for the differents types of 
+ * Abstract class for the different types of 
  * index. 
+ * 
  * @param <T>
  */
 public class Index <T> {
@@ -23,7 +24,8 @@ public class Index <T> {
 	protected String name;
 	
 	/**
-	 * Index Construcutor
+	 * Constructor.
+	 * 
 	 * @param type
 	 * @param name
 	 * @param length
@@ -37,6 +39,7 @@ public class Index <T> {
 	
 	/**
 	 * As a type String returns the name.
+	 * 
 	 * @return name
 	 */
 	
@@ -144,6 +147,7 @@ public class Index <T> {
 	
 	/**
 	 * Checks the length of the index.
+	 * 
 	 * @param element
 	 * @return boolean
 	 */
@@ -158,7 +162,8 @@ public class Index <T> {
 	
 	/**
 	 * Checks if the image in the indicated path 
-	 * is format .jpeg
+	 * is format .jpeg.
+	 * 
 	 * @param imagePath
 	 * @return
 	 */
@@ -168,7 +173,7 @@ public class Index <T> {
 		if (fileType.equals("image/jpeg")){
 			System.out.println("Valid image type");
 			return true;
-		} else {
+		}else{
 			System.out.println("Only .jpeg images");
 			return false;
 		}
@@ -176,24 +181,26 @@ public class Index <T> {
 	
 	/**
 	 * Checks if the image in the indicated path 
-	 * is format .mp4
+	 * is format .mp4.
+	 * 
 	 * @param imagePath
-	 * @return
+	 * @return boolean
 	 */
 	private <T extends String> boolean isVideo(T element) {
 		String fileType = getFileType(element);
 		if (fileType.equals("video/mp4")){
 			System.out.println("Valid image type");
 			return true;
-		} else {
+		}else{
 			System.out.println("Only .mp4 images");
 			return false;
 		}
 	}
 	
 	/**
-	 * Checks the type of file
-	 * Usable for image/video files
+	 * Checks the type of file.
+	 * Usable for image/video files.
+	 * 
 	 * @param fileName
 	 * @return
 	 * @throws IOException 
@@ -204,22 +211,22 @@ public class Index <T> {
 		String fileType = null;
 		try {
 			fileType = Files.probeContentType(filePath);
-		} catch (IOException e) {
+		}catch (IOException e){
 			e.printStackTrace();
 		}
-		
 		return fileType;
 	}
 	
 	/**
 	 * For inserting in a tree
-	 * Letting know if the type is binary
+	 * Letting know if the type is binary.
+	 * 
 	 * @return
 	 */
 	protected boolean isBinary() {
 		if (type.equals("binary")) {
 			return true;
-		} else {
+		}else{
 			return false;
 		}
 	}
