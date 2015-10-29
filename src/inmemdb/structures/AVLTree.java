@@ -1,6 +1,10 @@
 package inmemdb.structures;
 
-
+/**
+ * Class for the AVL Tree.
+ *
+ * @param <T>
+ */
 public class AVLTree <T> extends Tree{
 	public AVLNode root; 
 	public int index;
@@ -11,19 +15,28 @@ public class AVLTree <T> extends Tree{
 	}
 	
 	
-	/*
-	 * Empty
+	/**
+	 * Checks if the tree is empty. 
+	 * @return boolean
 	 */
 	public boolean isEmpty(){
-		return root==null;
+		return (root == null);
 	}
 	
+	/**
+	 * Makes the tree empty by appointing
+	 * the root to null. 
+	 */
 	public void makeEmpty(){
 		root=null;
 	}
 	
-	/*
-	 * Height 
+	/**
+	 * Return the height of a given node
+	 * of the tree. 
+	 * 
+	 * @param node
+	 * @return int
 	 */
 	private int height(AVLNode node){
 		if (node==null){
@@ -33,6 +46,14 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Given to sibling nodes, returns which
+	 * has the bigger element.
+	 * 
+	 * @param leftNode
+	 * @param rightNode
+	 * @return int
+	 */
 	private int max (int leftNode, int rightNode){
 		if (leftNode < rightNode){
 			return rightNode;
@@ -41,14 +62,19 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
-	/*
-	 * Insertion 
-	 */ 
+	/**
+	 * Inserts data to the tree.
+	 * (1) checks if the tree is empty,
+	 * (2) checks if the given data exist,
+	 * (3) calls insert2() to insert the data.
+	 * 
+	 * @param data
+	 */
 	public void insert(T data){
 		if (this.root==null){
 			return;
 		}else if (search(data)){
-			System.out.println("This value already exists in the tree");
+			System.out.println("This value already exists in the tree.");
 		}else{
 			root = insert2(data, this.root);
 			this.index++;
@@ -56,7 +82,13 @@ public class AVLTree <T> extends Tree{
 		
 	}
 	
-
+	/**
+	 * Called by insert(). Inserts the data.
+	 * 
+	 * @param data
+	 * @param node
+	 * @return node
+	 */
 	
 	private AVLNode<T> insert2(T data, AVLNode node){
 		AVLNode newNode = new AVLNode(data, this.index+1);
@@ -85,11 +117,13 @@ public class AVLTree <T> extends Tree{
 		return node;
 	}
 
-	/*
-	 * Rotations
+	/**
+	 * Makes a rotation with the left child
+	 * of a given node. 
+	 * 
+	 * @param k2
+	 * @return node
 	 */
-	
-	//With T
 	private AVLNode rotateWithLeftChild(AVLNode k2){
 		AVLNode k1 = k2.leftChild;
 		k2.leftChild = k1.rightChild;
@@ -99,7 +133,13 @@ public class AVLTree <T> extends Tree{
 		return k1;
 	}
 	
-	
+	/**
+	 * Makes a rotation with the right child
+	 * of a given node.
+	 * 
+	 * @param k1
+	 * @return node
+	 */
 	private AVLNode rotateWithRightChild(AVLNode k1){
         AVLNode k2 = k1.rightChild;
         k1.rightChild = k2.leftChild;
@@ -109,26 +149,46 @@ public class AVLTree <T> extends Tree{
         return k2;
     }
 	
-	
+	/**
+	 * Makes a double rotation with the left child 
+	 * of given node. 
+	 * 
+	 * @param k3
+	 * @return node
+	 */
 	private AVLNode doubleWithLeftChild(AVLNode k3){
         k3.leftChild = rotateWithRightChild( k3.leftChild );
         return rotateWithLeftChild( k3 );
     }
 	
+	/**
+	 * Makes a double rotation with the right child 
+	 * of a given node. 
+	 * @param k1
+	 * @return node
+	 */
 	private AVLNode doubleWithRightChild(AVLNode k1)
     {
         k1.rightChild = rotateWithLeftChild( k1.rightChild );
         return rotateWithRightChild( k1 );
     }
 	
-	/*
-	 * Size
+	/**
+	 * Returns the size of the tree. 
+	 * Invoque size(root) for the number.
+	 * @return int
 	 */
 	public int size(){
 		return size(this.root);
 	}
 	
-	//With T
+	/**
+	 * Return the size of the tree by counting from 
+	 * the root. 
+	 * 
+	 * @param root
+	 * @return int
+	 */
 	public int size(AVLNode root){
 		if(root==null){
 			return 0;
@@ -140,11 +200,13 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
-	/*
-	 * Search 
+	/**
+	 * Searches inside the tree the given data, 
+	 * invoque search(data, root) for the boolean.
+	 * 
+	 * @param value
+	 * @return boolean
 	 */
-	
-	//With T
 	public boolean search(T value){
 		if(root ==null){
 			return false;
@@ -153,6 +215,14 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Given a data, searches it inside the tree
+	 * starting by the root.
+	 * 
+	 * @param root
+	 * @param value
+	 * @return boolean
+	 */
 	public boolean search(AVLNode root, T value){
 		boolean found = false; 
 		while((root!=null)&&!found){
@@ -170,8 +240,13 @@ public class AVLTree <T> extends Tree{
 		return found;
 	}
 	
-	/*
-	 * Compare (T only)
+	/**
+	 * Given two data values, changes them
+	 * into string to compare them.
+	 * 
+	 * @param a
+	 * @param b
+	 * @return int
 	 */
 	public int compareTo(T a, T b){
         String temp1 = a.toString();
@@ -179,10 +254,11 @@ public class AVLTree <T> extends Tree{
         return temp1.compareTo(temp2);
     }
 	
-	/*
-	 * Balance Factor
+	/**
+	 * Returns the balance factor of the tree. 
+	 * @param node
+	 * @return int
 	 */
-	
 	public int balanceFactor(AVLNode node){   		/// node can't be null 
 		int LCHeight=0, RCHeight=0;
 		if(node.leftChild!=null){
@@ -193,10 +269,6 @@ public class AVLTree <T> extends Tree{
 		return RCHeight-LCHeight;
 	}
 	
-	/*
-	 * findMax
-	 */
-	
 	private AVLNode findMax( AVLNode node){
         if( node == null )
             return node;
@@ -206,11 +278,12 @@ public class AVLTree <T> extends Tree{
         return node;
     }
 	
-	/*
-	 * Deletion
+	/**
+	 * Removes an element of the tree. Invoque
+	 * remove(value, node).
+	 * @param data
+	 * @return boolean
 	 */
-	
-	
 	public boolean remove( T data ) {
 	      root = remove(data, root);
 	      if (root!=null){
@@ -220,6 +293,14 @@ public class AVLTree <T> extends Tree{
 	      }
 	}
 	
+	/**
+	 * Searches for the element inside the tree for 
+	 * deletion. Starts from the root.
+	 * 
+	 * @param value
+	 * @param node
+	 * @return node
+	 */
 	public AVLNode remove(T value, AVLNode node) {
 		if (node==null)    {
 			return null;
@@ -279,13 +360,17 @@ public class AVLTree <T> extends Tree{
 	  		
 	}
 	
-	/*
-	 * Print
+	/**
+	 * Calls inorder().
 	 */
 	public void inorder(){
 		inorder(root);
 	}
 	
+	/**
+	 * Prints the order of the nodes. 
+	 * @param root
+	 */
 	public void inorder(AVLNode root){
 		if(root != null){
 			inorder(root.leftChild);
@@ -294,10 +379,18 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Calls inorder2().
+	 */
 	public void inorder2(){
 		inorder2(root);
 	}
 	
+	/**
+	 * Prints the order of the nodes. 
+	 * 
+	 * @param root
+	 */
 	public void inorder2(AVLNode root){
 		if(root != null){
 			inorder(root.rightChild);
@@ -306,10 +399,17 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
+	/**
+	 * Calls Preorder().
+	 */
 	public void preorder(){
 		preorder(root);
 	}
 	
+	/**
+	 * 
+	 * @param root
+	 */
 	public void preorder(AVLNode root){
 		if (root != null){
 			System.out.println("Data: "+root.data + "  Key: "+ root.key);
@@ -318,7 +418,9 @@ public class AVLTree <T> extends Tree{
 		}
 	}
 	
-	
+	/**
+	 * Calls postorder().
+	 */
 	public void postorder(){
 		postorder(root);
 	}
@@ -330,11 +432,22 @@ public class AVLTree <T> extends Tree{
 			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 		}
 	}
-
+	
+	/**
+	 * Calls getDataStringAux().
+	 * 
+	 * @return String
+	 */
 	public String getDataString() {
 		return getDataStringAux(root);
 	}
 	
+	/**
+	 * Returns the data of the given node as a String. 
+	 * 
+	 * @param current
+	 * @return String 
+	 */
 	private String getDataStringAux(AVLNode current) {
 		StringBuilder list = new StringBuilder();
 		

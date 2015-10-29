@@ -1,5 +1,11 @@
 package inmemdb.structures;
 
+/**
+ * Node class for the SplayTree.
+ * 
+ * @param <T>
+ */
+
 public class SplayNode<T> extends Node {
 	public SplayNode leftChild;
 	public SplayNode rightChild;
@@ -16,6 +22,7 @@ public class SplayNode<T> extends Node {
 	
 	/**
 	 * Constructor
+	 * 
 	 * @param value
 	 * @param key
 	 */
@@ -29,8 +36,9 @@ public class SplayNode<T> extends Node {
 	}
 	
 	/**
-	 * toString allows the data to be printed as
-	 * a String.
+	 *Return the data a type String.
+	 * 
+	 * @return String
 	 */
 	public String toString(){
 		return ""+ data; 
