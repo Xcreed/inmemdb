@@ -9,16 +9,10 @@ import java.nio.file.Paths;
 import inmemdb.structures.Tree;
 
 @SuppressWarnings({ "rawtypes" })
+
 /**
  * Asbtract class for the differents types of 
  * index. 
- * 
-<<<<<<< HEAD
- * @author Juan Pablo
-=======
- * @author Juan Pablo, Randy
->>>>>>> branch 'master' of https://github.com/Xcreed/inmemdb.git
- *
  * @param <T>
  */
 public class Index <T> {

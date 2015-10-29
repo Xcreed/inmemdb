@@ -2,7 +2,7 @@ package inmemdb.nosql;
 
 import inmemdb.structures.AVLTree;
 
-public class IndexAVL <T> extends Index {
+public class IndexAVL <T> extends Index{
 	
 	private AVLTree tree;
 	
