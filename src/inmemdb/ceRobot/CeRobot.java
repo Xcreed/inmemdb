@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
@@ -20,6 +21,7 @@ import com.itextpdf.text.pdf.parser.TextExtractionStrategy;
 
 import inmemdb.nosql.Index;
 import inmemdb.nosql.Schema;
+import inmemdb.structures.BinarySearchTree;
 
 
 @SuppressWarnings("deprecation")
@@ -31,7 +33,7 @@ public class CeRobot {
 	private File text = new File("res/text.txt");
 	private File tmpWords = new File("res/tmpWords.txt");
 	private String arrayString[];
-	private Schema pdfSchema = new Schema("Pdf", "C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+	public Schema pdfSchema = new Schema("Pdf", "C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
 	
 	/**
 	 * Opens a folder
@@ -71,7 +73,7 @@ public class CeRobot {
 	 * @param guide
 	 */
 	public void operations(File f) {
-		pdfSchema.createIndex("bts", "string", f.getName(), 5);
+		pdfSchema.createIndex("bts", "string", f.getName(), 7);
 //		Index index = (Index) pdfSchema.schema.getItem(1);
 //		System.out.println(index.getName());
 	}
@@ -130,12 +132,19 @@ public class CeRobot {
 		InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
 		BufferedReader br = new BufferedReader(isr)) {
 	    String line;
-	    		    
+	    String wordsString[];
 	    while ((line = br.readLine()) != null) {
 	    	System.out.println("------------------------------------ Hye");
 	    	
+	    	wordsString = line.split(",");
 	    	
-	    	System.out.println(line);
+	    	for (int i = 0; i < wordsString.length; i++) {
+	    		pdfSchema.insertToIndex(schemaIndex, wordsString[i]);
+	    	}
+	    	Index index = (Index) pdfSchema.schema.getItem(schemaIndex);
+	    	BinarySearchTree t = (BinarySearchTree) index.getTree();
+	    	System.out.println("-------------------------");
+	    	//t.inOrderTraversal();
 	    	
 	    	}
 		}catch (Exception e){ 
