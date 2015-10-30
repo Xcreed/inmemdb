@@ -207,4 +207,31 @@ public class Schema<T> {
 			System.out.println("Folder created succesfully");
 		}
 	}
+	
+	/**
+	 * Gets the data in a given line
+	 * Not working for join tables
+	 * @param lineNumber
+	 */
+	public void getLine(int lineNumber) {
+		DoubleLinkedList line = new DoubleLinkedList();
+
+		for (int i = 0; i < schema.getLength(); i++) {
+			Index index = schema.getItem(i);
+			if (index instanceof IndexBTS) {
+				IndexBTS indexType = (IndexBTS) schema.getItem(i);
+				BinarySearchTree indexTree = indexType.getTree();
+				line.insertEnd(indexTree.keyBST.searchKeyReturnValue(lineNumber));
+			} else if (index instanceof IndexAVL) {
+				IndexAVL indexType = (IndexAVL) schema.getItem(i);
+				AVLTree indexTree = indexType.getTree();	
+				
+			} else if (index instanceof IndexSplay) {
+				IndexSplay indexType = (IndexSplay) schema.getItem(i);
+				
+			}
+			
+		}
+		line.print();
+	}
 }

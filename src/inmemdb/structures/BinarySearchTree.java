@@ -145,8 +145,8 @@ public class BinarySearchTree <T> extends Tree{
 	 */
 	public <T> boolean remove(T data){
 		keyBST.remove(SearchKeyOfValue(data));
-		System.out.println("here");
-		System.out.println("remove from BiSeTr");
+//		System.out.println("here");
+//		System.out.println("remove from BiSeTr");
 		
 		BSTNode current = root;
 		BSTNode parent = root;
