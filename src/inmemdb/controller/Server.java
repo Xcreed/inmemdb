@@ -27,7 +27,6 @@ public class Server implements Runnable{
 				serverReader SerReader = new serverReader(serSocket);
 				serWriter.sendMessage("Sent from Server");
 				
-				
 			 }
 		}catch(Exception e){
 			System.out.println("Error in server class: "+ e);
