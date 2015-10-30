@@ -1,45 +1,19 @@
 package inmemdb.structures;
 
-/**
- * Class for the Binary Search Tree. 
- *
- * @param <T>
- */
-public class BinarySearchTree <T> extends Tree{
+
+public class keyBSTree {
 	
-	public keyBSTree keyBST;
 	public BSTNode root;
 	int index;
 	
-	/**
-	 * Constructor.
-	 */
-	public BinarySearchTree (){
+	public keyBSTree (){
 		root = null;
 		index = 0;
-		keyBST = new keyBSTree ();
 	}
 	
-	/**
-	 * Compare two given data. Both as strings.
-	 */
-	public <T> int compareTo(T a, T b){
-        String temp1 = a.toString();
-        String temp2 = b.toString();
-        return temp1.compareTo(temp2);
-    }
-	
-	
-	/**
-	 * Inserts a given data to the tree. 
-	 * 
-	 * @param data
-	 */
 	public <T> void addNode(T data){
 		//BSTNode newNode = new BSTNode(data, name);
-		keyBST.addNode(data);
 		BSTNode newNode = new BSTNode(data, this.index+1);
-		
 		if (root == null){
 			root = newNode;
 			this.index++;
@@ -49,7 +23,7 @@ public class BinarySearchTree <T> extends Tree{
 			
 			while(true){
 				parent = current;
-				if(compareTo(data, current.data)>0){
+				if(newNode.key < current.key){
 					current = current.leftChild;
 					if(current == null){
 						parent.leftChild = newNode;
@@ -68,20 +42,13 @@ public class BinarySearchTree <T> extends Tree{
 		}
 	}
 	
-	/**
-	 * Given a data, returns the a boolean weather or 
-	 * not a node containing the data exists. 
-	 * 
-	 * @param data
-	 * @return
-	 */
-	public <T> boolean findNode(T data){
+	public <T> boolean findNode(int key){
 		if(root==null){
 			return false;
 		}
 		BSTNode current = root;
-		while (current.data != data){
-			if (compareTo(data, current.data)>0){
+		while (current.key != key){
+			if (key < current.key){
 				current = current.leftChild;
 			}else{
 				current = current.rightChild;
@@ -93,32 +60,24 @@ public class BinarySearchTree <T> extends Tree{
 		return true;
 	}
 	
-	public <T> int SearchKeyOfValue(T data){
+	public <T> T searchKeyReturnValue(int key){
 		if(root==null){
-			return -1;
+			return null;
 		}
 		BSTNode current = root;
-		while (current.data != data){
-			if (compareTo(data, current.data)>0){
+		while (current.key != key){
+			if (key < current.key){
 				current = current.leftChild;
 			}else{
 				current = current.rightChild;
 			}
 			if (current == null){
-				return -1;
+				return null;
 			}
 		}
-		return current.key;
-		
+		return (T) current.data;
 	}
-
-	/**
-	 * Given a new node, replace a node in the tree
-	 * by the new one 
-	 * 
-	 * @param replacedNode
-	 * @return node
-	 */
+	
 	public BSTNode getReplacementNode(BSTNode replacedNode){
 		BSTNode replacementParent = replacedNode;
 		BSTNode replacement  = replacedNode;
@@ -134,31 +93,20 @@ public class BinarySearchTree <T> extends Tree{
 		}
 		return replacement;
 	}
-	
-
-	/**
-	 * Given a data inside the tree, deletes the node
-	 * that contains the data. 
-	 * 
-	 * @param data
-	 * @return boolean
-	 */
-	public <T> boolean remove(T data){
-		keyBST.remove(SearchKeyOfValue(data));
-		System.out.println("here");
-		System.out.println("remove from BiSeTr");
-		
+	 
+	public <T> boolean remove(int key){
 		BSTNode current = root;
 		BSTNode parent = root;
+		
 		
 		if(root == null){
 			return false;
 		}
 		
 		boolean isItALeftChild = true;
-		while(current.data != data){
+		while(current.key != key){
 			parent = current;
-			if(compareTo(data, current.data)>0){
+			if(key < current.key){
 				isItALeftChild = true;
 				current = current.leftChild;
 			}else{
@@ -191,6 +139,7 @@ public class BinarySearchTree <T> extends Tree{
 			}else if (isItALeftChild){
 				parent.leftChild = current.rightChild;
 			}else{
+				
 				parent.rightChild = current.rightChild;
 			}
 		}else{
@@ -207,91 +156,17 @@ public class BinarySearchTree <T> extends Tree{
 		return true;
 	}
 	
-	/**
-	 * Calls getDataStringAux().
-	 * 
-	 * @return String
-	 */
-	public String getDataString() {
-		return getDataStringAux(root);
-	}
-	
-	/**
-	 * Returns as a type String the data from 
-	 * a specific node. 
-	 *  
-	 * @param current
-	 * @return
-	 */
-	private String getDataStringAux(BSTNode current) {
-		StringBuilder list = new StringBuilder();
-		
-		if(current != null){
-			getDataStringAux(current.leftChild);
-			list.append("Data: "+current+"--Key: "+current.key);
-			getDataStringAux(current.rightChild);
-		} 
-		System.out.println(list);
-		return list.toString();
-	}
-	
-	/**
-	 * Calls inOrderTravesal().
-	 */
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");
 		inOrderTraversal(root);
 	}
 	
-	/**
-	 * 
-	 * @param current
-	 */
-	public void inOrderTraversal(BSTNode current){
+	private void inOrderTraversal(BSTNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
 			System.out.println("Data: "+current+"    Key: "+current.key);
 			inOrderTraversal(current.rightChild);
 		}
 	}
-	
-	/**
-	 * Calls preorderTravesarl().
-	 */
-	public void preorderTraversal(){
-		System.out.println("Preorder traversal");
-		preorderTraversal(root);
-	}
-	
-	/**
-	 * 
-	 * @param current
-	 */
-	public void preorderTraversal(BSTNode current){
-		if(current != null){
-			System.out.println(current);
-			preorderTraversal(current.leftChild);
-			preorderTraversal(current.rightChild);
-		}
-	}
-	
-	/**
-	 * Calls postOrderTraversal().
-	 */
-	public void postorderTraversal(){
-		System.out.println("Postorder traversal");
-		postorderTraversal(root);
-	}
-	
-	/**
-	 * 
-	 * @param current
-	 */
-	public void postorderTraversal(BSTNode current){
-		if(current != null){
-			postorderTraversal(current.leftChild);
-			postorderTraversal(current.rightChild);
-			System.out.println(current);
-		}
-	}
+
 }

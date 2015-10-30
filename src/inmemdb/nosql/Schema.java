@@ -53,7 +53,7 @@ public class Schema<T> {
 	 * @param length
 	 * @return boolean
 	 */
-	public boolean createIndex(String treeType, String indexType, String indexName, int length) {
+	public boolean createIndex(String treeType, String indexType, String indexName, int length) {           //$$##$##$#
 		if (treeType.equals("bts")) {
 			IndexBTS bts = new IndexBTS(indexType, indexName, length);
 			insertIndex(bts);
@@ -118,7 +118,7 @@ public class Schema<T> {
 	 * @param searchItem
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public boolean search(T searchItem) {
+	public boolean search(T searchItem) {										//$$##$##$#
 		Index index;
 		boolean bool = false;
 		for (int i = 0; i < schema.getLength(); i++) {
@@ -147,7 +147,7 @@ public class Schema<T> {
 	 * @return boolean
 	 */
 	@SuppressWarnings("rawtypes")
-	public boolean insertToIndex(int containingIndex, T itemToInsert) {
+	public boolean insertToIndex(int containingIndex, T itemToInsert) {                                           //$$##$##$#
 		Index index = schema.getItem(containingIndex);
 		boolean bool = false;
 		
