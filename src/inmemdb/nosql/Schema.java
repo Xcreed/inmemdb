@@ -217,7 +217,7 @@ public class Schema<T> {
 	public void getLine(int lineNumber) {
 		DoubleLinkedList line = new DoubleLinkedList();
 
-		for (int i = 0; i < schema.getLength(); i++) {
+		for (int i = 1; i < schema.getLength(); i++) {
 			Index index = schema.getItem(i);
 			if (index instanceof IndexBTS) {
 				IndexBTS indexType = (IndexBTS) schema.getItem(i);

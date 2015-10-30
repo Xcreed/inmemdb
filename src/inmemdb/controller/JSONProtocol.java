@@ -30,7 +30,7 @@ public class JSONProtocol <T>{
 				
 		clientObj.put("name", table.name);
 		JSONArray indexes = new JSONArray();
-		System.out.println(table.schema.getLength());
+
 		for (int i = 1; i < table.schema.getLength(); i++) {
 			
 			Index index = (Index) table.schema.getItem(i);
@@ -40,7 +40,6 @@ public class JSONProtocol <T>{
 			if (index instanceof IndexBTS) {
 				IndexBTS indexType = (IndexBTS) table.schema.getItem(i);
 				BinarySearchTree indexTree = indexType.getTree();
-				System.out.println("Hey I'm  in Json protocol");
 				for (int j = 1; j < 4; j++) {
 					T data = indexTree.keyBST.searchKeyReturnValue(j);
 					indexes.add(indexType.getName() + ": " + data);
@@ -66,7 +65,7 @@ public class JSONProtocol <T>{
 		clientObj.put("Indexes: ", indexes);
 
 		System.out.println("If this fails, you're not using Windows");
-		File schemaFile = new File(table.getSchemaLocation() + "\\" + table.name + ".txt");
+		File schemaFile = new File(table.getSchemaLocation() + "\\" + table.name + ".json");
 		try (FileWriter file = new FileWriter(schemaFile)) {
 			file.write(clientObj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");

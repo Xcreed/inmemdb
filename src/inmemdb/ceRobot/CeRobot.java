@@ -16,7 +16,6 @@ import com.itextpdf.text.pdf.parser.PdfReaderContentParser;
 import com.itextpdf.text.pdf.parser.SimpleTextExtractionStrategy;
 import com.itextpdf.text.pdf.parser.TextExtractionStrategy;
 
-import inmemdb.nosql.Index;
 import inmemdb.nosql.Schema;
 
 
@@ -50,15 +49,21 @@ public class CeRobot {
 	 */
 	public void readFiles() throws IOException {
 		for (File f : contents) {
-			pdfSchema.createIndex("bts", "string", f.getName(), 4);
-			Index index =(Index) pdfSchema.schema.getItem(1);
-			System.out.println(index.getName());
 			extractText(f.getAbsolutePath());
-			System.out.println("Help");
 		}
         PrintWriter out = new PrintWriter(new FileOutputStream(text.getAbsolutePath(), false));
         out.flush();
         out.close();
+	}
+	
+	/**
+	 * Creates an index for each pdf file in the folder
+	 * Creates a Binary Search Tree with a limit to 5 letter words
+	 * @param f
+	 * @param guide
+	 */
+	public void operations(File f) {
+		pdfSchema.createIndex("bts", "string", f.getName(), 5);
 	}
 	
 	/**

@@ -24,6 +24,7 @@ public class Main {
 		s.insertToIndex(1, "JP");
 		s.insertToIndex(1, "Randy");
 		s.insertToIndex(1, "Alejandra");
+//		s.insertToIndex(1, "Xcreed");
 		s.insertToIndex(2, 1996);
 		s.insertToIndex(2, 1995);
 		s.insertToIndex(2, 1997);
@@ -63,7 +64,7 @@ public class Main {
 		
 		//Deletes an index in the schema
 //		s.schema.print();
-//		s.deleteIndex(2);
+//		s.deleteIndex(1);
 //		s.schema.print();
 		
 // ***********Activate Separately**********
