@@ -41,11 +41,17 @@ public class JSONProtocol {
 				IndexBTS indexType = (IndexBTS) table.schema.getItem(i);
 				BinarySearchTree indexTree = indexType.getTree();
 				System.out.println("Hey");
+//				for (int j = 0; j < 5; j++) {
+//					//indexTree.
+//				}
 				indexes.add("" + indexType.getName() + ": " + indexTree.getDataString());
 //				bool = indexTree.findNode(searchItem);
 			} else if (index instanceof IndexAVL) {
 				IndexAVL indexType = (IndexAVL) table.schema.getItem(i);
 				AVLTree indexTree = indexType.getTree();
+				for (int j = 0; j < 5; j++) {
+					indexTree.
+				}
 				indexes.add("" + indexType.getName() + ": " + indexTree.getDataString());
 //				bool = indexTree.search(searchItem);
 			} else if (index instanceof IndexSplay) {
