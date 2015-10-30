@@ -1,13 +1,15 @@
 package inmemdb.structures;
 
 public class BinarySearchTree <T> extends Tree{
-
+	
+	public keyBSTree keyBST;
 	public BSTNode root;
 	int index;
 
 	public BinarySearchTree (){
 		root = null;
 		index = 0;
+		keyBST = new keyBSTree ();
 	}
 	
 	/*
@@ -23,7 +25,9 @@ public class BinarySearchTree <T> extends Tree{
 	
 	public <T> void addNode(T data){
 		//BSTNode newNode = new BSTNode(data, name);
+		keyBST.addNode(data);
 		BSTNode newNode = new BSTNode(data, this.index+1);
+		
 		if (root == null){
 			root = newNode;
 			this.index++;
@@ -69,6 +73,27 @@ public class BinarySearchTree <T> extends Tree{
 		}
 		return true;
 	}
+	
+	public <T> int SearchKeyOfValue(T data){
+		if(root==null){
+			return -1;
+		}
+		BSTNode current = root;
+		while (current.data != data){
+			if (compareTo(data, current.data)>0){
+				current = current.leftChild;
+			}else{
+				current = current.rightChild;
+			}
+			if (current == null){
+				return -1;
+			}
+		}
+		return current.key;
+		
+		
+		
+	}
 
 	public BSTNode getReplacementNode(BSTNode replacedNode){
 		BSTNode replacementParent = replacedNode;
@@ -88,7 +113,12 @@ public class BinarySearchTree <T> extends Tree{
 	
 	
 	
+	
 	public <T> boolean remove(T data){
+		keyBST.remove(SearchKeyOfValue(data));
+		System.out.println("here");
+		System.out.println("remove from BiSeTr");
+		
 		BSTNode current = root;
 		BSTNode parent = root;
 		
@@ -132,7 +162,7 @@ public class BinarySearchTree <T> extends Tree{
 			}else if (isItALeftChild){
 				parent.leftChild = current.rightChild;
 			}else{
-				parent.rightChild = current.leftChild;
+				parent.rightChild = current.rightChild;
 			}
 		}else{
 			BSTNode replacement = getReplacementNode(current);
@@ -170,7 +200,7 @@ public class BinarySearchTree <T> extends Tree{
 		inOrderTraversal(root);
 	}
 	
-	public void inOrderTraversal(BSTNode current){
+	private void inOrderTraversal(BSTNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
 			System.out.println("Data: "+current+"    Key: "+current.key);
@@ -183,7 +213,7 @@ public class BinarySearchTree <T> extends Tree{
 		preorderTraversal(root);
 	}
 	
-	public void preorderTraversal(BSTNode current){
+	private void preorderTraversal(BSTNode current){
 		if(current != null){
 			System.out.println(current);
 			preorderTraversal(current.leftChild);
@@ -196,7 +226,7 @@ public class BinarySearchTree <T> extends Tree{
 		postorderTraversal(root);
 	}
 	
-	public void postorderTraversal(BSTNode current){
+	private void postorderTraversal(BSTNode current){
 		if(current != null){
 			postorderTraversal(current.leftChild);
 			postorderTraversal(current.rightChild);

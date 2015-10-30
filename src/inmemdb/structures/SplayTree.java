@@ -2,9 +2,17 @@ package inmemdb.structures;
 
 public class SplayTree<T> extends Tree {
 	SplayNode root;
+	keySPTree keySP;
 	int size;
 	int index; 
 
+	
+	public SplayTree(){
+		this.root = null;
+		this.keySP = new keySPTree();
+		this.size = 0;
+		this.index = 0;
+	}
 	
 	public boolean isEmpty(){
 		return root == null;
@@ -31,11 +39,13 @@ public class SplayTree<T> extends Tree {
 			System.out.println("This node already exists ");
 		}else{
 			index++;
+			keySP.insert(data, index);
 			insert(data, index);
+			
 		}
 	}
+	
 	public void insert(T data, int key){
-		System.out.println(data);
 		SplayNode newNode = new SplayNode(data, key);
 		if(root == null){
 			this.root = newNode;
@@ -66,45 +76,124 @@ public class SplayTree<T> extends Tree {
 		
 	}
 	
+	public int SearchKeyOfValue(T value){
+		if(root ==null){
+			return -1;
+		}else{
+			return SearchKeyOfValue(root, value);
+		}
+	}
+	
+	public int SearchKeyOfValue(SplayNode root, T value){
+		boolean found = false; 
+		while((root!=null)&&!found){
+			T rootvalue = (T) root.data;
+			if (compareTo(value, rootvalue)>0){
+				root = root.leftChild;
+			}else if (compareTo(value, rootvalue)<0){
+				root = root.rightChild;
+			}else{
+				found = true;
+				break;
+			}
+		}
+		if(found){
+			return root.key;
+		}else{
+			return -1;
+		}
+		
+	}
+	
+
+	
 	
 	public void delete(T data){
 		if(root==null){
 			return ;
 		}
 		SplayNode current = root;
-		while(current.data!=data){
-			if (compareTo((T) current.data, data)<0){
+		while(current.data!=data){   
+			if (compareTo((T) current.data,data)<0){
 				current = current.leftChild;
 			}else{
 				current = current.rightChild;
 			}
 		}
 		if (current.leftChild==null && current.rightChild==null){
-			SplayNode node2Splay = current.parent;
-			current = null; 
+			//SplayNode node2Splay = current.parent;
+			if(current.parent==null){
+				this.root=null;
+			}else{
+				if(current.parent.leftChild==current){
+					current.parent.leftChild=null;
+				}else{
+					current.parent.rightChild=null;
+				}
+			}
 			this.root= Splay(current.parent);
 		}else if(current.rightChild== null){
 			SplayNode newCurrent = current.leftChild;
 			while(newCurrent.rightChild != null){
 				newCurrent = newCurrent.rightChild; 
 			}
+			if(newCurrent.parent.leftChild==newCurrent){
+				newCurrent.parent.leftChild=null;
+			}else{
+				newCurrent.parent.rightChild=null;
+			}
 			current.data = newCurrent.data;
-			newCurrent = null;
+			current.key = newCurrent.key;
+			if(current.leftChild!=null){
+				current.leftChild.parent=current;
+			}
+			if(current.parent.leftChild==current){
+				current.parent.leftChild=current;
+			}else{
+				current.parent.rightChild=current;
+			}
+			if(current.leftChild!=null){
+				current.leftChild.parent=current;
+			}
 			this.root = Splay(current);
+			
 		}else{
 			SplayNode newCurrent = current.rightChild;
 			while(newCurrent.leftChild != null){
 				newCurrent = newCurrent.leftChild; 
 			}
+			if(newCurrent.parent.leftChild==newCurrent){
+				newCurrent.parent.leftChild=null;
+			}else{
+				newCurrent.parent.rightChild=null;
+			}
 			current.data = newCurrent.data;
-			newCurrent = null;
+			current.key = newCurrent.key;
+			if(current.rightChild!=null){
+				current.rightChild.parent=current;
+			}else if(current.leftChild!=null){
+				current.leftChild.parent=current;
+			}
+			if(current.parent.leftChild==current){
+				current.parent.leftChild=current;
+			}else{
+				current.parent.rightChild=current;
+			}
+			if(current.rightChild!=null){
+				current.rightChild.parent=current;
+			}else if(current.leftChild!=null){
+				current.leftChild.parent=current;
+			}
 			this.root = Splay(current);
 		}
 	}
 	
 	public SplayNode zig(SplayNode node){
+		
 		SplayNode p = node.parent;
 		SplayNode x = node;
+		
+		
 		if (node.compareTo(node.parent)<0){  // node > node.parent
 			x.parent = p.parent;
 			p.parent=x;
@@ -126,7 +215,7 @@ public class SplayTree<T> extends Tree {
 			}
 			x.rightChild = p; 
 		}
-		return node; 
+		return x; 
 	}
 	
 	public SplayNode zigzig(SplayNode node, boolean leftLeft){
@@ -187,6 +276,7 @@ public class SplayTree<T> extends Tree {
 	}
 	
 	public SplayNode zigzag(SplayNode node, boolean XRightCPLeftC){
+		
 		SplayNode x = node;
 		SplayNode p = node.parent;
 		SplayNode g = node.parent.parent;
