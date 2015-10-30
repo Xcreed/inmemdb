@@ -9,16 +9,11 @@ import java.nio.file.Paths;
 import inmemdb.structures.Tree;
 
 @SuppressWarnings({ "rawtypes" })
+
 /**
- * Asbtract class for the differents types of 
+ * Abstract class for the different types of 
  * index. 
  * 
-<<<<<<< HEAD
- * @author Juan Pablo
-=======
- * @author Juan Pablo, Randy
->>>>>>> branch 'master' of https://github.com/Xcreed/inmemdb.git
- *
  * @param <T>
  */
 public class Index <T> {
@@ -26,8 +21,15 @@ public class Index <T> {
 	protected Tree<?> tree;
 	protected String type;
 	protected int length;
-
 	protected String name;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param type
+	 * @param name
+	 * @param length
+	 */
 	
 	public Index(String type, String name, int length) {
 		this.type = type;
@@ -35,9 +37,16 @@ public class Index <T> {
 		this.name = name;
 	}
 	
+	/**
+	 * As a type String returns the name.
+	 * 
+	 * @return name
+	 */
+	
 	public String getName() {
 		return name;
 	}
+	
 	/**
 	 * Insert
 	 */
@@ -49,7 +58,6 @@ public class Index <T> {
 	  */
 	public void remove() {
 	}
-	
 	
 	/**
 	 * Converts integer to binary
@@ -133,12 +141,16 @@ public class Index <T> {
 				System.out.println("Invalid type. Index type is " + type);
 				bool = false;
 			}
-			
 		}
-		
 		return bool;
 	}
 	
+	/**
+	 * Checks the length of the index.
+	 * 
+	 * @param element
+	 * @return boolean
+	 */
 	private boolean checkLength(T element) {
 		if (element.toString().length() <= length) {
 			return true;
@@ -150,7 +162,8 @@ public class Index <T> {
 	
 	/**
 	 * Checks if the image in the indicated path 
-	 * is format .jpeg
+	 * is format .jpeg.
+	 * 
 	 * @param imagePath
 	 * @return
 	 */
@@ -160,7 +173,7 @@ public class Index <T> {
 		if (fileType.equals("image/jpeg")){
 			System.out.println("Valid image type");
 			return true;
-		} else {
+		}else{
 			System.out.println("Only .jpeg images");
 			return false;
 		}
@@ -168,24 +181,26 @@ public class Index <T> {
 	
 	/**
 	 * Checks if the image in the indicated path 
-	 * is format .mp4
+	 * is format .mp4.
+	 * 
 	 * @param imagePath
-	 * @return
+	 * @return boolean
 	 */
 	private <T extends String> boolean isVideo(T element) {
 		String fileType = getFileType(element);
 		if (fileType.equals("video/mp4")){
 			System.out.println("Valid image type");
 			return true;
-		} else {
+		}else{
 			System.out.println("Only .mp4 images");
 			return false;
 		}
 	}
 	
 	/**
-	 * Checks the type of file
-	 * Usable for image/video files
+	 * Checks the type of file.
+	 * Usable for image/video files.
+	 * 
 	 * @param fileName
 	 * @return
 	 * @throws IOException 
@@ -196,22 +211,22 @@ public class Index <T> {
 		String fileType = null;
 		try {
 			fileType = Files.probeContentType(filePath);
-		} catch (IOException e) {
+		}catch (IOException e){
 			e.printStackTrace();
 		}
-		
 		return fileType;
 	}
 	
 	/**
 	 * For inserting in a tree
-	 * Letting know if the type is binary
+	 * Letting know if the type is binary.
+	 * 
 	 * @return
 	 */
 	protected boolean isBinary() {
 		if (type.equals("binary")) {
 			return true;
-		} else {
+		}else{
 			return false;
 		}
 	}

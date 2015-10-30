@@ -1,12 +1,27 @@
 package inmemdb.structures;
 
+/**
+ * Node class. 
+ *
+ * @param <T>
+ */
 public abstract class Node<T> implements Comparable<Node<T>>{
 	
 	private T data;
     
+	/**
+	 * Constructor. 
+	 * 
+	 */
 	public Node(){
 		data = null;
 	}
+	
+	/**
+	 * Constructor node. 
+	 * 
+	 * @param value
+	 */
     public Node(T value){
         this.data = value;
     }
@@ -21,11 +36,18 @@ public abstract class Node<T> implements Comparable<Node<T>>{
         return temp1.compareTo(temp2);
     }
     
-     
+    /**
+     * Returns the data as a type String.
+     * @return String
+     */
     public String toString(){
         return data.toString();
     }
 	
+    /**
+     *Returns the data of a given node. 
+     * @return data
+     */
     public T getData(){ 
     	return data;
     }
