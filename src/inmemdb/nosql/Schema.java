@@ -20,7 +20,7 @@ public class Schema<T> {
 	public DoubleLinkedList<Index> schema = new DoubleLinkedList<Index>();
 	protected byte[] sharedSecret;
 	protected ParameterizedType indexType;
-	protected String newFolderLoc;
+	protected String folderLocation;
 	
 	/**
 	 * Constructor 1. 
@@ -42,6 +42,7 @@ public class Schema<T> {
 	 */
 	public Schema(String name, String path) {
 		this.name = name;
+		this.folderLocation = path;
 		createFolder(path);
 	}
 	
@@ -233,5 +234,9 @@ public class Schema<T> {
 			
 		}
 		line.print();
+	}
+	
+	public String getSchemaLocation() {
+		return folderLocation;
 	}
 }

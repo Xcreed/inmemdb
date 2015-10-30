@@ -3,7 +3,6 @@ package inmemdb.nosql;
 import java.io.IOException;
 
 import inmemdb.controller.JSONProtocol;
-import inmemdb.structures.AVLTree;
 import inmemdb.structures.BinarySearchTree;
 
 public class Main {
@@ -79,8 +78,7 @@ public class Main {
 		
 		JSONProtocol json = new JSONProtocol();
 		json.writeSchema(s);
-		
-		
+				
 		
 	}
 

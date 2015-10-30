@@ -65,7 +65,9 @@ public class JSONProtocol <T>{
 		}
 		clientObj.put("Indexes: ", indexes);
 
-		try (FileWriter file = new FileWriter(jsonFile)) {
+		System.out.println("If this fails, you're not using Windows");
+		File schemaFile = new File(table.getSchemaLocation() + "\\" + table.name + ".txt");
+		try (FileWriter file = new FileWriter(schemaFile)) {
 			file.write(clientObj.toJSONString());
 			System.out.println("Successfully Copied JSON Object to File...");
 			System.out.println("\nJSON Object: " + clientObj);
