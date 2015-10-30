@@ -4,28 +4,145 @@ public class StructureTester {
 
 	public static void main(String[] args) {
 		
-		DoubleLinkedList<Integer> testList = new DoubleLinkedList<Integer>();
+		AVLTree AVL = new AVLTree();
 		
-		testList.insertBeginning(3);
-		testList.insertEnd(4);
-		testList.insertEnd(5);
-		testList.insertEnd(7);
-		testList.insertEnd(6);
-		testList.insertEnd(14);
-		testList.insertEnd(9);
-		testList.insertEnd(8);
-		testList.insertBeginning(4);
-		testList.print();
-		testList.deleteBeginning();
-		testList.print();
-		testList.deleteEnd();
-		testList.print();
+		System.out.println("AVL TREE ");
 		
-		testList.deleteByIndex(3);
+		System.out.println(" ");
+		System.out.println(" ");
 		
+		AVL.insert("aa");
+		AVL.insert("bb");
+		AVL.insert("cc");
+		AVL.insert("dd");
+		AVL.insert("ee");
+		AVL.insert("ff");
+		AVL.insert("gg");
+		AVL.insert("hh");
+		AVL.insert("ii");
 		
+		AVL.inorder();
 		
 		
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("keyAVL Tree");
+		
+		AVL.keyAVL.inorder();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		System.out.println(AVL.keyAVL.search(7));
+		System.out.println(AVL.keyAVL.search(10));
+		
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		System.out.println(AVL.keyAVL.searchKeyReturnValue(7));
+		System.out.println(AVL.keyAVL.searchKeyReturnValue(10));
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		AVL.remove("dd");
+		
+		AVL.inorder();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		AVL.keyAVL.inorder();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		
+		System.out.println("Binary Search Tree");
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		BinarySearchTree BST = new BinarySearchTree();
+		
+		BST.addNode("aa");
+		BST.addNode("bb");
+		BST.addNode("cc");
+		BST.addNode("dd");
+		BST.addNode("ee");
+		BST.addNode("ff");
+		BST.addNode("gg");
+		BST.addNode("hh");
+		BST.addNode("ii");
+		BST.addNode("jj");
+		
+		BST.inOrderTraversal();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		BST.keyBST.inOrderTraversal();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		BST.remove("ee");
+		
+		BST.inOrderTraversal();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		BST.keyBST.inOrderTraversal();
+
+
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		System.out.println("SPTree");
+		System.out.println(" ");
+		
+		SplayTree SP = new SplayTree();
+		
+		SP.insert("aa");
+		SP.insert("bb");
+		SP.insert("cc");
+		SP.insert("dd");
+		SP.insert("ee");
+		SP.insert("ff");
+		SP.insert("gg");
+		SP.insert("hh");
+		SP.insert("ii");
+		
+		SP.inOrderTraversal();
+		
+		
+		System.out.println(" ");
+		System.out.println("key SP");
+		
+		SP.keySP.inOrderTraversal();
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("REMOVE");
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		SP.delete("cc");
+		
+		SP.inOrderTraversal();
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		SP.keySP.inOrderTraversal();
 	}
 
 }

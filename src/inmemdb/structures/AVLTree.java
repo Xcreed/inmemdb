@@ -6,10 +6,12 @@ package inmemdb.structures;
  * @param <T>
  */
 public class AVLTree <T> extends Tree{
+	public keyAVLTree keyAVL;
 	public AVLNode root; 
 	public int index;
-
+	
 	public AVLTree(){
+		keyAVL = new keyAVLTree();
 		root=null;
 		index = 0;
 	}
@@ -71,12 +73,11 @@ public class AVLTree <T> extends Tree{
 	 * @param data
 	 */
 	public void insert(T data){
-		if (this.root==null){
-			return;
-		}else if (search(data)){
-			System.out.println("This value already exists in the tree.");
+		if (search(data)){
+			System.out.println("This value already exists in the tree");
 		}else{
-			root = insert2(data, this.root);
+			keyAVL.insert(data);
+			root = insert(data, this.root);
 			this.index++;
 		}
 		
@@ -90,12 +91,12 @@ public class AVLTree <T> extends Tree{
 	 * @return node
 	 */
 	
-	private AVLNode<T> insert2(T data, AVLNode node){
+	private AVLNode<T> insert(T data, AVLNode node){
 		AVLNode newNode = new AVLNode(data, this.index+1);
 		if (node==null){       
 			node = newNode;
 		}else if(newNode.compareTo(node)>0){
-			node.leftChild = insert2(data, node.leftChild);
+			node.leftChild = insert(data, node.leftChild);
 			if (height(node.leftChild) - height (node.rightChild)==2){
 				if (newNode.compareTo(node.leftChild)>0){
 					node = rotateWithLeftChild(node);
@@ -104,7 +105,7 @@ public class AVLTree <T> extends Tree{
 				}
 			}
 		}else if(newNode.compareTo(node)<0){
-			node.rightChild = insert2(data, node.rightChild);
+			node.rightChild = insert(data, node.rightChild);
 			if (height(node.rightChild)-height(node.leftChild)==2){
 				if (newNode.compareTo(node.rightChild)<0){
 					node = rotateWithRightChild(node);
@@ -240,6 +241,39 @@ public class AVLTree <T> extends Tree{
 		return found;
 	}
 	
+	public int SearchKeyOfValue(T value){
+		if(root ==null){
+			return -1;
+		}else{
+			return SearchKeyOfValue(root, value);
+		}
+	}
+	
+	public int SearchKeyOfValue(AVLNode root, T value){
+		boolean found = false; 
+		while((root!=null)&&!found){
+			T rootvalue = (T) root.data;
+			if (compareTo(value, rootvalue)>0){
+				root = root.leftChild;
+			}else if (compareTo(value, rootvalue)<0){
+				root = root.rightChild;
+			}else{
+				found = true;
+				break;
+			}
+		}
+		if(found){
+			return root.key;
+		}else{
+			return -1;
+		}
+		
+	}
+	
+	
+	/*
+	 * Compare (T only)
+=======
 	/**
 	 * Given two data values, changes them
 	 * into string to compare them.
@@ -247,6 +281,7 @@ public class AVLTree <T> extends Tree{
 	 * @param a
 	 * @param b
 	 * @return int
+>>>>>>> master
 	 */
 	public int compareTo(T a, T b){
         String temp1 = a.toString();
@@ -285,12 +320,14 @@ public class AVLTree <T> extends Tree{
 	 * @return boolean
 	 */
 	public boolean remove( T data ) {
-	      root = remove(data, root);
-	      if (root!=null){
-	    	  return false;
-	      }else{
-	    	  return true; 
-	      }
+		int key = SearchKeyOfValue(data);
+		keyAVL.remove(key);
+		root = remove(data, root);
+	    if (root!=null){
+	    	return false;
+	    }else{
+	    	return true; 
+	    }
 	}
 	
 	/**
@@ -306,7 +343,7 @@ public class AVLTree <T> extends Tree{
 			return null;
 		}
 	      
-		if (value.toString().compareTo(node.toString())>0) {
+		if (value.toString().compareTo(node.toString())>0) {    //node.data > value
 			node.leftChild = remove(value,node.leftChild);
 			int l = node.leftChild != null ? node.leftChild.height : 0;
 	  
@@ -320,7 +357,7 @@ public class AVLTree <T> extends Tree{
 					node = doubleWithRightChild(node);
 			}
 		}
-		else if (value.toString().compareTo(node.toString())<0) {
+		else if (value.toString().compareTo(node.toString())<0) {    //node.data < value
 			node.rightChild = remove(value,node.rightChild);
 			int r = node.rightChild != null ? node.rightChild.height : 0;
 			if((node.leftChild != null) && (node.leftChild.height - r >= 2)) {
@@ -333,8 +370,9 @@ public class AVLTree <T> extends Tree{
 			}
 		}
 		
-		else if(node.leftChild != null) {
+		else if(node.leftChild != null) {         //node.data == value  &&   node.left!=null
 			node.data = findMax(node.leftChild).data;
+			node.key = findMax(node.leftChild).key;
 			remove((T) node.data, node.leftChild);
 	       
 			if((node.rightChild != null) && (node.rightChild.height - node.leftChild.height >= 2)) {
@@ -432,7 +470,6 @@ public class AVLTree <T> extends Tree{
 			System.out.println("Data: "+root.data + "  Key: "+ root.key);
 		}
 	}
-	
 	/**
 	 * Calls getDataStringAux().
 	 * 
@@ -460,3 +497,4 @@ public class AVLTree <T> extends Tree{
 		return list.toString();
 	}
 }
+
