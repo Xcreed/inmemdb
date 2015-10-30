@@ -6,8 +6,8 @@ package inmemdb.structures;
  * @param <T>
  */
 public class SplayTree<T> extends Tree {
-	SplayNode root;
-	keySPTree keySP;
+	public SplayNode root;
+	public keySPTree keySP;
 	int size;
 	int index; 
 	
