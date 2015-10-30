@@ -1,8 +1,7 @@
 package inmemdb.structures;
 
 /**
- * Class for doubly linked list, linear data structure for the game
- * @author Randy
+ * Class for DoubleLinkedList.
  *
  * @param <T>
  */

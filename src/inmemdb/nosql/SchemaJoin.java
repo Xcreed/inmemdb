@@ -1,15 +1,27 @@
 package inmemdb.nosql;
 
+/**
+ * Class SchemaJoins allows
+ *
+ * @param <T>
+ */
 public class SchemaJoin<T> extends Schema<T>{
 	
 	private Schema joinedSchema;
 	
+	/**
+	 * Constructor. 
+	 * 
+	 * @param name
+	 * @param folderLocation
+	 */
 	public SchemaJoin(String name, String folderLocation) {
 		super(name, folderLocation);
 	}
 	
 	/**
-	 * Joins a schema to this schema
+	 * Joins a schema to this schema.
+	 * 
 	 * @param schemaToJoin
 	 */
 	public void joinSchema(Schema schemaToJoin) {
@@ -17,14 +29,20 @@ public class SchemaJoin<T> extends Schema<T>{
 		this.joinedSchema = schemaToJoin;
 	}
 	
-	
+	/**
+	 * Delete an index by its positions. 
+	 * 
+	 * @return boolean
+	 */
 	public boolean deleteIndex(int index) {
 		return super.deleteIndex(index);
 	}
 	
 	/**
-	 * Inserts an element to a given index
-	 * Only in the Join type schema
+	 * Inserts an element to a given index.
+	 * Only in the Join type schema.
+	 * 
+	 * @return boolean
 	 */
 	public boolean insertToIndex(int containingIndex, T itemToInsert) {
 		if (super.insertToIndex(containingIndex, itemToInsert)) {
@@ -37,10 +55,11 @@ public class SchemaJoin<T> extends Schema<T>{
 	}
 	
 	/**
-	 * Deletes element in this table
+	 * Deletes element in this table.
+	 * 
 	 * @param containingIndex
 	 * @param itemToRemove
-	 * @return
+	 * @return boolean
 	 */
 	public boolean deleteInJoinedIndex(int containingIndex, T itemToRemove) {
 		boolean bool = false;
@@ -57,7 +76,7 @@ public class SchemaJoin<T> extends Schema<T>{
 	/**
 	 * Searches for an element in this table and the one joined
 	 * @param element
-	 * @return
+	 * @return boolean
 	 */
 	@SuppressWarnings("unchecked")
 	public boolean joinedSearch(T element) {
@@ -75,17 +94,16 @@ public class SchemaJoin<T> extends Schema<T>{
 	
 	/**
 	 * Creates two separate Indexes with the same info
-	 * one for each table
+	 * one for each table.
+	 * 
 	 * @param treeType
 	 * @param indexType
 	 * @param length
-	 * @return
+	 * @return boolean
 	 */
 	public boolean createJoinedIndex(String treeType, String indexType, String indexName, int length) {
 		super.createIndex(treeType, indexType, indexName, length);
 		joinedSchema.createIndex(treeType, indexType, indexName, length);
 		return true;
 	}
-	
-
 }

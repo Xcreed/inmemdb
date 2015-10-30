@@ -1,19 +1,16 @@
 package inmemdb.structures;
 /**
- * Class for the double nodes,
- * linear data structure.
- * 
- * @author Randy
+ * Class node for the DoubleLinkedList.
  *
- * @param <T>: generic object
+ * @param <T>
  */
 
 public class DoubleNode<T> {
 	
 	
-	private DoubleNode<T> next; // basic node for next
+	private DoubleNode<T> next; 
 	private DoubleNode<T> prev;
-	private T data; 			//data/element to be inserted
+	private T data; 			
 	
 	
 	/**
@@ -46,7 +43,7 @@ public class DoubleNode<T> {
 	/**
 	 * Returns the next node in the list. 
 	 * 
-	 * @return next (node)
+	 * @return node
 	 */
 	public DoubleNode<T> getNext() {
 		return next;
@@ -55,7 +52,7 @@ public class DoubleNode<T> {
 	/**
 	 * Return the previous node in the list.
 	 * 
-	 * @return prev (node)
+	 * @return node
 	 */
 	public DoubleNode<T> getPrev(){
 		return prev;
@@ -64,7 +61,7 @@ public class DoubleNode<T> {
 	/**
 	 * Returns the data (info)  of a node.
 	 * 
-	 * @return data (info)
+	 * @return object
 	 */
 	public Object getData() {
 		return data;
