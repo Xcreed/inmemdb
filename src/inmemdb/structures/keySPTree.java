@@ -1,6 +1,6 @@
 package inmemdb.structures;
 
-public class keySPTree {
+public class keySPTree<T> {
 	SplayNode root;
 	int size;
 	int index; 
@@ -29,6 +29,16 @@ public class keySPTree {
 		}
 	}
 	
+	/*
+	 * Compare (T only)
+	 */
+	public int compareTo(T data, T b){
+        String temp1 = data.toString();
+        String temp2 = b.toString();
+        return temp1.compareTo(temp2);
+    }
+	/**/
+	
 
 	public void insert(SplayNode newNode, SplayNode root){
 		if(root.key < newNode.key){  ///newNode > root
@@ -53,86 +63,7 @@ public class keySPTree {
 	}
 	
 
-	public void delete(int key){
-		if(root==null){
-			return ;
-		}
-		SplayNode current = root;
-		while(current.key!=key){
-			if (key< current.key){
-				current = current.leftChild;
-			}else{
-				current = current.rightChild;
-			}
-		}
-		if (current.leftChild==null && current.rightChild==null){
-			//SplayNode node2Splay = current.parent;
-			if(current.parent==null){
-				this.root=null;
-			}else{
-				if(current.parent.leftChild==current){
-					current.parent.leftChild=null;
-				}else{
-					current.parent.rightChild=null;
-				}
-			}
-			this.root= Splay(current.parent);
-		}else if(current.rightChild== null){
-			SplayNode newCurrent = current.leftChild;
-			while(newCurrent.rightChild != null){
-				newCurrent = newCurrent.rightChild; 
-			}
-			if(newCurrent.parent.leftChild==newCurrent){
-				newCurrent.parent.leftChild=null;
-			}else{
-				newCurrent.parent.rightChild=null;
-			}
-			current.data = newCurrent.data;
-			current.key = newCurrent.key;
-			if(current.leftChild!=null){
-				current.leftChild.parent=current;
-			}
-			if(current.parent.leftChild==current){
-				current.parent.leftChild=current;
-			}else{
-				current.parent.rightChild=current;
-			}
-			if(current.leftChild!=null){
-				current.leftChild.parent=current;
-			}
-			this.root = Splay(current);
-			
-		}else{
-			SplayNode newCurrent = current.rightChild;
-			while(newCurrent.leftChild != null){
-				newCurrent = newCurrent.leftChild; 
-			}
-			if(newCurrent.parent.leftChild==newCurrent){
-				newCurrent.parent.leftChild=null;
-			}else{
-				newCurrent.parent.rightChild=null;
-			}
-			current.data = newCurrent.data;
-			current.key = newCurrent.key;
-			if(current.rightChild!=null){
-				current.rightChild.parent=current;
-			}else if(current.leftChild!=null){
-				current.leftChild.parent=current;
-			}
-			if(current.parent.leftChild==current){
-				current.parent.leftChild=current;
-			}else{
-				current.parent.rightChild=current;
-			}
-			if(current.rightChild!=null){
-				current.rightChild.parent=current;
-			}else if(current.leftChild!=null){
-				current.leftChild.parent=current;
-			}
-			this.root = Splay(current);
-		}
-	}
-
+	
 	public SplayNode zig(SplayNode node){
 		
 		
@@ -161,6 +92,146 @@ public class keySPTree {
 			x.rightChild = p; 
 		}
 		return x; 
+	}
+	
+	public SplayNode findMax(SplayNode root){
+		if (root.rightChild==null){
+			return root;
+		}else{
+			return findMax(root.rightChild);
+		}
+	}
+
+	public SplayNode findMin(SplayNode root){
+		if (root.leftChild==null){
+			return root;
+		}else{
+			return findMax(root.leftChild);
+		}
+	}
+	
+	public void setReplacementNull(SplayNode replacement, SplayNode root){
+		SplayNode parent = root;
+		if(replacement.rightChild==null && replacement.leftChild == null){
+			if(parent.leftChild == replacement){
+				parent.leftChild = null;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = null;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}else if(replacement.rightChild != null){
+			replacement.rightChild.parent = replacement.parent;
+			if(parent.leftChild == replacement){
+				parent.leftChild = replacement.rightChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = replacement.rightChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}else if(replacement.leftChild != null){
+			replacement.leftChild.parent = replacement.parent;
+			if(parent.leftChild == replacement){
+				parent.leftChild = replacement.leftChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = replacement.leftChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}
+	}
+	
+	
+	public void delete(int key){
+		if(root==null){
+			return;
+		}
+		SplayNode current = root;
+		while(current.key!=key && current!=null){
+			if(key < current.key){
+				current=current.leftChild;
+			}else{
+				current=current.rightChild;
+			}
+		}
+		if(current.leftChild==null && current.rightChild==null){
+			if(current==this.root){
+				this.root=null;
+			}
+			else if(current.parent.leftChild==current){
+				current.parent.leftChild = null;
+			}else{
+				current.parent.rightChild = null;
+			}
+		}else if(current.rightChild == null){
+			SplayNode newCurrent;
+			SplayNode replacement = findMax(current.leftChild);
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.leftChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}else if (current.leftChild == null){
+			SplayNode newCurrent;
+			SplayNode replacement = findMin(current.rightChild);
+			System.out.println(replacement);
+			System.out.println(replacement.rightChild);
+			
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.rightChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}else{
+			SplayNode newCurrent;
+			SplayNode replacement = findMax(current.leftChild);
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.leftChild.parent = newCurrent;
+			current.rightChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}
+		
 	}
 	
 	public SplayNode zigzig(SplayNode node, boolean leftLeft){
