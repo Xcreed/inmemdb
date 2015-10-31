@@ -12,9 +12,9 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		
 		//Creates a regular schema and Join type in the desired folder
-		Schema s = new Schema("Estudiantes","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		Schema s = new Schema("Estudiantes","C:\\Users\\morazan\\Desktop\\com\\idk\\ac\\cr");
 
-		SchemaJoin j = new SchemaJoin("Notas","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		SchemaJoin j = new SchemaJoin("Notas","C:\\Users\\morazan\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
 		s.createIndex("bts", "string", "Nombre", 10);

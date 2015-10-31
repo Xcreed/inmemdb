@@ -18,12 +18,10 @@ public class ClientMethods {
 		
 		System.out.println("1. Schema(String name, String path)");
 		System.out.println("2. createIndex(String treeType, String indexType, String indexName, int length)");
-		System.out.println("3. insertIndex(String index)");
-		System.out.println("4. insertToIndex(int containingIndex, String itemToInsert)");
-		System.out.println("5. createFolder(String path)");
-		System.out.println("6. deleteIndex(String index)");
-		System.out.println("7. deleteInIndex(String containingIndex, String itemToRemove)");
-		System.out.println("8. search(String searchItem)");
+		System.out.println("3. insertToIndex(int containingIndex, String itemToInsert)");
+		System.out.println("4. deleteIndex(String index)");
+		System.out.println("5. deleteInIndex(String containingIndex, String itemToRemove)");
+		System.out.println("6. search(String searchItem)");
 		
 		System.out.println("Enter the number of the method that you want to execute");
 		
@@ -103,21 +101,8 @@ public class ClientMethods {
 		        		}
 		        	}
 		        	System.out.println("treeType: "+treeType+"   indexType: "+indexType+"   indexName: "+indexName+"   length: "+length);
+		        	createIndex( treeType,  indexType,  indexName,  length);
 		        }else if(inBr.equals("3")){
-		        	String index="";
-		        	
-		        	System.out.println("Enter index : ");
-		        	while(true){
-		        		inBr = br.readLine();
-		        		if (inBr!=null){
-		        			if(index==""){
-		        				index = inBr;
-		        				break;
-		        			}
-		        		}
-		        	}
-		        	System.out.println("index: "+index);
-		        }else if(inBr.equals("4")){
 		        	String containingIndex="";
 		        	String itemToInsert="";
 		        	System.out.println("Enter containingIndex : ");
@@ -141,21 +126,8 @@ public class ClientMethods {
 		        		}
 		        	}
 		        	System.out. println("containingIndex: "+containingIndex+"   itemToInsert: "+itemToInsert);
-		        	
-		        }else if(inBr.equals("5")){
-		        	String path="";
-		        	System.out.println("Enter path : ");
-		        	while(true){
-		        		inBr = br.readLine();
-		        		if (inBr!=null){
-		        			if(path==""){
-		        				path = inBr;
-		        				break;
-		        			}
-		        		}
-		        	}
-		        	System.out. println("path: "+path);
-	        	}else if(inBr.equals("6")){
+		        	insertToIndex(containingIndex, itemToInsert);
+	        	}else if(inBr.equals("4")){
 		        	String index="";
 		        	System.out.println("Enter index : ");
 		        	while(true){
@@ -168,7 +140,8 @@ public class ClientMethods {
 		        		}
 		        	}
 		        	System.out. println("index: "+index);
-	        	}else if(inBr.equals("7")){
+		        	deleteIndex(index);
+	        	}else if(inBr.equals("5")){
 		        	String containingIndex="";
 		        	String itemToRemove="";
 		        	System.out.println("Enter containingIndex : ");
@@ -192,7 +165,8 @@ public class ClientMethods {
 		        		}
 		        	}
 		        	System.out. println("containingIndex: "+containingIndex+"   itemToRemove: "+itemToRemove);
-	        	}else if(inBr.equals("8")){
+		        	deleteInIndex(containingIndex, itemToRemove);
+	        	}else if(inBr.equals("6")){
 		        	String searchItem="";
 		        	System.out.println("Enter searchItem : ");
 		        	while(true){
@@ -205,6 +179,7 @@ public class ClientMethods {
 		        		}
 		        	}
 		        	System.out. println("searchItem: "+searchItem);
+		        	search(searchItem);
 	        	}else{
 	        		System.out.println("Invalid. Try again:");
 	        	}
@@ -224,7 +199,7 @@ public class ClientMethods {
 		cW.sendMessage("Path: "+ path);
 	}
 	
-	public void createIndex(String treeType, String indexType, String indexName, int length){
+	public void createIndex(String treeType, String indexType, String indexName, String length){   //int length 
 		cW.sendMessage("createIndex");
 		cW.sendMessage("treeType: "+ treeType);
 		cW.sendMessage("indexType: "+ indexType);
@@ -232,33 +207,26 @@ public class ClientMethods {
 		cW.sendMessage("length: "+ length);
 	}
 	
-	public void insertIndex(String index) {
-		cW.sendMessage("insertIndex");
-		cW.sendMessage("index: "+ index);
-	}
-	
-	public void insertToIndex(int containingIndex, String itemToInsert) {
+
+	public void insertToIndex(String containingIndex, String itemToInsert) {
 		cW.sendMessage("insertToIndex");
 		cW.sendMessage("containingIndex: " + containingIndex);
 		cW.sendMessage("itemToInsert: " + itemToInsert);
 	}
 	
-	private void createFolder(String path) {
-		cW.sendMessage("createFolder");
-		cW.sendMessage("path: " + path);
-	}
+
 	
-	private void deleteIndex(String index) {
+	private void deleteIndex(String index) {    //int
 		cW.sendMessage("deleteIndex");
 		cW.sendMessage("index: " + index);
 	}
 	
-	public void deleteInIndex(String containingIndex, String itemToRemove){
+	private void deleteInIndex(String containingIndex, String itemToRemove) {    //int
 		cW.sendMessage("deleteInIndex");
-		cW.sendMessage("containingIndex: "+ containingIndex);
-		cW.sendMessage("itemToRemove: "+ itemToRemove);
+		cW.sendMessage("containingIndex: " + containingIndex);
+		cW.sendMessage("itemToRemove: " + itemToRemove);
 	}
-	
+
 	private void search(String searchItem) {
 		cW.sendMessage("search");
 		cW.sendMessage("searchItem: " + searchItem);
