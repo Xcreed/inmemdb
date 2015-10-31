@@ -227,195 +227,244 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="27">    
+  <package id="27" language="java" name="client" project="inmemdb" file="/inmemdb/src/client" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="984" width="1553" x="212" y="2043"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="28" language="java" name="client.Client" project="inmemdb" file="/inmemdb/src/client/Client.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="122" x="905" y="2428"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="client.ClientMethods" project="inmemdb" 
+    file="/inmemdb/src/client/ClientMethods.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="218" x="1067" y="2428"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="client.ClientReader" project="inmemdb" 
+    file="/inmemdb/src/client/ClientReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="128" x="1325" y="2428"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="client.ClientWriter" project="inmemdb" 
+    file="/inmemdb/src/client/ClientWriter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="153" x="1067" y="2693"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="32">    
     <bendpoint x="1208" y="944"/>    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <generalization id="28">    
+  <generalization id="33">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="29">    
+  <association id="34">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="30" name="root"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
+      <attribute id="35" name="root"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="32">    
+  <association id="37">    
     <bendpoint x="1218" y="1146"/>    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="33" name="node1"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
+      <attribute id="38" name="node1"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="35">    
+  <association id="40">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="36" name="leftChild"/>      
-      <multiplicity id="37" minimum="0" maximum="1"/>    
+      <attribute id="41" name="leftChild"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="38">    
+  <generalization id="43">    
     <bendpoint x="598" y="580"/>    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="39">    
+  <association id="44">    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="40" name="keyBST"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
+      <attribute id="45" name="keyBST"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="42">    
+  <generalization id="47">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="21"/>  
   </generalization>  
-  <generalization id="43">    
+  <generalization id="48">    
     <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="21"/>  
   </generalization>  
-  <generalization id="44">    
+  <generalization id="49">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <association id="45">    
+  <association id="50">    
     <bendpoint x="410" y="636"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="46" name="root"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
+      <attribute id="51" name="root"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="48">    
+  <association id="53">    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="49" name="keySP"/>      
-      <multiplicity id="50" minimum="0" maximum="1"/>    
+      <attribute id="54" name="keySP"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="51">    
+  <association id="56">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="52" name="keyAVL"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
+      <attribute id="57" name="keyAVL"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="54">    
+  <association id="59">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="55" name="root"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
+      <attribute id="60" name="root"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="57">    
+  <association id="62">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="63" name="cW"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
     <bendpoint x="3260" y="950"/>    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="25"/>  
   </generalization>  
-  <generalization id="58">    
+  <generalization id="66">    
     <bendpoint x="736" y="254"/>    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <association id="59">    
+  <association id="67">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="60" name="head"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
+      <attribute id="68" name="head"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="62">    
+  <association id="70">    
     <bendpoint x="1118" y="1539"/>    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="63" name="root"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
+      <attribute id="71" name="root"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="65">    
+  <association id="73">    
     <bendpoint x="1078" y="1280"/>    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="66" name="rightChild"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
+      <attribute id="74" name="rightChild"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="68">    
+  <association id="76">    
     <bendpoint x="754" y="1148"/>    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="69" name="root"/>      
-      <multiplicity id="70" minimum="0" maximum="1"/>    
+      <attribute id="77" name="root"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="71">    
+  <generalization id="79">    
     <bendpoint x="932" y="1448"/>    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <generalization id="72">    
+  <generalization id="80">    
     <end type="SOURCE" refId="26"/>    
     <end type="TARGET" refId="21"/>  
   </generalization>  
-  <association id="73">    
+  <association id="81">    
     <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="74" name="root"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
+      <attribute id="82" name="root"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="76">    
+  <association id="84">    
     <bendpoint x="3181" y="961"/>    
     <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="77" name="joinedSchema"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
+      <attribute id="85" name="joinedSchema"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="79">    
+  <generalization id="87">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="80">    
+  <association id="88">    
     <bendpoint x="362" y="1148"/>    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="81" name="root"/>      
-      <multiplicity id="82" minimum="0" maximum="1"/>    
+      <attribute id="89" name="root"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="83">    
+  <association id="91">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="84" name="tail"/>      
-      <multiplicity id="85" minimum="0" maximum="1"/>    
+      <attribute id="92" name="tail"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="86">    
+  <association id="94">    
     <bendpoint x="1774" y="1286"/>    
     <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="87" name="root"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
+      <attribute id="95" name="root"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
