@@ -75,6 +75,7 @@ public class keyBSTree {
 				return null;
 			}
 		}
+		System.out.println(current.data);
 		return (T) current.data;
 	}
 	

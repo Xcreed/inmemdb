@@ -73,7 +73,7 @@ public class CeRobot {
 	 * @param guide
 	 */
 	public void operations(File f) {
-		pdfSchema.createIndex("bts", "string", f.getName(), 6);
+		pdfSchema.createIndex("bts", "string", f.getName(), 5);
 
 	}
 	
@@ -138,6 +138,7 @@ public class CeRobot {
 	    	wordsString = line.split(",");
 	    	
 	    	for (int i = 0; i < wordsString.length; i++) {
+//	    		System.out.println(wordsString[i]);
 	    		pdfSchema.insertToIndex(schemaIndex, wordsString[i]);
 	    	}
 	    	
