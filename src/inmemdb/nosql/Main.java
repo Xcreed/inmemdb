@@ -63,6 +63,7 @@ public class Main {
 //		System.out.println("bts2 order");
 //		t2.inOrderTraversal();
 
+		
 		j.insertToIndex(1, 80);
 		j.insertToIndex(1, 82);
 		j.insertToIndex(1, 78);
