@@ -8,10 +8,14 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import inmemdb.nosql.Schema;
+
 public class serverReader implements Runnable{
 	String in, out;
 	Socket sSocket;
 	serverWriter SerWriter;
+	Encryption Encryption =  new Encryption();
+	Schema schema;
 	
 	public serverReader(Socket socket){
 		this.sSocket = socket;
@@ -28,9 +32,8 @@ public class serverReader implements Runnable{
 						BufferedReader input = new BufferedReader(new InputStreamReader(sSocket.getInputStream()));
 						while(true){
 							in = input.readLine();
-							System.out.println(in);
-							System.out.println("From client "+in);
-							if(in=="Schema"){
+							System.out.println("From client:   "+in);
+							if(in.equals("Schema")){
 								//Name: 
 								in = input.readLine();
 								String name= in.substring(6);
@@ -38,7 +41,12 @@ public class serverReader implements Runnable{
 								in = input.readLine();
 								String path = in.substring(6);
 								
-								//Call the Schema method 
+								//name = Encryption.encrypt(name);
+								//path = Encryption.encrypt(name);
+								
+								//Calls the Schema method 
+								System.out.println("sR schema");
+								schema = new Schema(name, path);
 								
 							}else if (in=="createIndex"){
 								//treeType: 
