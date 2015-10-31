@@ -45,7 +45,8 @@ public class serverReader implements Runnable{
 								//path = Encryption.encrypt(name);
 								
 								//Calls the Schema method 
-								System.out.println("sR schema");
+								System.out.println("Name" + name);
+								System.out.println("Path" + path);
 								schema = new Schema(name, path);
 								
 							}else if (in=="createIndex"){
@@ -61,63 +62,59 @@ public class serverReader implements Runnable{
 								//length: 
 								in = input.readLine();
 								String length = in.substring(8);
+								int intLength = Integer.parseInt(length);
 								
 								//Call the createIndex method
-							
-							}else if(in=="insertIndex"){   
-								in = input.readLine();
-								//index:
-								String index = in.substring(7);
-								
-								//Call the insertIndex method
-								
+								schema.createIndex(treeType, indexType, indexName, intLength);
+						
 							}else if(in=="insertToIndex"){
 								//containingIndex: 
 								in = input.readLine();
-								String containingIndex = in.substring(17);
+								String ContainingIndex = in.substring(17);
+								int intContainingIndex = Integer.parseInt(ContainingIndex);
 								//itemToInsert:
 								in = input.readLine();
 								String itemToInsert = in.substring(14);
 								
 								//Call the insertToIndex method
-								
-							}else if(in=="createFolder"){
-								//path: 
-								in = input.readLine();
-								String path = in.substring(6);
-								
-								//Call the createFolder method 
+								schema.insertToIndex(intContainingIndex, itemToInsert);
 								
 							}else if (in=="deleteIndex"){
 								//index
 								in = input.readLine();
 								String index = in.substring(11);	
+								int intIndex = Integer.parseInt(index);
+
+								//Call the deleteIndex method
+								schema.deleteIndex(intIndex);
 								
-								//Call the deleteIndex method 
+							}else if (in=="deleteInIndex"){
+								//containingIndex: 
+								in = input.readLine();
+								String containingIndex = in.substring(15);
+								int intContainingIndex = Integer.parseInt(containingIndex);
+								//itemToRemove: 
+								in = input.readLine();
+								String itemToRemove = in.substring(12);
 								
+								//Call the deleteInIndex method here
+								schema.deleteInIndex(intContainingIndex, itemToRemove);
+					
 							}else if (in=="search"){
 								//searchItem
 								in = input.readLine();
 								String searchItem = in.substring(11);
 								
 								//Call the search method here
-								
-							}else if (in=="deleteInIndex"){
-								//containingIndex: 
-								in = input.readLine();
-								String containingIndex = in.substring(15);
-								//itemToRemove: 
-								in = input.readLine();
-								String itemToRemove = in.substring(12);
-								
-								//Call the deleteInIndex method here
+								schema.search(searchItem);
 							}
 						}
 					}catch(Exception e){
-						e.printStackTrace();
+							e.printStackTrace();
 					}
-				
+			
 				}
+			
 		};
 		thread.start();
 	}
