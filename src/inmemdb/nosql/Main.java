@@ -56,6 +56,7 @@ public class Main {
 		System.out.println("Traversal: 2");
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
+
 		t2.inorder();
 		
 		j.insertToIndex(1, 80);
