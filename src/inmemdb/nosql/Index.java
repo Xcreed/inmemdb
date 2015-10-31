@@ -169,7 +169,6 @@ public class Index <T> {
 	 */
 	private <T extends String> boolean isImage(T imagePath) {
 		String fileType = getFileType(imagePath);
-		System.out.println(fileType);
 		if (fileType.equals("image/jpeg")){
 			System.out.println("Valid image type");
 			return true;
@@ -189,7 +188,7 @@ public class Index <T> {
 	private <T extends String> boolean isVideo(T element) {
 		String fileType = getFileType(element);
 		if (fileType.equals("video/mp4")){
-			System.out.println("Valid image type");
+			System.out.println("Valid video type");
 			return true;
 		}else{
 			System.out.println("Only .mp4 images");
