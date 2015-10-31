@@ -3,7 +3,7 @@
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <package id="1" language="java" name="inmemdb.structures" project="inmemdb" file="/inmemdb/src/inmemdb/structures" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="1816" width="1867" x="32" y="16"/>    
+    <position height="1816" width="1867" x="30" y="64"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="inmemdb.structures.keyBSTree" project="inmemdb" 
@@ -17,7 +17,7 @@
   </class>  
   <class id="3" language="java" name="inmemdb.structures.DoubleNode" project="inmemdb" 
     file="/inmemdb/src/inmemdb/structures/DoubleNode.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="275" y="596"/>    
+    <position height="-1" width="-1" x="191" y="650"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -229,12 +229,12 @@
   </class>  
   <package id="27" language="java" name="client" project="inmemdb" file="/inmemdb/src/client" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="984" width="1553" x="212" y="2043"/>    
+    <position height="752" width="1131" x="394" y="2089"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="28" language="java" name="client.Client" project="inmemdb" file="/inmemdb/src/client/Client.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="122" x="905" y="2428"/>    
+    <position height="-1" width="-1" x="566" y="2276"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -243,7 +243,7 @@
   </class>  
   <class id="29" language="java" name="client.ClientMethods" project="inmemdb" 
     file="/inmemdb/src/client/ClientMethods.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="218" x="1067" y="2428"/>    
+    <position height="-1" width="-1" x="928" y="2298"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -252,7 +252,7 @@
   </class>  
   <class id="30" language="java" name="client.ClientReader" project="inmemdb" 
     file="/inmemdb/src/client/ClientReader.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="128" x="1325" y="2428"/>    
+    <position height="-1" width="-1" x="1275" y="2306"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -261,7 +261,7 @@
   </class>  
   <class id="31" language="java" name="client.ClientWriter" project="inmemdb" 
     file="/inmemdb/src/client/ClientWriter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="153" x="1067" y="2693"/>    
+    <position height="-1" width="-1" x="931" y="2689"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -303,7 +303,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="43">    
-    <bendpoint x="598" y="580"/>    
+    <bendpoint x="630" y="408"/>    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
@@ -453,6 +453,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="91">    
+    <bendpoint x="308" y="476"/>    
     <end type="SOURCE" refId="7" navigable="false">      
       <attribute id="92" name="tail"/>      
       <multiplicity id="93" minimum="0" maximum="1"/>    
