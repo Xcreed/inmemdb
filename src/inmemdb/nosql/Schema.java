@@ -264,13 +264,13 @@ public class Schema<T> {
 	
 	public int getItemPos(T element) {
 		int pos = 0;
-		for (int i = 1; i < schema.getLength(); i++) {
+		int i = 1;
+//		for (int i = 1; i < schema.getLength(); i++) {
 			Index index = schema.getItem(i);
 			if (index instanceof IndexBTS) {
 				IndexBTS indexType = (IndexBTS) schema.getItem(i);
 				BinarySearchTree indexTree = indexType.getTree();
 				pos = (indexTree.SearchKeyOfValue(element));
-				System.out.println("position" + pos);
 			} else if (index instanceof IndexAVL) {
 				IndexAVL indexType = (IndexAVL) schema.getItem(i);
 				AVLTree indexTree = indexType.getTree();	
@@ -287,7 +287,6 @@ public class Schema<T> {
 				pos = -1;
 			}
 			
-		}
 		return pos;
 	}
 	
