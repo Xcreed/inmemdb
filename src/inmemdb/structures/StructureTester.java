@@ -34,6 +34,8 @@ public class StructureTester {
 		System.out.println(" ");
 		
 		System.out.println(AVL.keyAVL.search(7));
+		System.out.println("hey");
+		System.out.println(AVL.SearchKeyOfValue("gg"));
 		System.out.println(AVL.keyAVL.search(10));
 		
 		

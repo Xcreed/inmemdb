@@ -1,0 +1,1354 @@
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
+JP Mayorga     2014057102    3
+rd 
+Summary  
+A nested class is a class that is within the body of another class, therefore a nested class is 
+inside a top class. An abstract class is incompletely implemented and cannot be instantiated. If 
+it final, it cannot have any subclasses and if it is public it can be called from any package. Newly 
+declared methods can implement or override methods from superclasses or superinterface. A 
+synchronize method locks the object before executing the body and unlocks it after. 
+Constructors are almost same as a method but they are used to initialize a new class instance. 
+There are two types of class declaration (normal and enum). If a normal class contains an 
+abstract method, you will find an error. Only use final class if the its definition is complete and it 
+will not have any subclass. Strictfp modifier will make any float or double expression a FP strict. 
+A class is generic if it declares one or more type of variables these variables are called type 
+parameters, where usually one type variable depends of another.  
+An inner class is a nested class that is not declared static. Using extends means a direct 
+superclass from the actual class and the same applies when using implements, it will be a direct 
+superinterface from the actual class. Members of a class (inherited from superclass, 
+superinterface or declared in its body), members that are private are not inherited by the 
+subclass. Field declarations are used to set the type of field the variable will be used in; a class 
+inherits all non-private fields. Static field = class variables, there will only be one in the field. 
+Non static = instance variables, where a new instance is created for every instance variable 
+declared. Final fields need to be declared and can be applied to either static or not. If you don’t 
+declare the final variable, there will be a compile error. Transient variables are not part of the 
+persistent state of the object. A volatile variable will show the same value for all the threads 
+that see this variable (it cannot be volatile and final at the same time).  
+If the declarator is for a class variable (static) then the variable initializer is evaluated and 
+performed only once when the class is initialized. If it is for an instance variable (non-static), the 
+initializer is evaluated and performed each time a new instance is created. They are also used 
+for local variables and are performed each time the statement is executed. For class initializers, 
+static and final fields are initialized first, these fields will be constant. Initialization expressions 
+for instance variables may use the simple name of any static variable declared in or inherited by 
+the class, even one whose declaration occurs later in the class body. The declaration of a 
+member needs to be in the class body before it’s used.  
+At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the 
+observe pressed justice. Instantly cordially far intention recommend estimable yet her his. Ladies stairs 
+enough esteem add fat all enable. Needed its design number winter see. Oh be me sure wise sons no. 
+Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up. Up 
+maids me an ample stood given. Certainty say suffering his him collected intention promotion. Hill sold 
+ham men made lose case. Views abode law heard jokes too. Was are delightful solicitude discovered 
+collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off 
+unaffected literature partiality inhabiting. Consulted he eagerness unfeeling deficient existence of. 
+Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. 
+It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable 
+projecting expression. Way mrs end gave tall walk fact bed. Situation admitting promotion at or to 
+perceived be. Mr acuteness we as estimable enjoyment up. An held late as felt know. Learn do allow 
+solid to grave. Middleton suspicion age her attention. Chiefly several bed its wishing. Is so moments on 
+chamber pressed to. Doubtful yet way properly answered humanity its desirous. Minuter believe service 
+arrived civilly add all. Acuteness allowance an at eagerness favourite in extensive exquisite ye. Respect 
+forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so 
+motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence 
+impossible to conviction. Suppose neither evident welcome it at do civilly uncivil. Sing tall much you get 
+nor. Savings her pleased are several started females met. Short her not among being any. Thing of judge 
+fruit charm views do. Miles mr an forty along as he. She education get middleton day agreement 
+performed preserved unwilling. Do however as pleased offence outward beloved by present. By 
+outward neither he so covered amiable greater. Juvenile proposal betrayed he an informed weddings 
+followed. Precaution day see imprudence sympathize principles. At full leaf give quit to in they up. 
+Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire 
+settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end 
+procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an 
+thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished 
+travelling are particular. Had strictly mrs handsome mistaken cheerful. We it so if resolution invitation 
+remarkably unpleasant conviction. As into ye then form. To easy five less if rose were. Now set offended 
+own out required entirely. Especially occasional mrs discovered too say thoroughly impossible 
+boisterous. My head when real no he high rich at with. After so power of young as. Bore year does has 
+get long fat cold saw neat. Put boy carried chiefly shy general. Quick six blind smart out burst. Perfectly 
+on furniture dejection determine my depending an to. Add short water court fat. Her bachelor honoured 
+perceive securing but desirous ham required. Questions deficient acuteness to engrossed as. Entirely led 
+ten humoured greatest and yourself. Besides ye country on observe. She continue appetite endeavor 
+she judgment interest the met. For she surrounded motionless fat resolution may. Do so written as 
+raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. 
+Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old 
+pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours men. Stuff 
+front to do allow to asked he. 
