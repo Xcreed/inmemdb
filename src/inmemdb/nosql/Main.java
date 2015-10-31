@@ -11,9 +11,9 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		
 		//Creates a regular schema and Join type in the desired folder
-		Schema s = new Schema("Estudiantes","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		Schema s = new Schema("Estudiantes","C:\\Users\\Randy\\Desktop\\com\\idk\\ac\\cr");
 
-		SchemaJoin j = new SchemaJoin("Notas","C:\\Users\\Xcreed\\Desktop\\com\\idk\\ac\\cr");
+		SchemaJoin j = new SchemaJoin("Notas","C:\\Users\\Randy\\Desktop\\com\\idk\\ac\\cr");
 
 		//Creates an index in the regular schema
 		s.createIndex("bts", "string", "Nombre", 10);
@@ -21,6 +21,11 @@ public class Main {
 		j.joinSchema(s);
 		j.createJoinedIndex("avl", "number", "Notas", 2);
 		
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Inserting data to: ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		s.insertToIndex(1, "JP");
 		s.insertToIndex(1, "Randy");
 		s.insertToIndex(1, "Alejandra");
@@ -31,11 +36,21 @@ public class Main {
 
 		IndexBTS index = (IndexBTS) s.schema.getItem(1);
 		BinarySearchTree t = (BinarySearchTree) index.tree;
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Traversal: 1");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		t.inOrderTraversal();
 		
 		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
 		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
 		System.out.println("bts2 order");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Traversal: 2");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		t2.inOrderTraversal();
 		
 		j.insertToIndex(1, 80);
