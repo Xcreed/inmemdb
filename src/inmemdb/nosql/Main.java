@@ -3,6 +3,7 @@ package inmemdb.nosql;
 import java.io.IOException;
 
 import inmemdb.controller.JSONProtocol;
+import inmemdb.structures.AVLTree;
 import inmemdb.structures.BinarySearchTree;
 
 public class Main {
@@ -34,9 +35,9 @@ public class Main {
 		s.insertToIndex(3, "SchemaExtraFiles/4.jpg");
 		
 
-		IndexBTS index = (IndexBTS) s.schema.getItem(1);
-		BinarySearchTree t = (BinarySearchTree) index.tree;
-		t.inOrderTraversal();
+//		IndexBTS index = (IndexBTS) s.schema.getItem(1);
+//		BinarySearchTree t = (BinarySearchTree) index.tree;
+//		t.inOrderTraversal();
 		
 //		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
 //		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
@@ -48,27 +49,17 @@ public class Main {
 		j.insertToIndex(1, 78);
 		
 //		
-//		System.out.println(t.root);
-//		System.out.println("Hijo dere " + t.root.rightChild);
-//		System.out.println("Hijo izq " + t.root.leftChild);
-		
-//		
-		System.out.println(j.joinedSearch(80));
-//		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
-//		System.out.println(j.joinedSearch("Hello"));
 		
 //		System.out.println(s.search("JP"));
 //		System.out.println(s.deleteInIndex(1,"JP"));
 //		System.out.println(s.search("JP"));
 		
-		t.inOrderTraversal();
-		
 		System.out.println("Getting line 1");
 		s.getLine(1);
 //		s.deleteLine(1);
-		
-		System.out.println(s.getItemPos("JP"));
-		
+				
+		j.joinedSearch(82);
+
 		//Deletes an index in the schema
 //		s.schema.print();
 //		s.deleteIndex(1);
