@@ -155,7 +155,7 @@ public class Index <T> {
 		if (element.toString().length() <= length) {
 			return true;
 		} else {
-			System.out.println("Invalid length. Length up to " + length + " characters."); 
+//			System.out.println("Invalid length. Length up to " + length + " characters."); 
 			return false;
 		}
 	}
