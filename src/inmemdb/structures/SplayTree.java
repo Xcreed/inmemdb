@@ -6,10 +6,11 @@ package inmemdb.structures;
  * @param <T>
  */
 public class SplayTree<T> extends Tree {
-	public SplayNode root;
-	public keySPTree keySP;
+	SplayNode root;
+	keySPTree keySP;
 	int size;
 	int index; 
+
 	
 	public SplayTree(){
 		this.root = null;
@@ -18,35 +19,25 @@ public class SplayTree<T> extends Tree {
 		this.index = 0;
 	}
 	
-	/**
-	 * verify if the tree is empty.
-	 * 
-	 * @return boolean
-	 */
 	public boolean isEmpty(){
 		return root == null;
 	}
-	/**
-	 * Make the tree empty.
-	 */
+	
 	public void makeEmpty(){
 		root = null;
 	}
 	
-	/**
+	
+	/*
 	 * Compare (T only)
 	 */
-	public int compareTo(T a, T b){
-        String temp1 = a.toString();
+	public int compareTo(T data, T b){
+        String temp1 = data.toString();
         String temp2 = b.toString();
         return temp1.compareTo(temp2);
     }
+	/**/
 	
-	/**
-	 * Gine a data, it assign a key for the new
-	 * node that will contain the data.
-	 * @param data
-	 */
 	public void insert(T data){
 		//System.out.println(data);
 		if(search(data)){
@@ -58,16 +49,7 @@ public class SplayTree<T> extends Tree {
 			
 		}
 	}
-
 	
-	/**
-	 * Given a new data, insert its into a new node. 
-	 * Calls insert() to insert the new node into 
-	 * the tree. 
-	 * 
-	 * @param data
-	 * @param key
-	 */
 	public void insert(T data, int key){
 		SplayNode newNode = new SplayNode(data, key);
 		if(root == null){
@@ -77,12 +59,6 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
-	/**
-	 * Insert a new node into the tree.
-	 * 
-	 * @param newNode
-	 * @param root
-	 */
 	public void insert(SplayNode newNode, SplayNode root){
 		if(newNode.compareTo(root)<0){  ///newNode > root
 			if(root.rightChild==null){
@@ -133,54 +109,159 @@ public class SplayTree<T> extends Tree {
 		}
 		
 	}
-					
-	/**
-	 * Deletes the nodes that contains the given data.
-	 * 
-	 * @param data
-	 */
-	public void delete(T data){
-		if(root==null){
-			return ;
-		}
-		SplayNode current = root;
-		while(current.data!=data){
-			if (compareTo((T) current.data, data)<0){
-				current = current.leftChild;
-			}else{
-				current = current.rightChild;
-			}
-		}
-		if (current.leftChild==null && current.rightChild==null){
-			SplayNode node2Splay = current.parent;
-			current = null; 
-			this.root= Splay(current.parent);
-		}else if(current.rightChild== null){
-			SplayNode newCurrent = current.leftChild;
-			while(newCurrent.rightChild != null){
-				newCurrent = newCurrent.rightChild; 
-			}
-			current.data = newCurrent.data;
-			newCurrent = null;
-			this.root = Splay(current);
+	
+	
+	public SplayNode findMax(SplayNode root){
+		if (root.rightChild==null){
+			return root;
 		}else{
-			SplayNode newCurrent = current.rightChild;
-			while(newCurrent.leftChild != null){
-				newCurrent = newCurrent.leftChild; 
-			}
-			current.data = newCurrent.data;
-			newCurrent = null;
-			this.root = Splay(current);
+			return findMax(root.rightChild);
+		}
+	}
+
+	public SplayNode findMin(SplayNode root){
+		if (root.leftChild==null){
+			return root;
+		}else{
+			return findMax(root.leftChild);
 		}
 	}
 	
-	/**
-	 *Zig operation.
-	 * 
-	 * @param node
-	 * @return node
-	 */
+	public void setReplacementNull(SplayNode replacement, SplayNode root){
+		SplayNode parent = root;
+		if(replacement.rightChild==null && replacement.leftChild == null){
+			if(parent.leftChild == replacement){
+				parent.leftChild = null;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = null;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}else if(replacement.rightChild != null){
+			replacement.rightChild.parent = replacement.parent;
+			if(parent.leftChild == replacement){
+				parent.leftChild = replacement.rightChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = replacement.rightChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}else if(replacement.leftChild != null){
+			replacement.leftChild.parent = replacement.parent;
+			if(parent.leftChild == replacement){
+				parent.leftChild = replacement.leftChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}else{
+				parent.rightChild = replacement.leftChild;
+				if(parent.parent.leftChild == root){
+					parent.parent.leftChild = parent;
+				}else{
+					parent.parent.rightChild = parent;
+				}
+			}
+		}
+	}
+	
+	
+	
+	public void delete(T data){
+		keySP.delete(SearchKeyOfValue(data));
+		delete2(data);
+	}
+	
+	public void delete2(T data){
+		if(root==null){
+			return;
+		}
+		SplayNode current = root;
+		while(current.data!=data && current!=null){
+			if(compareTo((T) current.data, data) < 0){
+				current=current.leftChild;
+			}else{
+				current=current.rightChild;
+			}
+		}
+		if(current.leftChild==null && current.rightChild==null){
+			if(current==this.root){
+				this.root=null;
+			}
+			else if(current.parent.leftChild==current){
+				current.parent.leftChild = null;
+			}else{
+				current.parent.rightChild = null;
+			}
+		}else if(current.rightChild == null){
+			SplayNode newCurrent;
+			SplayNode replacement = findMax(current.leftChild);
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.leftChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}else if (current.leftChild == null){
+			SplayNode newCurrent;
+			SplayNode replacement = findMin(current.rightChild);
+			System.out.println(replacement);
+			System.out.println(replacement.rightChild);
+			
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.rightChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}else{
+			SplayNode newCurrent;
+			SplayNode replacement = findMax(current.leftChild);
+			current.data = replacement.data;
+			current.key = replacement.key;
+			newCurrent = current;
+			current.leftChild.parent = newCurrent;
+			current.rightChild.parent = newCurrent;
+			if(current.parent.leftChild == current){
+				current.parent.leftChild = newCurrent;
+			}else{
+				current.parent.rightChild = newCurrent;
+			}
+			setReplacementNull(replacement, replacement.parent);
+		}
+		
+	}
+	
+	
+	
+	
 	public SplayNode zig(SplayNode node){
+		
 		SplayNode p = node.parent;
 		SplayNode x = node;
 		
@@ -209,13 +290,6 @@ public class SplayTree<T> extends Tree {
 		return x; 
 	}
 	
-	/**
-	 * ZigZig rotation. 
-	 * 
-	 * @param node
-	 * @param leftLeft
-	 * @return node
-	 */
 	public SplayNode zigzig(SplayNode node, boolean leftLeft){
 		SplayNode x = node; 
 		SplayNode p = node.parent;
@@ -273,14 +347,8 @@ public class SplayTree<T> extends Tree {
 		return x; 
 	}
 	
-	/**
-	 * Zizag rotation.
-	 * 
-	 * @param node
-	 * @param XRightCPLeftC
-	 * @return Node
-	 */
 	public SplayNode zigzag(SplayNode node, boolean XRightCPLeftC){
+		
 		SplayNode x = node;
 		SplayNode p = node.parent;
 		SplayNode g = node.parent.parent;
@@ -350,13 +418,6 @@ public class SplayTree<T> extends Tree {
 		return x;
 	}
 	
-	/**
-	 * Apply the splay operation into a given a
-	 * node. 
-	 * 
-	 * @param node
-	 * @return node
-	 */
 	public SplayNode Splay(SplayNode node){
 		if (node.parent==null){
 			return node; 
@@ -382,13 +443,7 @@ public class SplayTree<T> extends Tree {
 			return Splay(node);
 		}
 	}
-	/**
-	 * Given a data, searches if it is contain
-	 * by the tree.
-	 * 
-	 * @param data
-	 * @return boolean
-	 */
+	
 	public boolean search(T data){
 		if(this.root==null){
 			return false;
@@ -412,18 +467,12 @@ public class SplayTree<T> extends Tree {
 		return true; 
 	}
 	
-	/**
-	 * Calls inOrderTraversal().
-	 */
+	
 	public void inOrderTraversal(){
 		System.out.println("In order traversal");
 		inOrderTraversal(root);
 	}
 	
-	/**
-	 * 
-	 * @param current
-	 */
 	public void inOrderTraversal(SplayNode current){
 		if(current != null){
 			inOrderTraversal(current.leftChild);
@@ -432,18 +481,11 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
-	/**
-	 * Calls preorderTraversal().
-	 */
 	public void preorderTraversal(){
 		System.out.println("Preorder traversal");
 		preorderTraversal(root);
 	}
 	
-	/**
-	 * 
-	 * @param current
-	 */
 	public void preorderTraversal(SplayNode current){
 		if(current != null){
 			System.out.println(current);
@@ -452,18 +494,11 @@ public class SplayTree<T> extends Tree {
 		}
 	}
 	
-	/**
-	 * Calls postOrderTraversal().
-	 */
 	public void postorderTraversal(){
 		System.out.println("Postorder traversal");
 		postorderTraversal(root);
 	}
 	
-	/**
-	 * 
-	 * @param current
-	 */
 	public void postorderTraversal(SplayNode current){
 		if(current != null){
 			postorderTraversal(current.leftChild);
@@ -471,20 +506,11 @@ public class SplayTree<T> extends Tree {
 			System.out.println(current);
 		}
 	}
-	/**
-	 * Calls getDataStringAux().
-	 * 
-	 * @return String
-	 */
+	
 	public String getDataString() {
 		return getDataStringAux(root);
 	}
 	
-	/**
-	 * Returns the data of a given as a type String.
-	 * 
-	 * @return String
-	 */
 	private String getDataStringAux(SplayNode current) {
 		StringBuilder list = new StringBuilder();
 		
@@ -495,5 +521,7 @@ public class SplayTree<T> extends Tree {
 		} 
 		System.out.println(list);
 		return list.toString();
-	}	
+	}
+	
+	
 }
