@@ -1,7 +1,6 @@
 package inmemdb.nosql;
 	
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,7 +10,8 @@ import inmemdb.structures.Tree;
 @SuppressWarnings({ "rawtypes" })
 
 /**
- * Abstract class for the different types of 
+<<<<<<< HEAD
+ * Asbtract class for the differents types of 
  * index. 
  * 
  * @param <T>
@@ -98,7 +98,7 @@ public class Index <T> {
 				bool = false;
 			}
 		} else if (type.equals("char")){
-			if (element instanceof Charset && checkLength(element)) {
+			if (element instanceof Number && checkLength(element)) {
 				bool = true;
 			} else {
 				System.out.println("Invalid type. Index type is " + type);
@@ -155,7 +155,7 @@ public class Index <T> {
 		if (element.toString().length() <= length) {
 			return true;
 		} else {
-			System.out.println("Invalid length. Length up to " + length + " characters."); 
+//			System.out.println("Invalid length. Length up to " + length + " characters."); 
 			return false;
 		}
 	}

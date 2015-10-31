@@ -3,6 +3,7 @@ package inmemdb.nosql;
 import java.io.IOException;
 
 import inmemdb.controller.JSONProtocol;
+import inmemdb.structures.AVLTree;
 import inmemdb.structures.BinarySearchTree;
 
 public class Main {
@@ -22,6 +23,11 @@ public class Main {
 		j.joinSchema(s);
 		j.createJoinedIndex("avl", "number", "Notas", 2);
 		
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Inserting I ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		s.insertToIndex(1, "JP");
 		s.insertToIndex(1, "Randy");
 		s.insertToIndex(1, "Alejandra");
@@ -33,42 +39,48 @@ public class Main {
 		s.insertToIndex(3, "SchemaExtraFiles/8.jpg");
 		s.insertToIndex(3, "SchemaExtraFiles/4.jpg");
 		
-
 		IndexBTS index = (IndexBTS) s.schema.getItem(1);
 		BinarySearchTree t = (BinarySearchTree) index.tree;
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Traversal I");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		t.inOrderTraversal();
 		
-//		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
-//		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
-//		System.out.println("bts2 order");
-//		t2.inOrderTraversal();
+		IndexAVL index2 = (IndexAVL) s.schema.getItem(2);
+		AVLTree t2 = (AVLTree) index2.getTree();
+		System.out.println("avl order");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Traversal II");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		t2.inorder();
 		
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Inserting II ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		j.insertToIndex(1, 80);
 		j.insertToIndex(1, 82);
-		j.insertToIndex(1, 78);
-		
-//		
-//		System.out.println(t.root);
-//		System.out.println("Hijo dere " + t.root.rightChild);
-//		System.out.println("Hijo izq " + t.root.leftChild);
-		
-//		
-		System.out.println(j.joinedSearch(80));
-//		System.out.println(j.deleteInJoinedIndex(1,"Hello"));
-//		System.out.println(j.joinedSearch("Hello"));
+		j.insertToIndex(1, 78);			
 		
 //		System.out.println(s.search("JP"));
 //		System.out.println(s.deleteInIndex(1,"JP"));
 //		System.out.println(s.search("JP"));
 		
-		t.inOrderTraversal();
-		
 		System.out.println("Getting line 1");
 		s.getLine(1);
 //		s.deleteLine(1);
-		
-		System.out.println(s.getItemPos("JP"));
-		
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Searching 82 ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		j.joinedSearch(82);
+
 		//Deletes an index in the schema
 //		s.schema.print();
 //		s.deleteIndex(1);

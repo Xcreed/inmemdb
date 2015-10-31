@@ -94,7 +94,6 @@ public class BinarySearchTree <T> extends Tree{
 	}
 	
 	public <T> int SearchKeyOfValue(T data){
-		System.out.println();
 		if(root==null){
 			return -1;
 		}
