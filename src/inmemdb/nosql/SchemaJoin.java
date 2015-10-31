@@ -82,9 +82,11 @@ public class SchemaJoin<T> extends Schema<T>{
 	public boolean joinedSearch(T element) {
 		if (super.search(element) && joinedSchema.search(element)) {
 			System.out.println("Item in both tables");
+			joinedSchema.getLine(joinedSchema.getItemPos(element));
 			return true;
 		} else if (super.search(element) || joinedSchema.search(element)) {
 			System.out.println("Item found in one of two tables");
+			joinedSchema.getLine(joinedSchema.getItemPos(element));
 			return true;
 		} else {
 			System.out.println("Item not found in any table");

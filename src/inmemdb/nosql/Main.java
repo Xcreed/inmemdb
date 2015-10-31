@@ -17,7 +17,8 @@ public class Main {
 
 		//Creates an index in the regular schema
 		s.createIndex("bts", "string", "Nombre", 10);
-		s.createIndex("bts", "number", "año", 4);
+		s.createIndex("avl", "number", "año", 4);
+		s.createIndex("avl", "image", "Imagen", 0);
 		j.joinSchema(s);
 		j.createJoinedIndex("avl", "number", "Notas", 2);
 		
@@ -28,16 +29,19 @@ public class Main {
 		s.insertToIndex(2, 1996);
 		s.insertToIndex(2, 1995);
 		s.insertToIndex(2, 1997);
+		s.insertToIndex(3, "SchemaExtraFiles/2.jpg");
+		s.insertToIndex(3, "SchemaExtraFiles/8.jpg");
+		s.insertToIndex(3, "SchemaExtraFiles/4.jpg");
 		
 
 		IndexBTS index = (IndexBTS) s.schema.getItem(1);
 		BinarySearchTree t = (BinarySearchTree) index.tree;
 		t.inOrderTraversal();
 		
-		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
-		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
-		System.out.println("bts2 order");
-		t2.inOrderTraversal();
+//		IndexBTS index2 = (IndexBTS) s.schema.getItem(2);
+//		BinarySearchTree t2 = (BinarySearchTree) index2.tree;
+//		System.out.println("bts2 order");
+//		t2.inOrderTraversal();
 		
 		j.insertToIndex(1, 80);
 		j.insertToIndex(1, 82);
@@ -61,6 +65,9 @@ public class Main {
 		
 		System.out.println("Getting line 1");
 		s.getLine(1);
+//		s.deleteLine(1);
+		
+		System.out.println(s.getItemPos("JP"));
 		
 		//Deletes an index in the schema
 //		s.schema.print();
@@ -71,9 +78,6 @@ public class Main {
 		
 //		s.createIndex("bts", "video", "Videos", 0);
 //		s.insertToIndex(1, "SchemaExtraFiles/Trike Drifting.mp4");
-//		
-//		s.createIndex("bts", "image", "Images", 0);
-//		s.insertToIndex(2, "SchemaExtraFiles/1st.jpg");
 		
 //	***************************************
 		

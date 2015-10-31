@@ -73,9 +73,8 @@ public class CeRobot {
 	 * @param guide
 	 */
 	public void operations(File f) {
-		pdfSchema.createIndex("bts", "string", f.getName(), 7);
-//		Index index = (Index) pdfSchema.schema.getItem(1);
-//		System.out.println(index.getName());
+		pdfSchema.createIndex("bts", "string", f.getName(), 6);
+
 	}
 	
 	/**
@@ -117,7 +116,7 @@ public class CeRobot {
 		    	writer.write(Arrays.toString(arrayString));
 		    }
 		    wordsToIndex(number);
-	    	System.out.println(Arrays.toString(arrayString));
+//	    	System.out.println(Arrays.toString(arrayString));
 		    writer.flush();
 		    writer.close();
 		} catch (Exception e){ 
@@ -141,6 +140,7 @@ public class CeRobot {
 	    	for (int i = 0; i < wordsString.length; i++) {
 	    		pdfSchema.insertToIndex(schemaIndex, wordsString[i]);
 	    	}
+	    	
 	    	Index index = (Index) pdfSchema.schema.getItem(schemaIndex);
 	    	BinarySearchTree t = (BinarySearchTree) index.getTree();
 	    	System.out.println("-------------------------");

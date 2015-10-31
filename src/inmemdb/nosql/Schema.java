@@ -152,7 +152,7 @@ public class Schema<T> {
 		Index index = schema.getItem(containingIndex);
 		boolean bool = false;
 		
-		System.out.println(itemToInsert);
+//		System.out.println(itemToInsert);
 		if (index instanceof IndexBTS) {
 			IndexBTS indexType = (IndexBTS) schema.getItem(containingIndex);
 			bool = indexType.insert(itemToInsert);
@@ -226,14 +226,69 @@ public class Schema<T> {
 			} else if (index instanceof IndexAVL) {
 				IndexAVL indexType = (IndexAVL) schema.getItem(i);
 				AVLTree indexTree = indexType.getTree();	
-				
+				line.insertEnd(indexTree.keyAVL.searchKeyReturnValue(lineNumber));
 			} else if (index instanceof IndexSplay) {
 				IndexSplay indexType = (IndexSplay) schema.getItem(i);
-				
+				SplayTree indexTree = (SplayTree) indexType.getTree();
+				System.out.println("Not implemented for Splay tree");
+//				line.insertEnd(indexTree.keySP.searchKeyReturnValue(lineNumber));
+
 			}
 			
 		}
 		line.print();
+	}
+	
+	public void deleteLine(int lineNumber) {
+		
+		DoubleLinkedList line = new DoubleLinkedList();
+
+		for (int i = 1; i < schema.getLength(); i++) {
+			Index index = schema.getItem(i);
+			if (index instanceof IndexBTS) {
+				IndexBTS indexType = (IndexBTS) schema.getItem(i);
+				BinarySearchTree indexTree = indexType.getTree();
+				indexTree.remove(indexTree.keyBST.searchKeyReturnValue(lineNumber));
+			} else if (index instanceof IndexAVL) {
+				IndexAVL indexType = (IndexAVL) schema.getItem(i);
+				AVLTree indexTree = indexType.getTree();	
+				indexTree.remove(indexTree.keyAVL.searchKeyReturnValue(lineNumber));
+			} else if (index instanceof IndexSplay) {
+				IndexSplay indexType = (IndexSplay) schema.getItem(i);
+				SplayTree indexTree = (SplayTree) indexType.getTree();
+				System.out.println("Not implemented for Splay tree");
+			}
+			
+		}
+	}
+	
+	public int getItemPos(T element) {
+		int pos = 0;
+		for (int i = 1; i < schema.getLength(); i++) {
+			Index index = schema.getItem(i);
+			if (index instanceof IndexBTS) {
+				IndexBTS indexType = (IndexBTS) schema.getItem(i);
+				BinarySearchTree indexTree = indexType.getTree();
+				pos = (indexTree.SearchKeyOfValue(element));
+				System.out.println("position" + pos);
+			} else if (index instanceof IndexAVL) {
+				IndexAVL indexType = (IndexAVL) schema.getItem(i);
+				AVLTree indexTree = indexType.getTree();	
+				pos = (indexTree.SearchKeyOfValue(element));
+			} else if (index instanceof IndexSplay) {
+				IndexSplay indexType = (IndexSplay) schema.getItem(i);
+				SplayTree indexTree = (SplayTree) indexType.getTree();
+				System.out.println("Item in position: ");
+				pos = (indexTree.SearchKeyOfValue(element));
+//				line.insertEnd(indexTree.keySP.searchKeyReturnValue(lineNumber));
+
+			} else {
+				System.out.println("item not found");
+				pos = -1;
+			}
+			
+		}
+		return pos;
 	}
 	
 	public String getSchemaLocation() {

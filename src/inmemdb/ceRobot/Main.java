@@ -10,6 +10,7 @@ public class Main  {
 	public static void main(String[] args) throws IOException {
 		robot.openDir("PdfFiles/");
 		robot.readFiles();
+		System.out.println("length" + robot.pdfSchema.schema.getLength());
 		System.out.println(robot.pdfSchema.search("age"));
 	}
 
