@@ -6,10 +6,18 @@ package inmemdb.structures;
  * @param <T>
  */
 public class SplayTree<T> extends Tree {
-	SplayNode root;
+	public SplayNode root;
+	public keySPTree keySP;
 	int size;
 	int index; 
-
+	
+	public SplayTree(){
+		this.root = null;
+		this.keySP = new keySPTree();
+		this.size = 0;
+		this.index = 0;
+	}
+	
 	/**
 	 * verify if the tree is empty.
 	 * 
@@ -45,9 +53,12 @@ public class SplayTree<T> extends Tree {
 			System.out.println("This node already exists ");
 		}else{
 			index++;
+			keySP.insert(data, index);
 			insert(data, index);
+			
 		}
 	}
+
 	
 	/**
 	 * Given a new data, insert its into a new node. 
@@ -58,7 +69,6 @@ public class SplayTree<T> extends Tree {
 	 * @param key
 	 */
 	public void insert(T data, int key){
-		System.out.println(data);
 		SplayNode newNode = new SplayNode(data, key);
 		if(root == null){
 			this.root = newNode;
@@ -95,6 +105,35 @@ public class SplayTree<T> extends Tree {
 		
 	}
 	
+	public int SearchKeyOfValue(T value){
+		if(root ==null){
+			return -1;
+		}else{
+			return SearchKeyOfValue(root, value);
+		}
+	}
+	
+	public int SearchKeyOfValue(SplayNode root, T value){
+		boolean found = false; 
+		while((root!=null)&&!found){
+			T rootvalue = (T) root.data;
+			if (compareTo(value, rootvalue)>0){
+				root = root.leftChild;
+			}else if (compareTo(value, rootvalue)<0){
+				root = root.rightChild;
+			}else{
+				found = true;
+				break;
+			}
+		}
+		if(found){
+			return root.key;
+		}else{
+			return -1;
+		}
+		
+	}
+					
 	/**
 	 * Deletes the nodes that contains the given data.
 	 * 
@@ -144,6 +183,8 @@ public class SplayTree<T> extends Tree {
 	public SplayNode zig(SplayNode node){
 		SplayNode p = node.parent;
 		SplayNode x = node;
+		
+		
 		if (node.compareTo(node.parent)<0){  // node > node.parent
 			x.parent = p.parent;
 			p.parent=x;
@@ -165,7 +206,7 @@ public class SplayTree<T> extends Tree {
 			}
 			x.rightChild = p; 
 		}
-		return node; 
+		return x; 
 	}
 	
 	/**

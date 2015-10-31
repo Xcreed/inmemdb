@@ -6,7 +6,8 @@ package inmemdb.structures;
  * @param <T>
  */
 public class BinarySearchTree <T> extends Tree{
-
+	
+	public keyBSTree keyBST;
 	public BSTNode root;
 	int index;
 	
@@ -16,6 +17,7 @@ public class BinarySearchTree <T> extends Tree{
 	public BinarySearchTree (){
 		root = null;
 		index = 0;
+		keyBST = new keyBSTree ();
 	}
 	
 	/**
@@ -35,7 +37,9 @@ public class BinarySearchTree <T> extends Tree{
 	 */
 	public <T> void addNode(T data){
 		//BSTNode newNode = new BSTNode(data, name);
+		keyBST.addNode(data);
 		BSTNode newNode = new BSTNode(data, this.index+1);
+		
 		if (root == null){
 			root = newNode;
 			this.index++;
@@ -89,6 +93,26 @@ public class BinarySearchTree <T> extends Tree{
 		return true;
 	}
 	
+	public <T> int SearchKeyOfValue(T data){
+		System.out.println(data);
+		if(root==null){
+			return -1;
+		}
+		BSTNode current = root;
+		while (current.data != data){
+			if (compareTo(data, current.data)>0){
+				current = current.leftChild;
+			}else{
+				current = current.rightChild;
+			}
+			if (current == null){
+				return -1;
+			}
+		}
+		return current.key;
+		
+	}
+
 	/**
 	 * Given a new node, replace a node in the tree
 	 * by the new one 
@@ -112,6 +136,7 @@ public class BinarySearchTree <T> extends Tree{
 		return replacement;
 	}
 	
+
 	/**
 	 * Given a data inside the tree, deletes the node
 	 * that contains the data. 
@@ -120,6 +145,10 @@ public class BinarySearchTree <T> extends Tree{
 	 * @return boolean
 	 */
 	public <T> boolean remove(T data){
+		keyBST.remove(SearchKeyOfValue(data));
+//		System.out.println("here");
+//		System.out.println("remove from BiSeTr");
+		
 		BSTNode current = root;
 		BSTNode parent = root;
 		
@@ -163,7 +192,7 @@ public class BinarySearchTree <T> extends Tree{
 			}else if (isItALeftChild){
 				parent.leftChild = current.rightChild;
 			}else{
-				parent.rightChild = current.leftChild;
+				parent.rightChild = current.rightChild;
 			}
 		}else{
 			BSTNode replacement = getReplacementNode(current);
