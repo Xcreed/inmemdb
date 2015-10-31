@@ -25,7 +25,7 @@ public class Main {
 		
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
-		System.out.println("Inserting data to: ");
+		System.out.println("Inserting I ");
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
 		s.insertToIndex(1, "JP");
@@ -43,7 +43,7 @@ public class Main {
 		BinarySearchTree t = (BinarySearchTree) index.tree;
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
-		System.out.println("Traversal: 1");
+		System.out.println("Traversal I");
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
 		t.inOrderTraversal();
@@ -53,17 +53,19 @@ public class Main {
 		System.out.println("avl order");
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
-		System.out.println("Traversal: 2");
+		System.out.println("Traversal II");
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.println("---------------------------------------------------------------------------");
-
 		t2.inorder();
 		
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Inserting II ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		j.insertToIndex(1, 80);
 		j.insertToIndex(1, 82);
-		j.insertToIndex(1, 78);
-		
-//		
+		j.insertToIndex(1, 78);			
 		
 //		System.out.println(s.search("JP"));
 //		System.out.println(s.deleteInIndex(1,"JP"));
@@ -72,7 +74,11 @@ public class Main {
 		System.out.println("Getting line 1");
 		s.getLine(1);
 //		s.deleteLine(1);
-				
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Searching 82 ");
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------------------");
 		j.joinedSearch(82);
 
 		//Deletes an index in the schema
