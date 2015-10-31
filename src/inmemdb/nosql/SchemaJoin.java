@@ -46,7 +46,7 @@ public class SchemaJoin<T> extends Schema<T>{
 	 */
 	public boolean insertToIndex(int containingIndex, T itemToInsert) {
 		if (super.insertToIndex(containingIndex, itemToInsert)) {
-			System.out.println("Item inserted to index " + containingIndex);
+//			System.out.println("Item inserted to index " + containingIndex);
 			return true;
 		} else {
 			System.out.println("Failed to insert");
@@ -80,13 +80,14 @@ public class SchemaJoin<T> extends Schema<T>{
 	 */
 	@SuppressWarnings("unchecked")
 	public boolean joinedSearch(T element) {
+		
 		if (super.search(element) && joinedSchema.search(element)) {
 			System.out.println("Item in both tables");
-			joinedSchema.getLine(joinedSchema.getItemPos(element));
+//			joinedSchema.getLine(joinedSchema.getItemPos(element));
 			return true;
 		} else if (super.search(element) || joinedSchema.search(element)) {
 			System.out.println("Item found in one of two tables");
-			joinedSchema.getLine(joinedSchema.getItemPos(element));
+			joinedSchema.getLine(this.getItemPos(element));
 			return true;
 		} else {
 			System.out.println("Item not found in any table");
